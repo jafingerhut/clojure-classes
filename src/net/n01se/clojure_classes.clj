@@ -9,10 +9,31 @@
 
 (ns net.n01se.clojure-classes
   (:use [clojure.java.shell :only (sh)])
+  (:require [clojure.string :as str])
   (:import (javax.swing JFrame JLabel JScrollPane ImageIcon)
            (clojure.lang PersistentQueue)))
 
-(def srcpath "/home/chouser/proj/clojure/src/jvm/clojure/lang/")
+(def log-lines (atom []))
+
+(defn log [line-str]
+  (swap! log-lines conj line-str))
+
+(defn write-log [log-fname]
+  (spit log-fname (str/join "\n" @log-lines)))
+
+(defn clojure-java-src-dir [clojure-local-root]
+  (str clojure-local-root "/src/jvm/clojure/lang/"))
+
+(defn java-source-file-base-names [clojure-java-src]
+  (filter identity
+          (for [file (.listFiles (java.io.File. clojure-java-src))]
+            (let [[base-fname ext] (.split (.getName file) "\\.")]
+              (when (= ext "java")
+                base-fname)))))
+
+(defn clojure-lang-classes [java-source-file-base-names]
+  (for [base-fname java-source-file-base-names]
+    (Class/forName (str "clojure.lang." base-fname))))
 
 (defmacro str-for [& for-stuff]
   `(apply str (for ~@for-stuff)))
@@ -45,21 +66,59 @@
 
 (def clusters '#{})
 
+;; The interfaces that are the keys of the map 'badges' are so
+;; commonly implemented by Clojure classes that it would clutter up
+;; the graph if they were shown as nodes with edges from other nodes.
+;; Instead, label each class with the list of single-character
+;; abbreviations in this map.
+
+;; There was a java.util.stream.Streamable in some versions of the
+;; JDK, but it was removed before the final release of JDK 8.  I have
+;; thus removed Streamable from 'badges'.
+;; https://stackoverflow.com/questions/21985854/what-happened-to-java-util-stream-streamable
+
+;; I added IObj and IHashEq to Chouser's original list of badges,
+;; since those are now also frequently implemented interfaces.
+
 (def badges
-  '{IMeta M Iterable T Counted 1 Streamable S Serializable Z
-    Reversible R Named N Comparable =})
+  (apply array-map
+   '[IMeta M
+     IObj W
+     Iterable T
+     Counted 1
+     IHashEq H
+     Serializable Z
+     Reversible R
+     Named N
+     Comparable =]))
 
 (def color-override '{PersistentList "#76d700" PersistentQueue "#0061d7"
                       LazySeq "#d78100"})
 
-(def aliases '{core$future_call$reify__5684 "(future)"})
+;; TBD: See if there is a way to get this class name reliably at run
+;; time, without having to know a run-time generated class name like
+;; reify__5684.
 
-(def extra-seed-classes [clojure.core$future_call$reify__5684])
+;;(def aliases '{core$future_call$reify__5684 "(future)"})
+(def aliases '{})
 
-(defn class-filter [cls]
+;;(def extra-seed-classes [clojure.core$future_call$reify__5684])
+(def extra-seed-classes [])
+
+(defn class-filter* [cls]
   (let [package (-> cls .getPackage .getName)]
     (or (= package "clojure.lang")
         (and (.startsWith package "java") (.isInterface cls)))))
+
+(def classes-failing-class-filter (atom #{}))
+
+(defn class-filter [cls]
+  (let [ret (class-filter* cls)]
+    (when (and (not ret)
+               (not (contains? @classes-failing-class-filter cls)))
+      (swap! classes-failing-class-filter conj cls)
+      (log (str "(class-filter " cls ") -> " ret)))
+    ret))
 
 (defn choose-shape [cls]
   (cond
@@ -86,15 +145,12 @@
   (color-override (class-name cls)
     (nth colors (rem (Math/abs (hash (str cls))) (count colors)))))
 
-(def graph
+(defn class-graph [clj-classes]
   (loop [found {}
          work (into
                 (into PersistentQueue/EMPTY extra-seed-classes)
                 (filter #(and % (some class-filter (bases %)))
-                        (for [file (.listFiles (java.io.File. srcpath))]
-                          (let [[cname ext] (.split (.getName file) "\\.")]
-                            (when (= ext "java")
-                              (Class/forName (str "clojure.lang." cname)))))))]
+                        clj-classes))]
     (if (empty? work)
       found
       (let [cls (peek work)
@@ -102,9 +158,7 @@
         (recur (assoc found cls kids)
                (into (pop work) (remove found kids)))))))
 
-(def classes (sort-by #(.getSimpleName %) (keys graph)))
-
-(def dotstr
+(defn dotstr [classes graph]
   (str
     "digraph {\n"
     "  rankdir=LR;\n"
@@ -157,11 +211,35 @@
                        " [ color=\"" color "\" ];\n")))))))
     "}\n"))
 
-(spit "graph.dot" dotstr)
 
+(defn -main [& args]
+  (when-not (= 2 (count args))
+    (println "usage: cmd_name <clojure-local-root-directory> <directory-to-write-output-files>")
+    (System/exit 1))
+  (let [[clojure-local-root output-dir] args
+        srcpath (clojure-java-src-dir clojure-local-root)
+        file-base-names (java-source-file-base-names srcpath)
+        clj-classes (clojure-lang-classes file-base-names)
+        dot-fname (str output-dir "/graph-" (clojure-version) ".dot")
+        log-fname (str output-dir "/log-" (clojure-version) ".txt")]
+
+    (log (str "In directory: " srcpath))
+    (log (str "found the following " (count file-base-names)
+              " files with .java suffix:"))
+    (doseq [base-fname (sort file-base-names)]
+      (log (str "    " base-fname)))
+
+    (let [graph (class-graph clj-classes)
+          classes (sort-by #(.getSimpleName %) (keys graph))
+          dot-string (dotstr classes graph)]
+      (spit dot-fname dot-string)
+      (write-log log-fname))))
+
+(comment
 (doto (JFrame. "Clojure Classes")
   (.add (-> (sh "dot" "-Tpng" :in dotstr :out-enc :bytes) :out ImageIcon.
           JLabel. JScrollPane.))
   (.setSize 600 400)
   (.setDefaultCloseOperation javax.swing.WindowConstants/DISPOSE_ON_CLOSE)
   (.setVisible true))
+)
