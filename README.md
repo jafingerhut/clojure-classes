@@ -19,9 +19,17 @@ $ clojure -Sdeps '{:deps {org.clojure/clojure {:mvn/version "1.10.1"}}}' -m net.
 ```
 
 There is a script in the `generate` directory that you can use to run
-it for multiple versions of Clojure source code:
+it for multiple versions of Clojure source code.  You must give it:
+
++ the root directory of a local git clone of the Clojure source code.
++ the directory where you want output files to be created
+
+The script will make changes to your git clone of the Clojure source
+code, using `git checkout` commands.  It does this to change the
+Clojure source code to different Clojure release versions.
+
 ```bash
-$ ./generate/gen.sh
+$ ./generate/gen.sh /home/andy/clj/clojure generate/
 ```
 
 You can produce svg, pdf, png, and other graphical file formats from
