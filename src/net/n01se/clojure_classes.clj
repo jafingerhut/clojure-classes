@@ -9,9 +9,17 @@
 
 (ns net.n01se.clojure-classes
   (:use [clojure.java.shell :only (sh)])
-  (:require [clojure.string :as str])
+  (:require [clojure.string :as str]
+            [clojure.reflect :as refl])
   (:import (javax.swing JFrame JLabel JScrollPane ImageIcon)
            (clojure.lang PersistentQueue)))
+
+;; Ignore exceptions from attempting to require clojure.core.reducers
+;; so that this program continues to work for Clojure 1.3.0 and 1.4.0
+(try
+  (require '[clojure.core.reducers :as red])
+  (catch Throwable e
+    nil))
 
 (def log-lines (atom []))
 
@@ -102,6 +110,12 @@
              LazyCons lazy-cons Range range FnSeq fnseq
              MultiFn defmulti Keyword keyword Symbol "symbol, gensym"})
 
+(def java-package-abbreviations
+  [{:full-name "clojure.core", :abbreviation "c.c"}
+   {:full-name "java.lang", :abbreviation "j.l"}
+   {:full-name "java.util.concurrent", :abbreviation "j.u.c"}
+   {:full-name "java.util", :abbreviation "j.u"}])
+
 (def clusters '#{})
 
 ;; The interfaces that are the keys of the map 'badges' are so
@@ -120,15 +134,27 @@
 
 (def badges
   (apply array-map
-   '[IMeta M          ;; package clojure.lang
-     IObj W           ;; package clojure.lang
-     Iterable T       ;; package java.lang
-     Counted 1        ;; package clojure.lang
-     IHashEq H        ;; package clojure.lang
-     Serializable Z   ;; package java.io
-     Reversible R     ;; package clojure.lang
-     Named N          ;; package clojure.lang
-     Comparable =]))  ;; package java.lang
+   '[IType          ;; package clojure.lang
+     {:abbreviation D, :description "type created by deftype"}
+     IMeta          ;; package clojure.lang
+     {:abbreviation M, :description "meta"}
+     IObj           ;; package clojure.lang
+     {:abbreviation W, :description "with-meta"}
+     Iterable       ;; package java.lang
+     {:abbreviation T, :description ""}
+     Counted        ;; package clojure.lang
+     {:abbreviation 1, :description "counted?, count is O(1)"}
+     IHashEq        ;; package clojure.lang
+     {:abbreviation H, :description "hash"}
+     Serializable   ;; package java.io
+     {:abbreviation Z, :description ""}
+     Reversible     ;; package clojure.lang
+     {:abbreviation R, :description "reversible?, rseq is O(1)"}
+     Named          ;; package clojure.lang
+     {:abbreviation N, :description ""}
+     Comparable     ;; package java.lang
+     {:abbreviation =, :description ""}]))
+
 
 ;; These nodes represent classes, not interfaces, so I don't want to
 ;; use the badges idea to represent them, but to avoid long edges
@@ -171,11 +197,30 @@
 ;;(def aliases '{core$future_call$reify__5684 "(future)"})
 (def aliases {sym-with-clojure-removed "(future)"})
 ;;(def extra-seed-classes [clojure.core$future_call$reify__5684])
-(def extra-seed-classes [future-call-class])
+(def extra-seed-classes
+  (vec (filter identity
+               (concat
+                [future-call-class]
+                ;; Types in Clojure's core implementation that are
+                ;; defined via the macro clojure.core/deftype.  We use
+                ;; class-exists? so that we only keep the ones that
+                ;; exist in the version of Clojure running this
+                ;; program.
+                (map class-exists?
+                     '[clojure.core.reducers.Cat
+                       clojure.reflect.JavaReflector
+                       clojure.reflect.AsmReflector
+                       clojure.core.Eduction
+                       clojure.core.VecNode
+                       clojure.core.ArrayChunk
+                       clojure.core.VecSeq
+                       clojure.core.Vec])))))
 
 (defn class-filter* [cls]
   (let [package (-> cls .getPackage .getName)]
     (or (= package "clojure.lang")
+        (.startsWith package "clojure.core")
+        (.startsWith package "clojure.reflect")
         (and (.startsWith package "java") (.isInterface cls)))))
 
 (def classes-failing-class-filter (atom #{}))
@@ -190,12 +235,29 @@
 
 (defn choose-shape [cls]
   (cond
-    (not (-> cls .getPackage .getName (.startsWith "clojure"))) "diamond"
+    (not (-> cls .getPackage .getName (.startsWith "clojure"))) "box"
     (.isInterface cls) "octagon"
     :else "oval"))
 
+(defn abbreviate-java-package [class-name-str]
+  (loop [abbrevs java-package-abbreviations]
+    (if-let [s (seq abbrevs)]
+      (let [{:keys [full-name abbreviation]} (first s)]
+        (if (.startsWith class-name-str full-name)
+          (str/replace-first class-name-str full-name abbreviation)
+          (recur (rest s))))
+      class-name-str)))
+
 (defn class-name [cls]
-  (symbol (.getSimpleName cls)))
+  (let [full-name (.getName cls)]
+    (symbol
+     (if (or (.startsWith full-name "clojure.lang.")
+             (.startsWith full-name "clojure.core$")
+             (contains? #{"java.lang.Iterable" "java.io.Serializable"
+                          "java.lang.Comparable"}
+                        full-name))
+       (.getSimpleName cls)
+       (abbreviate-java-package full-name)))))
 
 (defn class-label [cls]
   (let [clsname (class-name cls)
@@ -206,7 +268,12 @@
     (str a
          ;(when ctor (str (when-not (empty? a) "\\n") ctor))
          (when pred (str \\ \n pred))
-         (when-let [badge (seq (filter identity (map badges (map anc (keys badges)))))]
+         (when-let [badge (->> (keys badges)
+                               (map anc)
+                               (map badges)
+                               (map :abbreviation)
+                               (filter identity)
+                               seq)]
            (str "\\n[" (apply str badge) "]")))))
 
 (defn class-color [cls]
@@ -249,7 +316,7 @@
     fontsize=19
     bgcolor=\"#dddddd\"
     \"Clojure Interface\" [ shape=octagon fillcolor=\"#ffffff\" style=filled ];
-    \"Java Interface\" [ shape=diamond fillcolor=\"#ffffff\" style=filled ];
+    \"Java Interface\" [ shape=box fillcolor=\"#ffffff\" style=filled ];
     \"Clojure class\" [ shape=oval fillcolor=\"#ffffff\" style=filled ];
     "
     (when (seq badges)
@@ -259,9 +326,28 @@
       style=filled
       fillcolor=\"#ffffff\"
       label=\"{{"
-       (apply str (interpose "|" (vals badges)))
+       (apply str (interpose "|" (map :abbreviation (vals badges))))
       "}|{"
        (apply str (interpose "|" (keys badges)))
+      "}|{"
+       (apply str (interpose "|" (map :description (vals badges))))
+      "}}\"
+    ]"))
+
+    (when (seq java-package-abbreviations)
+      (str "
+    java_package_abbreviations [
+      shape=record
+      style=filled
+      fillcolor=\"#ffffff\"
+      label=\"{{"
+       (apply str (interpose "|" (cons "Abbrev."
+                                       (map :abbreviation
+                                            java-package-abbreviations))))
+      "}|{"
+       (apply str (interpose "|" (cons "Java Package"
+                                       (map :full-name
+                                            java-package-abbreviations))))
       "}}\"
     ]"))
     "
