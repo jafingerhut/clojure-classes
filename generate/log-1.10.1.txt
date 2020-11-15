@@ -1,3 +1,4 @@
+Found future-call compiled class with name: clojure.core$future_call$reify__8454
 In directory: /Users/andy/clj/clojure/src/jvm/clojure/lang/
 found the following 137 files with .java suffix:
     AFn

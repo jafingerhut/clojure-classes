@@ -147,11 +147,31 @@
 ;; time, without having to know a run-time generated class name like
 ;; reify__5684.
 
-;;(def aliases '{core$future_call$reify__5684 "(future)"})
-(def aliases '{})
+(defn class-exists? [sym]
+  (try
+    (eval sym)
+    (catch clojure.lang.Compiler$CompilerException e
+      false)))
 
+(defn find-class [base-name-string max-n]
+  (loop [i 0]
+    (if (> i max-n)
+      nil
+      (let [sym (symbol (str base-name-string i))
+            cls (class-exists? sym)]
+        (if cls
+          cls
+          (recur (inc i)))))))
+
+(def future-call-class (find-class "clojure.core$future_call$reify__" 10000))
+(def sym-with-clojure-removed (symbol (clojure.string/replace-first
+                                       (.getName future-call-class)
+                                       #"^clojure\." "")))
+
+;;(def aliases '{core$future_call$reify__5684 "(future)"})
+(def aliases {sym-with-clojure-removed "(future)"})
 ;;(def extra-seed-classes [clojure.core$future_call$reify__5684])
-(def extra-seed-classes [])
+(def extra-seed-classes [future-call-class])
 
 (defn class-filter* [cls]
   (let [package (-> cls .getPackage .getName)]
@@ -285,6 +305,8 @@
         dot-fname (str output-dir "/graph-" (clojure-version) ".dot")
         log-fname (str output-dir "/log-" (clojure-version) ".txt")]
 
+    (log (str "Found future-call compiled class with name: "
+              (.getName future-call-class)))
     (log (str "In directory: " srcpath))
     (log (str "found the following " (count file-base-names)
               " files with .java suffix:"))

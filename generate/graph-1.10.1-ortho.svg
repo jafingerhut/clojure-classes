@@ -87,8 +87,8 @@
 <!-- class clojure.lang.AFn&#45;&gt;interface clojure.lang.IFn -->
 <g id="edge1" class="edge">
 <title>class clojure.lang.AFn&#45;&gt;interface clojure.lang.IFn</title>
-<path fill="none" stroke="#00d0d7" d="M1025,-1997.36C1046.55,-1993.28 1078.22,-1986.91 1105.54,-1980 1157.71,-1966.8 1217.12,-1948.42 1254.71,-1936.38"/>
-<polygon fill="#00d0d7" stroke="#00d0d7" points="1255.79,-1939.7 1264.24,-1933.31 1253.65,-1933.04 1255.79,-1939.7"/>
+<path fill="none" stroke="#00d0d7" d="M1025.78,-2002C1097.2,-2002 1284.71,-2002 1284.71,-2002 1284.71,-2002 1284.71,-1963.49 1284.71,-1963.49"/>
+<polygon fill="#00d0d7" stroke="#00d0d7" points="1288.21,-1963.49 1284.71,-1953.49 1281.21,-1963.49 1288.21,-1963.49"/>
 </g>
 <!-- interface java.util.concurrent.Callable -->
 <g id="node52" class="node">
@@ -99,8 +99,8 @@
 <!-- interface clojure.lang.IFn&#45;&gt;interface java.util.concurrent.Callable -->
 <g id="edge57" class="edge">
 <title>interface clojure.lang.IFn&#45;&gt;interface java.util.concurrent.Callable</title>
-<path fill="none" stroke="#00d764" d="M1322.65,-1926.11C1370.3,-1929.69 1467.84,-1937 1530.37,-1941.7"/>
-<polygon fill="#00d764" stroke="#00d764" points="1530.25,-1945.2 1540.48,-1942.46 1530.77,-1938.22 1530.25,-1945.2"/>
+<path fill="none" stroke="#00d764" d="M1318.45,-1940.54C1318.45,-1940.54 1536.69,-1940.54 1536.69,-1940.54"/>
+<polygon fill="#00d764" stroke="#00d764" points="1536.69,-1944.04 1546.69,-1940.54 1536.69,-1937.04 1536.69,-1944.04"/>
 </g>
 <!-- interface java.lang.Runnable -->
 <g id="node74" class="node">
@@ -111,8 +111,8 @@
 <!-- interface clojure.lang.IFn&#45;&gt;interface java.lang.Runnable -->
 <g id="edge58" class="edge">
 <title>interface clojure.lang.IFn&#45;&gt;interface java.lang.Runnable</title>
-<path fill="none" stroke="#00d764" d="M1322.65,-1921.99C1368.87,-1918.68 1462.05,-1912 1524.67,-1907.51"/>
-<polygon fill="#00d764" stroke="#00d764" points="1525.11,-1910.99 1534.83,-1906.79 1524.61,-1904.01 1525.11,-1910.99"/>
+<path fill="none" stroke="#00d764" d="M1318.96,-1907.96C1318.96,-1907.96 1529.2,-1907.96 1529.2,-1907.96"/>
+<polygon fill="#00d764" stroke="#00d764" points="1529.2,-1911.46 1539.2,-1907.96 1529.2,-1904.46 1529.2,-1911.46"/>
 </g>
 <!-- class clojure.lang.AFunction -->
 <g id="node7" class="node">
@@ -124,8 +124,8 @@
 <!-- class clojure.lang.AFunction&#45;&gt;class clojure.lang.AFn -->
 <g id="edge2" class="edge">
 <title>class clojure.lang.AFunction&#45;&gt;class clojure.lang.AFn</title>
-<path fill="none" stroke="#d7009e" d="M752.1,-438.2C772.02,-446.34 793.46,-458.97 805.67,-478 986.24,-759.37 673.34,-1726.81 891.67,-1980 908.56,-1999.58 937.9,-2004.46 961.43,-2004.8"/>
-<polygon fill="#d7009e" stroke="#d7009e" points="961.48,-2008.3 971.44,-2004.68 961.4,-2001.3 961.48,-2008.3"/>
+<path fill="none" stroke="#d7009e" d="M751.92,-438.44C781.77,-438.44 814.71,-438.44 814.71,-438.44 814.71,-438.44 814.71,-1988 814.71,-1988 814.71,-1988 971.3,-1988 971.3,-1988"/>
+<polygon fill="#d7009e" stroke="#d7009e" points="971.3,-1991.5 981.3,-1988 971.3,-1984.5 971.3,-1991.5"/>
 </g>
 <!-- interface java.util.Comparator -->
 <g id="node8" class="node">
@@ -136,8 +136,8 @@
 <!-- class clojure.lang.AFunction&#45;&gt;interface java.util.Comparator -->
 <g id="edge3" class="edge">
 <title>class clojure.lang.AFunction&#45;&gt;interface java.util.Comparator</title>
-<path fill="none" stroke="#d7009e" d="M755.77,-415.72C808.01,-406.06 889.56,-390.98 943.28,-381.04"/>
-<polygon fill="#d7009e" stroke="#d7009e" points="944.11,-384.45 953.31,-379.19 942.84,-377.57 944.11,-384.45"/>
+<path fill="none" stroke="#d7009e" d="M751.84,-411.56C818.66,-411.56 932.71,-411.56 932.71,-411.56 932.71,-411.56 932.71,-384.74 932.71,-384.74"/>
+<polygon fill="#d7009e" stroke="#d7009e" points="936.21,-384.74 932.71,-374.74 929.21,-384.74 936.21,-384.74"/>
 </g>
 <!-- interface clojure.lang.Fn -->
 <g id="node9" class="node">
@@ -149,8 +149,8 @@
 <!-- class clojure.lang.AFunction&#45;&gt;interface clojure.lang.Fn -->
 <g id="edge4" class="edge">
 <title>class clojure.lang.AFunction&#45;&gt;interface clojure.lang.Fn</title>
-<path fill="none" stroke="#d7009e" d="M759.13,-425C817.86,-425 910.47,-425 961.28,-425"/>
-<polygon fill="#d7009e" stroke="#d7009e" points="961.46,-428.5 971.46,-425 961.46,-421.5 961.46,-428.5"/>
+<path fill="none" stroke="#d7009e" d="M759.18,-425C759.18,-425 961.27,-425 961.27,-425"/>
+<polygon fill="#d7009e" stroke="#d7009e" points="961.27,-428.5 971.27,-425 961.27,-421.5 961.27,-428.5"/>
 </g>
 <!-- class clojure.lang.AMapEntry -->
 <g id="node10" class="node">
@@ -169,8 +169,8 @@
 <!-- class clojure.lang.AMapEntry&#45;&gt;class clojure.lang.APersistentVector -->
 <g id="edge5" class="edge">
 <title>class clojure.lang.AMapEntry&#45;&gt;class clojure.lang.APersistentVector</title>
-<path fill="none" stroke="#00d764" d="M446.05,-1720.44C486.25,-1737.59 548.44,-1763.37 603.46,-1783 612.3,-1786.15 621.64,-1789.29 630.92,-1792.3"/>
-<polygon fill="#00d764" stroke="#00d764" points="629.96,-1795.67 640.55,-1795.38 632.09,-1789 629.96,-1795.67"/>
+<path fill="none" stroke="#00d764" d="M445.59,-1720.56C510.43,-1720.56 625.71,-1720.56 625.71,-1720.56 625.71,-1720.56 625.71,-1791.79 625.71,-1791.79"/>
+<polygon fill="#00d764" stroke="#00d764" points="622.21,-1791.78 625.71,-1801.79 629.21,-1791.79 622.21,-1791.78"/>
 </g>
 <!-- interface clojure.lang.IMapEntry -->
 <g id="node12" class="node">
@@ -181,14 +181,14 @@
 <!-- class clojure.lang.AMapEntry&#45;&gt;interface clojure.lang.IMapEntry -->
 <g id="edge6" class="edge">
 <title>class clojure.lang.AMapEntry&#45;&gt;interface clojure.lang.IMapEntry</title>
-<path fill="none" stroke="#00d764" d="M462.12,-1701.02C512.8,-1700.18 585.99,-1698.96 638.49,-1698.08"/>
-<polygon fill="#00d764" stroke="#00d764" points="638.76,-1701.58 648.7,-1697.91 638.64,-1694.58 638.76,-1701.58"/>
+<path fill="none" stroke="#00d764" d="M461.15,-1697C461.15,-1697 638.95,-1697 638.95,-1697"/>
+<polygon fill="#00d764" stroke="#00d764" points="638.95,-1700.5 648.95,-1697 638.95,-1693.5 638.95,-1700.5"/>
 </g>
 <!-- class clojure.lang.APersistentVector&#45;&gt;class clojure.lang.AFn -->
 <g id="edge15" class="edge">
 <title>class clojure.lang.APersistentVector&#45;&gt;class clojure.lang.AFn</title>
-<path fill="none" stroke="#00d764" d="M777.27,-1829.35C787.39,-1833.42 797.21,-1838.54 805.67,-1845 862.22,-1888.16 833.13,-1939.59 891.67,-1980 912,-1994.03 939.39,-1999.45 961.23,-2001.41"/>
-<polygon fill="#00d764" stroke="#00d764" points="961.23,-2004.91 971.44,-2002.11 961.71,-1997.93 961.23,-2004.91"/>
+<path fill="none" stroke="#00d764" d="M776.71,-1829.83C776.71,-1874.11 776.71,-1996 776.71,-1996 776.71,-1996 962.72,-1996 962.72,-1996"/>
+<polygon fill="#00d764" stroke="#00d764" points="962.72,-1999.5 972.72,-1996 962.72,-1992.5 962.72,-1999.5"/>
 </g>
 <!-- interface clojure.lang.IPersistentVector -->
 <g id="node21" class="node">
@@ -201,8 +201,8 @@
 <!-- class clojure.lang.APersistentVector&#45;&gt;interface clojure.lang.IPersistentVector -->
 <g id="edge16" class="edge">
 <title>class clojure.lang.APersistentVector&#45;&gt;interface clojure.lang.IPersistentVector</title>
-<path fill="none" stroke="#00d764" d="M771.11,-1831.73C811.52,-1842.66 863.9,-1856.83 908.1,-1868.79"/>
-<polygon fill="#00d764" stroke="#00d764" points="907.42,-1872.23 917.98,-1871.46 909.24,-1865.47 907.42,-1872.23"/>
+<path fill="none" stroke="#00d764" d="M787.71,-1823.44C787.71,-1837.67 787.71,-1862.96 787.71,-1862.96 787.71,-1862.96 927.04,-1862.96 927.04,-1862.96"/>
+<polygon fill="#00d764" stroke="#00d764" points="927.04,-1866.46 937.04,-1862.96 927.04,-1859.46 927.04,-1866.46"/>
 </g>
 <!-- interface java.util.List -->
 <g id="node22" class="node">
@@ -214,8 +214,8 @@
 <!-- class clojure.lang.APersistentVector&#45;&gt;interface java.util.List -->
 <g id="edge17" class="edge">
 <title>class clojure.lang.APersistentVector&#45;&gt;interface java.util.List</title>
-<path fill="none" stroke="#00d764" d="M775.83,-1798.03C786.31,-1794.04 796.62,-1789.1 805.67,-1783 855.72,-1749.32 839.09,-1707.55 891.67,-1678 975.35,-1630.98 1035.97,-1714.13 1105.54,-1648 1252.17,-1508.62 1063.79,-1357.88 1191.54,-1201 1206.17,-1183.03 1229.8,-1172.65 1250.53,-1166.7"/>
-<polygon fill="#00d764" stroke="#00d764" points="1251.63,-1170.03 1260.42,-1164.13 1249.86,-1163.26 1251.63,-1170.03"/>
+<path fill="none" stroke="#00d764" d="M781.71,-1800.68C781.71,-1707.88 781.71,-1161.78 781.71,-1161.78 781.71,-1161.78 1247.96,-1161.78 1247.96,-1161.78"/>
+<polygon fill="#00d764" stroke="#00d764" points="1247.96,-1165.28 1257.96,-1161.78 1247.96,-1158.28 1247.96,-1165.28"/>
 </g>
 <!-- interface java.util.RandomAccess -->
 <g id="node23" class="node">
@@ -226,8 +226,8 @@
 <!-- class clojure.lang.APersistentVector&#45;&gt;interface java.util.RandomAccess -->
 <g id="edge18" class="edge">
 <title>class clojure.lang.APersistentVector&#45;&gt;interface java.util.RandomAccess</title>
-<path fill="none" stroke="#00d764" d="M774.96,-1830.3C785.66,-1834.26 796.27,-1839.11 805.67,-1845 853.11,-1874.72 842.88,-1909.58 891.67,-1937 901.55,-1942.55 912.66,-1946.71 923.86,-1949.82"/>
-<polygon fill="#00d764" stroke="#00d764" points="923.16,-1953.25 933.71,-1952.29 924.86,-1946.46 923.16,-1953.25"/>
+<path fill="none" stroke="#00d764" d="M782.71,-1826.85C782.71,-1861.32 782.71,-1953.24 782.71,-1953.24 782.71,-1953.24 918.51,-1953.24 918.51,-1953.24"/>
+<polygon fill="#00d764" stroke="#00d764" points="918.51,-1956.74 928.51,-1953.24 918.51,-1949.74 918.51,-1956.74"/>
 </g>
 <!-- interface java.util.Map$Entry -->
 <g id="node62" class="node">
@@ -238,8 +238,8 @@
 <!-- interface clojure.lang.IMapEntry&#45;&gt;interface java.util.Map$Entry -->
 <g id="edge59" class="edge">
 <title>interface clojure.lang.IMapEntry&#45;&gt;interface java.util.Map$Entry</title>
-<path fill="none" stroke="#00d764" d="M748.74,-1685.78C786.41,-1676.06 842.58,-1661.76 891.67,-1650 914.11,-1644.63 939.29,-1638.91 959.47,-1634.4"/>
-<polygon fill="#00d764" stroke="#00d764" points="960.23,-1637.82 969.24,-1632.23 958.71,-1630.99 960.23,-1637.82"/>
+<path fill="none" stroke="#00d764" d="M760.34,-1698C835.15,-1698 958.71,-1698 958.71,-1698 958.71,-1698 958.71,-1637.78 958.71,-1637.78"/>
+<polygon fill="#00d764" stroke="#00d764" points="962.21,-1637.78 958.71,-1627.78 955.21,-1637.78 962.21,-1637.78"/>
 </g>
 <!-- class clojure.lang.APersistentMap -->
 <g id="node13" class="node">
@@ -251,8 +251,8 @@
 <!-- class clojure.lang.APersistentMap&#45;&gt;class clojure.lang.AFn -->
 <g id="edge7" class="edge">
 <title>class clojure.lang.APersistentMap&#45;&gt;class clojure.lang.AFn</title>
-<path fill="none" stroke="#0061d7" d="M773.45,-2180.26C784.92,-2175.97 796.18,-2170.35 805.67,-2163 863.13,-2118.54 832.16,-2065.66 891.67,-2024 911.91,-2009.84 939.3,-2004.42 961.16,-2002.5"/>
-<polygon fill="#0061d7" stroke="#0061d7" points="961.65,-2005.97 971.39,-2001.81 961.18,-1998.99 961.65,-2005.97"/>
+<path fill="none" stroke="#0061d7" d="M774.21,-2180.56C788.72,-2180.56 799.71,-2180.56 799.71,-2180.56 799.71,-2180.56 799.71,-2008 799.71,-2008 799.71,-2008 963.01,-2008 963.01,-2008"/>
+<polygon fill="#0061d7" stroke="#0061d7" points="963.01,-2011.5 973.01,-2008 963.01,-2004.5 963.01,-2011.5"/>
 </g>
 <!-- interface clojure.lang.IPersistentMap -->
 <g id="node14" class="node">
@@ -265,8 +265,8 @@
 <!-- class clojure.lang.APersistentMap&#45;&gt;interface clojure.lang.IPersistentMap -->
 <g id="edge8" class="edge">
 <title>class clojure.lang.APersistentMap&#45;&gt;interface clojure.lang.IPersistentMap</title>
-<path fill="none" stroke="#0061d7" d="M784.6,-2193.46C822.2,-2193.2 867.37,-2192.89 906.42,-2192.62"/>
-<polygon fill="#0061d7" stroke="#0061d7" points="906.76,-2196.12 916.73,-2192.55 906.71,-2189.12 906.76,-2196.12"/>
+<path fill="none" stroke="#0061d7" d="M784.53,-2194C784.53,-2194 906.61,-2194 906.61,-2194"/>
+<polygon fill="#0061d7" stroke="#0061d7" points="906.61,-2197.5 916.61,-2194 906.61,-2190.5 906.61,-2197.5"/>
 </g>
 <!-- interface java.util.Map -->
 <g id="node15" class="node">
@@ -277,8 +277,8 @@
 <!-- class clojure.lang.APersistentMap&#45;&gt;interface java.util.Map -->
 <g id="edge9" class="edge">
 <title>class clojure.lang.APersistentMap&#45;&gt;interface java.util.Map</title>
-<path fill="none" stroke="#0061d7" d="M770.96,-2209.05C806.61,-2217.18 851.53,-2227.3 891.67,-2236 914.44,-2240.93 940.02,-2246.25 960.33,-2250.42"/>
-<polygon fill="#0061d7" stroke="#0061d7" points="959.64,-2253.85 970.14,-2252.43 961.05,-2247 959.64,-2253.85"/>
+<path fill="none" stroke="#0061d7" d="M773.83,-2207.44C824.24,-2207.44 883.71,-2207.44 883.71,-2207.44 883.71,-2207.44 883.71,-2252 883.71,-2252 883.71,-2252 961.67,-2252 961.67,-2252"/>
+<polygon fill="#0061d7" stroke="#0061d7" points="961.67,-2255.5 971.67,-2252 961.67,-2248.5 961.67,-2255.5"/>
 </g>
 <!-- interface clojure.lang.MapEquivalence -->
 <g id="node16" class="node">
@@ -289,8 +289,8 @@
 <!-- class clojure.lang.APersistentMap&#45;&gt;interface clojure.lang.MapEquivalence -->
 <g id="edge10" class="edge">
 <title>class clojure.lang.APersistentMap&#45;&gt;interface clojure.lang.MapEquivalence</title>
-<path fill="none" stroke="#0061d7" d="M768.74,-2177.76C804.69,-2168.67 850.62,-2157.33 891.67,-2148 903.19,-2145.38 915.45,-2142.72 927.38,-2140.2"/>
-<polygon fill="#0061d7" stroke="#0061d7" points="928.23,-2143.6 937.3,-2138.12 926.79,-2136.75 928.23,-2143.6"/>
+<path fill="none" stroke="#0061d7" d="M777.71,-2183C777.71,-2165.67 777.71,-2134 777.71,-2134 777.71,-2134 908.86,-2134 908.86,-2134"/>
+<polygon fill="#0061d7" stroke="#0061d7" points="908.86,-2137.5 918.86,-2134 908.86,-2130.5 908.86,-2137.5"/>
 </g>
 <!-- interface clojure.lang.Associative -->
 <g id="node46" class="node">
@@ -302,8 +302,8 @@
 <!-- interface clojure.lang.IPersistentMap&#45;&gt;interface clojure.lang.Associative -->
 <g id="edge63" class="edge">
 <title>interface clojure.lang.IPersistentMap&#45;&gt;interface clojure.lang.Associative</title>
-<path fill="none" stroke="#00d764" d="M1070.52,-2169.97C1118.1,-2155.19 1180.33,-2135.86 1226.8,-2121.42"/>
-<polygon fill="#00d764" stroke="#00d764" points="1227.96,-2124.73 1236.47,-2118.42 1225.88,-2118.04 1227.96,-2124.73"/>
+<path fill="none" stroke="#00d764" d="M1073.84,-2171.78C1161.27,-2171.78 1293.71,-2171.78 1293.71,-2171.78 1293.71,-2171.78 1293.71,-2140.2 1293.71,-2140.2"/>
+<polygon fill="#00d764" stroke="#00d764" points="1297.21,-2140.2 1293.71,-2130.2 1290.21,-2140.2 1297.21,-2140.2"/>
 </g>
 <!-- class clojure.lang.APersistentSet -->
 <g id="node17" class="node">
@@ -315,8 +315,8 @@
 <!-- class clojure.lang.APersistentSet&#45;&gt;class clojure.lang.AFn -->
 <g id="edge11" class="edge">
 <title>class clojure.lang.APersistentSet&#45;&gt;class clojure.lang.AFn</title>
-<path fill="none" stroke="#d70000" d="M772.01,-1764.79C784.21,-1769.27 796.11,-1775.46 805.67,-1784 876.64,-1847.35 817.77,-1920.11 891.67,-1980 911.07,-1995.72 938.89,-2001.05 961.15,-2002.54"/>
-<polygon fill="#d70000" stroke="#d70000" points="961.11,-2006.04 971.26,-2002.98 961.42,-1999.04 961.11,-2006.04"/>
+<path fill="none" stroke="#d70000" d="M748.68,-1774.73C772.76,-1774.73 797.71,-1774.73 797.71,-1774.73 797.71,-1774.73 797.71,-1992 797.71,-1992 797.71,-1992 965.95,-1992 965.95,-1992"/>
+<polygon fill="#d70000" stroke="#d70000" points="965.95,-1995.5 975.95,-1992 965.95,-1988.5 965.95,-1995.5"/>
 </g>
 <!-- interface clojure.lang.IPersistentSet -->
 <g id="node18" class="node">
@@ -329,8 +329,8 @@
 <!-- class clojure.lang.APersistentSet&#45;&gt;interface clojure.lang.IPersistentSet -->
 <g id="edge12" class="edge">
 <title>class clojure.lang.APersistentSet&#45;&gt;interface clojure.lang.IPersistentSet</title>
-<path fill="none" stroke="#d70000" d="M772.2,-1764.86C813.52,-1772.22 867.02,-1781.75 911.53,-1789.67"/>
-<polygon fill="#d70000" stroke="#d70000" points="911.01,-1793.14 921.46,-1791.44 912.23,-1786.24 911.01,-1793.14"/>
+<path fill="none" stroke="#d70000" d="M763.72,-1769.58C763.72,-1769.58 946.64,-1769.58 946.64,-1769.58"/>
+<polygon fill="#d70000" stroke="#d70000" points="946.64,-1773.08 956.64,-1769.58 946.64,-1766.08 946.64,-1773.08"/>
 </g>
 <!-- interface java.util.Collection -->
 <g id="node19" class="node">
@@ -342,8 +342,8 @@
 <!-- class clojure.lang.APersistentSet&#45;&gt;interface java.util.Collection -->
 <g id="edge13" class="edge">
 <title>class clojure.lang.APersistentSet&#45;&gt;interface java.util.Collection</title>
-<path fill="none" stroke="#d70000" d="M761.33,-1735.35C775.89,-1730.4 791.48,-1724.77 805.67,-1719 844.9,-1703.05 851.15,-1690.29 891.67,-1678 983.58,-1650.13 1013.6,-1674.8 1105.54,-1647 1276.14,-1595.4 1462.56,-1492.07 1544.73,-1443.87"/>
-<polygon fill="#d70000" stroke="#d70000" points="1546.92,-1446.64 1553.76,-1438.55 1543.36,-1440.61 1546.92,-1446.64"/>
+<path fill="none" stroke="#d70000" d="M763.7,-1736.42C785.83,-1736.42 805.71,-1736.42 805.71,-1736.42 805.71,-1736.42 805.71,-1446.38 805.71,-1446.38 805.71,-1446.38 1559.34,-1446.38 1559.34,-1446.38"/>
+<polygon fill="#d70000" stroke="#d70000" points="1559.34,-1449.88 1569.34,-1446.38 1559.34,-1442.88 1559.34,-1449.88"/>
 </g>
 <!-- interface java.util.Set -->
 <g id="node20" class="node">
@@ -355,8 +355,8 @@
 <!-- class clojure.lang.APersistentSet&#45;&gt;interface java.util.Set -->
 <g id="edge14" class="edge">
 <title>class clojure.lang.APersistentSet&#45;&gt;interface java.util.Set</title>
-<path fill="none" stroke="#d70000" d="M776.26,-1744.77C832.13,-1738.26 908.26,-1729.4 955.11,-1723.95"/>
-<polygon fill="#d70000" stroke="#d70000" points="955.69,-1727.4 965.22,-1722.77 954.88,-1720.45 955.69,-1727.4"/>
+<path fill="none" stroke="#d70000" d="M777.63,-1746.71C777.63,-1746.71 978.13,-1746.71 978.13,-1746.71"/>
+<polygon fill="#d70000" stroke="#d70000" points="978.13,-1750.21 988.13,-1746.71 978.13,-1743.21 978.13,-1750.21"/>
 </g>
 <!-- interface clojure.lang.IPersistentCollection -->
 <g id="node47" class="node">
@@ -368,14 +368,14 @@
 <!-- interface clojure.lang.IPersistentSet&#45;&gt;interface clojure.lang.IPersistentCollection -->
 <g id="edge64" class="edge">
 <title>interface clojure.lang.IPersistentSet&#45;&gt;interface clojure.lang.IPersistentCollection</title>
-<path fill="none" stroke="#5a00d7" d="M1075.89,-1803.83C1155.63,-1802.51 1284.38,-1800.15 1395.55,-1797 1420.04,-1796.31 1446.28,-1795.44 1471.25,-1794.55"/>
-<polygon fill="#5a00d7" stroke="#5a00d7" points="1471.63,-1798.03 1481.49,-1794.18 1471.37,-1791.04 1471.63,-1798.03"/>
+<path fill="none" stroke="#5a00d7" d="M1075.75,-1802.36C1075.75,-1802.36 1472.33,-1802.36 1472.33,-1802.36"/>
+<polygon fill="#5a00d7" stroke="#5a00d7" points="1472.33,-1805.86 1482.33,-1802.36 1472.33,-1798.86 1472.33,-1805.86"/>
 </g>
 <!-- interface java.util.Set&#45;&gt;interface java.util.Collection -->
 <g id="edge143" class="edge">
 <title>interface java.util.Set&#45;&gt;interface java.util.Collection</title>
-<path fill="none" stroke="#d70000" d="M1033.02,-1721.89C1104.7,-1726.48 1276.39,-1728.83 1395.55,-1660 1478.54,-1612.06 1539.29,-1513.16 1568.41,-1457.79"/>
-<polygon fill="#d70000" stroke="#d70000" points="1571.66,-1459.12 1573.15,-1448.63 1565.44,-1455.9 1571.66,-1459.12"/>
+<path fill="none" stroke="#d70000" d="M1035.97,-1719C1165.68,-1719 1588.71,-1719 1588.71,-1719 1588.71,-1719 1588.71,-1466.12 1588.71,-1466.12"/>
+<polygon fill="#d70000" stroke="#d70000" points="1592.21,-1466.12 1588.71,-1456.12 1585.21,-1466.12 1592.21,-1466.12"/>
 </g>
 <!-- interface clojure.lang.Sequential -->
 <g id="node31" class="node">
@@ -387,14 +387,14 @@
 <!-- interface clojure.lang.IPersistentVector&#45;&gt;interface clojure.lang.Sequential -->
 <g id="edge67" class="edge">
 <title>interface clojure.lang.IPersistentVector&#45;&gt;interface clojure.lang.Sequential</title>
-<path fill="none" stroke="#0061d7" d="M1075.92,-1869.99C1086.89,-1864.16 1097.24,-1856.93 1105.54,-1848 1245.92,-1696.83 1281.35,-1436.1 1289.93,-1337.4"/>
-<polygon fill="#0061d7" stroke="#0061d7" points="1293.43,-1337.53 1290.76,-1327.27 1286.45,-1336.95 1293.43,-1337.53"/>
+<path fill="none" stroke="#0061d7" d="M1083.71,-1873.2C1083.71,-1772.06 1083.71,-1317.79 1083.71,-1317.79 1083.71,-1317.79 1235.14,-1317.79 1235.14,-1317.79"/>
+<polygon fill="#0061d7" stroke="#0061d7" points="1235.14,-1321.29 1245.14,-1317.79 1235.14,-1314.29 1235.14,-1321.29"/>
 </g>
 <!-- interface clojure.lang.IPersistentVector&#45;&gt;interface clojure.lang.Associative -->
 <g id="edge66" class="edge">
 <title>interface clojure.lang.IPersistentVector&#45;&gt;interface clojure.lang.Associative</title>
-<path fill="none" stroke="#0061d7" d="M1069.57,-1919.01C1081.9,-1924.62 1094.36,-1931 1105.54,-1938 1163.64,-1974.38 1221.79,-2028.53 1257.46,-2064.3"/>
-<polygon fill="#0061d7" stroke="#0061d7" points="1255.2,-2066.99 1264.72,-2071.64 1260.18,-2062.07 1255.2,-2066.99"/>
+<path fill="none" stroke="#0061d7" d="M1089.9,-1907.8C1159.94,-1907.8 1244.71,-1907.8 1244.71,-1907.8 1244.71,-1907.8 1244.71,-2069.96 1244.71,-2069.96"/>
+<polygon fill="#0061d7" stroke="#0061d7" points="1241.21,-2069.96 1244.71,-2079.96 1248.21,-2069.96 1241.21,-2069.96"/>
 </g>
 <!-- interface clojure.lang.Indexed -->
 <g id="node72" class="node">
@@ -407,8 +407,8 @@
 <!-- interface clojure.lang.IPersistentVector&#45;&gt;interface clojure.lang.Indexed -->
 <g id="edge69" class="edge">
 <title>interface clojure.lang.IPersistentVector&#45;&gt;interface clojure.lang.Indexed</title>
-<path fill="none" stroke="#0061d7" d="M1077.54,-1915.36C1088.17,-1921.26 1097.99,-1928.68 1105.54,-1938 1231.71,-2093.9 1066.72,-2224.01 1191.54,-2381 1201.38,-2393.39 1215.37,-2402.46 1229.8,-2409.08"/>
-<polygon fill="#0061d7" stroke="#0061d7" points="1228.73,-2412.43 1239.3,-2413.08 1231.44,-2405.97 1228.73,-2412.43"/>
+<path fill="none" stroke="#0061d7" d="M1065.73,-1920.68C1094.1,-1920.68 1120.71,-1920.68 1120.71,-1920.68 1120.71,-1920.68 1120.71,-2405.46 1120.71,-2405.46 1120.71,-2405.46 1234.02,-2405.46 1234.02,-2405.46"/>
+<polygon fill="#0061d7" stroke="#0061d7" points="1234.02,-2408.96 1244.02,-2405.46 1234.02,-2401.96 1234.02,-2408.96"/>
 </g>
 <!-- interface clojure.lang.IPersistentStack -->
 <g id="node81" class="node">
@@ -419,14 +419,14 @@
 <!-- interface clojure.lang.IPersistentVector&#45;&gt;interface clojure.lang.IPersistentStack -->
 <g id="edge68" class="edge">
 <title>interface clojure.lang.IPersistentVector&#45;&gt;interface clojure.lang.IPersistentStack</title>
-<path fill="none" stroke="#0061d7" d="M1067.18,-1866.01C1120.72,-1844.63 1194.31,-1815.23 1242.62,-1795.94"/>
-<polygon fill="#0061d7" stroke="#0061d7" points="1243.95,-1799.18 1251.94,-1792.22 1241.35,-1792.68 1243.95,-1799.18"/>
+<path fill="none" stroke="#0061d7" d="M1085.71,-1874.21C1085.71,-1841.89 1085.71,-1779.22 1085.71,-1779.22 1085.71,-1779.22 1203.19,-1779.22 1203.19,-1779.22"/>
+<polygon fill="#0061d7" stroke="#0061d7" points="1203.19,-1782.72 1213.19,-1779.22 1203.19,-1775.72 1203.19,-1782.72"/>
 </g>
 <!-- interface java.util.List&#45;&gt;interface java.util.Collection -->
 <g id="edge94" class="edge">
 <title>interface java.util.List&#45;&gt;interface java.util.Collection</title>
-<path fill="none" stroke="#76d700" d="M1323.74,-1167.25C1344.92,-1174.12 1373.6,-1185.33 1395.55,-1201 1466.87,-1251.93 1530.08,-1333.99 1563.21,-1381.26"/>
-<polygon fill="#76d700" stroke="#76d700" points="1560.46,-1383.44 1569.04,-1389.67 1566.22,-1379.46 1560.46,-1383.44"/>
+<path fill="none" stroke="#76d700" d="M1331.68,-1159C1406.15,-1159 1563.71,-1159 1563.71,-1159 1563.71,-1159 1563.71,-1382.22 1563.71,-1382.22"/>
+<polygon fill="#76d700" stroke="#76d700" points="1560.21,-1382.22 1563.71,-1392.22 1567.21,-1382.22 1560.21,-1382.22"/>
 </g>
 <!-- class clojure.lang.ARef -->
 <g id="node24" class="node">
@@ -445,8 +445,8 @@
 <!-- class clojure.lang.ARef&#45;&gt;class clojure.lang.AReference -->
 <g id="edge19" class="edge">
 <title>class clojure.lang.ARef&#45;&gt;class clojure.lang.AReference</title>
-<path fill="none" stroke="#d70000" d="M735.8,-658.81C772.57,-670.7 836.56,-691.2 891.67,-708 906.12,-712.4 921.71,-717.03 936.37,-721.33"/>
-<polygon fill="#d70000" stroke="#d70000" points="935.77,-724.8 946.35,-724.25 937.73,-718.08 935.77,-724.8"/>
+<path fill="none" stroke="#d70000" d="M729.81,-666.62C791.47,-666.62 944.71,-666.62 944.71,-666.62 944.71,-666.62 944.71,-715.39 944.71,-715.39"/>
+<polygon fill="#d70000" stroke="#d70000" points="941.21,-715.39 944.71,-725.39 948.21,-715.39 941.21,-715.39"/>
 </g>
 <!-- interface clojure.lang.IRef -->
 <g id="node26" class="node">
@@ -457,8 +457,8 @@
 <!-- class clojure.lang.ARef&#45;&gt;interface clojure.lang.IRef -->
 <g id="edge20" class="edge">
 <title>class clojure.lang.ARef&#45;&gt;interface clojure.lang.IRef</title>
-<path fill="none" stroke="#d70000" d="M737.65,-653.18C791.92,-660.24 901.54,-674.5 959.57,-682.05"/>
-<polygon fill="#d70000" stroke="#d70000" points="959.42,-685.56 969.79,-683.38 960.32,-678.62 959.42,-685.56"/>
+<path fill="none" stroke="#d70000" d="M731.97,-664.25C805,-664.25 998.71,-664.25 998.71,-664.25 998.71,-664.25 998.71,-664.69 998.71,-664.69"/>
+<polygon fill="#d70000" stroke="#d70000" points="995.21,-658.63 998.71,-668.63 1002.21,-658.63 995.21,-658.63"/>
 </g>
 <!-- interface clojure.lang.IReference -->
 <g id="node27" class="node">
@@ -470,8 +470,8 @@
 <!-- class clojure.lang.AReference&#45;&gt;interface clojure.lang.IReference -->
 <g id="edge21" class="edge">
 <title>class clojure.lang.AReference&#45;&gt;interface clojure.lang.IReference</title>
-<path fill="none" stroke="#d78100" d="M1061.01,-739C1107.3,-739 1170.92,-739 1219.77,-739"/>
-<polygon fill="#d78100" stroke="#d78100" points="1219.95,-742.5 1229.95,-739 1219.95,-735.5 1219.95,-742.5"/>
+<path fill="none" stroke="#d78100" d="M1061.15,-739C1061.15,-739 1219.81,-739 1219.81,-739"/>
+<polygon fill="#d78100" stroke="#d78100" points="1219.81,-742.5 1229.81,-739 1219.81,-735.5 1219.81,-742.5"/>
 </g>
 <!-- interface clojure.lang.IDeref -->
 <g id="node61" class="node">
@@ -482,8 +482,8 @@
 <!-- interface clojure.lang.IRef&#45;&gt;interface clojure.lang.IDeref -->
 <g id="edge71" class="edge">
 <title>interface clojure.lang.IRef&#45;&gt;interface clojure.lang.IDeref</title>
-<path fill="none" stroke="#d7009e" d="M1027.43,-682.06C1077.78,-673.12 1184.52,-654.18 1246.1,-643.24"/>
-<polygon fill="#d7009e" stroke="#d7009e" points="1247.08,-646.63 1256.31,-641.43 1245.85,-639.73 1247.08,-646.63"/>
+<path fill="none" stroke="#d7009e" d="M1027.44,-687C1101.69,-687 1293.71,-687 1293.71,-687 1293.71,-687 1293.71,-663.19 1293.71,-663.19"/>
+<polygon fill="#d7009e" stroke="#d7009e" points="1297.21,-663.19 1293.71,-653.19 1290.21,-663.19 1297.21,-663.19"/>
 </g>
 <!-- class clojure.lang.ASeq -->
 <g id="node28" class="node">
@@ -495,8 +495,8 @@
 <!-- class clojure.lang.ASeq&#45;&gt;interface java.util.List -->
 <g id="edge25" class="edge">
 <title>class clojure.lang.ASeq&#45;&gt;interface java.util.List</title>
-<path fill="none" stroke="#d70000" d="M1051.3,-1185.35C1107.51,-1179.21 1196.34,-1169.51 1249.08,-1163.75"/>
-<polygon fill="#d70000" stroke="#d70000" points="1249.57,-1167.22 1259.13,-1162.65 1248.81,-1160.26 1249.57,-1167.22"/>
+<path fill="none" stroke="#d70000" d="M1051.67,-1186.04C1051.67,-1186.04 1272.4,-1186.04 1272.4,-1186.04"/>
+<polygon fill="#d70000" stroke="#d70000" points="1272.4,-1189.54 1282.4,-1186.04 1272.4,-1182.54 1272.4,-1189.54"/>
 </g>
 <!-- class clojure.lang.Obj -->
 <g id="node29" class="node">
@@ -508,8 +508,8 @@
 <!-- class clojure.lang.ASeq&#45;&gt;class clojure.lang.Obj -->
 <g id="edge22" class="edge">
 <title>class clojure.lang.ASeq&#45;&gt;class clojure.lang.Obj</title>
-<path fill="none" stroke="#d70000" d="M1046.91,-1179.18C1065.45,-1174.02 1086.74,-1167.45 1105.54,-1160 1120.28,-1154.16 1201.51,-1112.3 1251.94,-1086.13"/>
-<polygon fill="#d70000" stroke="#d70000" points="1253.72,-1089.15 1260.98,-1081.44 1250.49,-1082.94 1253.72,-1089.15"/>
+<path fill="none" stroke="#d70000" d="M1042.02,-1175.09C1086.35,-1175.09 1148.71,-1175.09 1148.71,-1175.09 1148.71,-1175.09 1148.71,-1076.52 1148.71,-1076.52 1148.71,-1076.52 1246.24,-1076.52 1246.24,-1076.52"/>
+<polygon fill="#d70000" stroke="#d70000" points="1246.24,-1080.02 1256.24,-1076.52 1246.24,-1073.02 1246.24,-1080.02"/>
 </g>
 <!-- interface clojure.lang.ISeq -->
 <g id="node30" class="node">
@@ -521,20 +521,20 @@
 <!-- class clojure.lang.ASeq&#45;&gt;interface clojure.lang.ISeq -->
 <g id="edge23" class="edge">
 <title>class clojure.lang.ASeq&#45;&gt;interface clojure.lang.ISeq</title>
-<path fill="none" stroke="#d70000" d="M1050.63,-1198.32C1106.42,-1206.31 1194.92,-1219 1248,-1226.61"/>
-<polygon fill="#d70000" stroke="#d70000" points="1247.73,-1230.11 1258.12,-1228.07 1248.72,-1223.18 1247.73,-1230.11"/>
+<path fill="none" stroke="#d70000" d="M1034.77,-1210.89C1034.77,-1210.89 1260.26,-1210.89 1260.26,-1210.89"/>
+<polygon fill="#d70000" stroke="#d70000" points="1260.26,-1214.39 1270.26,-1210.89 1260.26,-1207.39 1260.26,-1214.39"/>
 </g>
 <!-- class clojure.lang.ASeq&#45;&gt;interface clojure.lang.Sequential -->
 <g id="edge24" class="edge">
 <title>class clojure.lang.ASeq&#45;&gt;interface clojure.lang.Sequential</title>
-<path fill="none" stroke="#d70000" d="M1046.88,-1202.88C1065.42,-1208.05 1086.72,-1214.61 1105.54,-1222 1145.31,-1237.62 1152.01,-1248.76 1191.54,-1265 1203.12,-1269.76 1215.65,-1274.31 1227.83,-1278.43"/>
-<polygon fill="#d70000" stroke="#d70000" points="1226.9,-1281.81 1237.49,-1281.64 1229.1,-1275.17 1226.9,-1281.81"/>
+<path fill="none" stroke="#d70000" d="M1025.22,-1214.38C1087.73,-1214.38 1238.71,-1214.38 1238.71,-1214.38 1238.71,-1214.38 1238.71,-1271.08 1238.71,-1271.08"/>
+<polygon fill="#d70000" stroke="#d70000" points="1235.21,-1271.08 1238.71,-1281.08 1242.21,-1271.08 1235.21,-1271.08"/>
 </g>
 <!-- interface clojure.lang.ISeq&#45;&gt;interface clojure.lang.IPersistentCollection -->
 <g id="edge72" class="edge">
 <title>interface clojure.lang.ISeq&#45;&gt;interface clojure.lang.IPersistentCollection</title>
-<path fill="none" stroke="#d78100" d="M1328.89,-1236.56C1350.52,-1240.48 1377.63,-1248.71 1395.55,-1266 1432.39,-1301.55 1539.39,-1635.62 1575.58,-1751.02"/>
-<polygon fill="#d78100" stroke="#d78100" points="1572.33,-1752.36 1578.65,-1760.85 1579.01,-1750.27 1572.33,-1752.36"/>
+<path fill="none" stroke="#d78100" d="M1329.11,-1233C1387.6,-1233 1497.71,-1233 1497.71,-1233 1497.71,-1233 1497.71,-1763.33 1497.71,-1763.33"/>
+<polygon fill="#d78100" stroke="#d78100" points="1494.21,-1763.33 1497.71,-1773.33 1501.21,-1763.33 1494.21,-1763.33"/>
 </g>
 <!-- class clojure.lang.ATransientMap -->
 <g id="node32" class="node">
@@ -546,8 +546,8 @@
 <!-- class clojure.lang.ATransientMap&#45;&gt;class clojure.lang.AFn -->
 <g id="edge26" class="edge">
 <title>class clojure.lang.ATransientMap&#45;&gt;class clojure.lang.AFn</title>
-<path fill="none" stroke="#d78100" d="M773.16,-2299.97C785.13,-2295.33 796.64,-2288.9 805.67,-2280 891.17,-2195.75 801.89,-2103.66 891.67,-2024 910.47,-2007.32 938.56,-2002.07 961.09,-2000.85"/>
-<polygon fill="#d78100" stroke="#d78100" points="961.43,-2004.34 971.32,-2000.55 961.22,-1997.35 961.43,-2004.34"/>
+<path fill="none" stroke="#d78100" d="M776.68,-2303.04C805.38,-2303.04 831.71,-2303.04 831.71,-2303.04 831.71,-2303.04 831.71,-2012 831.71,-2012 831.71,-2012 966.1,-2012 966.1,-2012"/>
+<polygon fill="#d78100" stroke="#d78100" points="966.1,-2015.5 976.1,-2012 966.1,-2008.5 966.1,-2015.5"/>
 </g>
 <!-- interface clojure.lang.ITransientMap -->
 <g id="node33" class="node">
@@ -559,8 +559,8 @@
 <!-- class clojure.lang.ATransientMap&#45;&gt;interface clojure.lang.ITransientMap -->
 <g id="edge27" class="edge">
 <title>class clojure.lang.ATransientMap&#45;&gt;interface clojure.lang.ITransientMap</title>
-<path fill="none" stroke="#d78100" d="M781.15,-2312C820.1,-2312 867.85,-2312 908.57,-2312"/>
-<polygon fill="#d78100" stroke="#d78100" points="908.77,-2315.5 918.77,-2312 908.77,-2308.5 908.77,-2315.5"/>
+<path fill="none" stroke="#d78100" d="M776.87,-2320.96C776.87,-2320.96 908.82,-2320.96 908.82,-2320.96"/>
+<polygon fill="#d78100" stroke="#d78100" points="908.82,-2324.46 918.82,-2320.96 908.82,-2317.46 908.82,-2324.46"/>
 </g>
 <!-- interface clojure.lang.ITransientAssociative2 -->
 <g id="node34" class="node">
@@ -571,8 +571,8 @@
 <!-- class clojure.lang.ATransientMap&#45;&gt;interface clojure.lang.ITransientAssociative2 -->
 <g id="edge28" class="edge">
 <title>class clojure.lang.ATransientMap&#45;&gt;interface clojure.lang.ITransientAssociative2</title>
-<path fill="none" stroke="#d78100" d="M772.57,-2324.39C815.15,-2332.26 870.56,-2342.51 915.75,-2350.86"/>
-<polygon fill="#d78100" stroke="#d78100" points="915.34,-2354.35 925.81,-2352.73 916.62,-2347.47 915.34,-2354.35"/>
+<path fill="none" stroke="#d78100" d="M771.71,-2325.14C771.71,-2337.78 771.71,-2355 771.71,-2355 771.71,-2355 902.5,-2355 902.5,-2355"/>
+<polygon fill="#d78100" stroke="#d78100" points="902.5,-2358.5 912.5,-2355 902.5,-2351.5 902.5,-2358.5"/>
 </g>
 <!-- interface clojure.lang.ITransientAssociative -->
 <g id="node83" class="node">
@@ -583,14 +583,14 @@
 <!-- interface clojure.lang.ITransientMap&#45;&gt;interface clojure.lang.ITransientAssociative -->
 <g id="edge76" class="edge">
 <title>interface clojure.lang.ITransientMap&#45;&gt;interface clojure.lang.ITransientAssociative</title>
-<path fill="none" stroke="#76d700" d="M1076.95,-2324.67C1117.28,-2331.28 1166.67,-2339.37 1208,-2346.15"/>
-<polygon fill="#76d700" stroke="#76d700" points="1207.61,-2349.63 1218.05,-2347.79 1208.75,-2342.72 1207.61,-2349.63"/>
+<path fill="none" stroke="#76d700" d="M1078.33,-2323.98C1133.37,-2323.98 1196.71,-2323.98 1196.71,-2323.98 1196.71,-2323.98 1196.71,-2341.28 1196.71,-2341.28"/>
+<polygon fill="#76d700" stroke="#76d700" points="1193.21,-2341.28 1196.71,-2351.28 1200.21,-2341.28 1193.21,-2341.28"/>
 </g>
 <!-- interface clojure.lang.ITransientAssociative2&#45;&gt;interface clojure.lang.ITransientAssociative -->
 <g id="edge75" class="edge">
 <title>interface clojure.lang.ITransientAssociative2&#45;&gt;interface clojure.lang.ITransientAssociative</title>
-<path fill="none" stroke="#5a00d7" d="M1105.78,-2363.83C1130.24,-2363.32 1156.33,-2362.79 1181.02,-2362.28"/>
-<polygon fill="#5a00d7" stroke="#5a00d7" points="1181.21,-2365.78 1191.13,-2362.08 1181.06,-2358.78 1181.21,-2365.78"/>
+<path fill="none" stroke="#5a00d7" d="M1105.5,-2363C1105.5,-2363 1181.44,-2363 1181.44,-2363"/>
+<polygon fill="#5a00d7" stroke="#5a00d7" points="1181.44,-2366.5 1191.44,-2363 1181.44,-2359.5 1181.44,-2366.5"/>
 </g>
 <!-- class clojure.lang.ATransientSet -->
 <g id="node35" class="node">
@@ -602,8 +602,8 @@
 <!-- class clojure.lang.ATransientSet&#45;&gt;class clojure.lang.AFn -->
 <g id="edge29" class="edge">
 <title>class clojure.lang.ATransientSet&#45;&gt;class clojure.lang.AFn</title>
-<path fill="none" stroke="#5a00d7" d="M770.69,-2537.7C783.89,-2532.8 796.52,-2525.59 805.67,-2515 950.57,-2347.41 737.5,-2183.09 891.67,-2024 909.47,-2005.64 938.3,-2000.58 961.39,-1999.88"/>
-<polygon fill="#5a00d7" stroke="#5a00d7" points="961.56,-2003.37 971.54,-1999.82 961.52,-1996.37 961.56,-2003.37"/>
+<path fill="none" stroke="#5a00d7" d="M772.24,-2539.04C806.41,-2539.04 840.71,-2539.04 840.71,-2539.04 840.71,-2539.04 840.71,-2016 840.71,-2016 840.71,-2016 971.41,-2016 971.41,-2016"/>
+<polygon fill="#5a00d7" stroke="#5a00d7" points="971.41,-2019.5 981.41,-2016 971.41,-2012.5 971.41,-2019.5"/>
 </g>
 <!-- interface clojure.lang.ITransientSet -->
 <g id="node36" class="node">
@@ -615,8 +615,8 @@
 <!-- class clojure.lang.ATransientSet&#45;&gt;interface clojure.lang.ITransientSet -->
 <g id="edge30" class="edge">
 <title>class clojure.lang.ATransientSet&#45;&gt;interface clojure.lang.ITransientSet</title>
-<path fill="none" stroke="#5a00d7" d="M776.26,-2548.48C817.84,-2548.77 870.64,-2549.13 914.24,-2549.43"/>
-<polygon fill="#5a00d7" stroke="#5a00d7" points="914.23,-2552.93 924.26,-2549.5 914.28,-2545.93 914.23,-2552.93"/>
+<path fill="none" stroke="#5a00d7" d="M772.02,-2556.96C772.02,-2556.96 914.23,-2556.96 914.23,-2556.96"/>
+<polygon fill="#5a00d7" stroke="#5a00d7" points="914.23,-2560.46 924.23,-2556.96 914.23,-2553.46 914.23,-2560.46"/>
 </g>
 <!-- interface clojure.lang.ITransientCollection -->
 <g id="node84" class="node">
@@ -627,8 +627,8 @@
 <!-- interface clojure.lang.ITransientSet&#45;&gt;interface clojure.lang.ITransientCollection -->
 <g id="edge77" class="edge">
 <title>interface clojure.lang.ITransientSet&#45;&gt;interface clojure.lang.ITransientCollection</title>
-<path fill="none" stroke="#00d0d7" d="M1069.96,-2536.6C1180.94,-2515.47 1395.82,-2474.54 1510.76,-2452.65"/>
-<polygon fill="#00d0d7" stroke="#00d0d7" points="1511.72,-2456.03 1520.89,-2450.72 1510.41,-2449.16 1511.72,-2456.03"/>
+<path fill="none" stroke="#00d0d7" d="M1073.04,-2550C1231.68,-2550 1588.71,-2550 1588.71,-2550 1588.71,-2550 1588.71,-2466.49 1588.71,-2466.49"/>
+<polygon fill="#00d0d7" stroke="#00d0d7" points="1592.21,-2466.49 1588.71,-2456.49 1585.21,-2466.49 1592.21,-2466.49"/>
 </g>
 <!-- class clojure.lang.Agent -->
 <g id="node37" class="node">
@@ -640,8 +640,8 @@
 <!-- class clojure.lang.Agent&#45;&gt;class clojure.lang.ARef -->
 <g id="edge31" class="edge">
 <title>class clojure.lang.Agent&#45;&gt;class clojure.lang.ARef</title>
-<path fill="none" stroke="#d78100" d="M439.16,-619.03C494.65,-625.32 601.57,-637.44 661.04,-644.18"/>
-<polygon fill="#d78100" stroke="#d78100" points="660.89,-647.69 671.22,-645.33 661.68,-640.73 660.89,-647.69"/>
+<path fill="none" stroke="#d78100" d="M431.25,-632C431.25,-632 668.67,-632 668.67,-632"/>
+<polygon fill="#d78100" stroke="#d78100" points="668.67,-635.5 678.67,-632 668.67,-628.5 668.67,-635.5"/>
 </g>
 <!-- interface java.lang.annotation.Annotation -->
 <g id="node38" class="node">
@@ -666,14 +666,14 @@
 <!-- class clojure.lang.ArrayChunk&#45;&gt;interface clojure.lang.IChunk -->
 <g id="edge32" class="edge">
 <title>class clojure.lang.ArrayChunk&#45;&gt;interface clojure.lang.IChunk</title>
-<path fill="none" stroke="#76d700" d="M767.14,-2485C819.17,-2485 892.98,-2485 942.95,-2485"/>
-<polygon fill="#76d700" stroke="#76d700" points="943.23,-2488.5 953.23,-2485 943.23,-2481.5 943.23,-2488.5"/>
+<path fill="none" stroke="#76d700" d="M766.92,-2485C766.92,-2485 943.13,-2485 943.13,-2485"/>
+<polygon fill="#76d700" stroke="#76d700" points="943.13,-2488.5 953.13,-2485 943.13,-2481.5 943.13,-2488.5"/>
 </g>
 <!-- interface clojure.lang.IChunk&#45;&gt;interface clojure.lang.Indexed -->
 <g id="edge54" class="edge">
 <title>interface clojure.lang.IChunk&#45;&gt;interface clojure.lang.Indexed</title>
-<path fill="none" stroke="#00d764" d="M1043.78,-2476.1C1093.16,-2466.16 1173.52,-2449.97 1229.5,-2438.7"/>
-<polygon fill="#00d764" stroke="#00d764" points="1230.19,-2442.13 1239.31,-2436.72 1228.81,-2435.27 1230.19,-2442.13"/>
+<path fill="none" stroke="#00d764" d="M1025.82,-2461.24C1025.82,-2461.24 1253.78,-2461.24 1253.78,-2461.24"/>
+<polygon fill="#00d764" stroke="#00d764" points="1253.78,-2464.74 1263.78,-2461.24 1253.78,-2457.74 1253.78,-2464.74"/>
 </g>
 <!-- class clojure.lang.ArrayIter -->
 <g id="node41" class="node">
@@ -690,8 +690,8 @@
 <!-- class clojure.lang.ArrayIter&#45;&gt;interface java.util.Iterator -->
 <g id="edge33" class="edge">
 <title>class clojure.lang.ArrayIter&#45;&gt;interface java.util.Iterator</title>
-<path fill="none" stroke="#00d0d7" d="M148.24,-2464.57C166.8,-2460.49 189.4,-2455.5 209.67,-2451 261.37,-2439.51 320.88,-2426.15 359.75,-2417.41"/>
-<polygon fill="#00d0d7" stroke="#00d0d7" points="360.67,-2420.8 369.66,-2415.19 359.13,-2413.97 360.67,-2420.8"/>
+<path fill="none" stroke="#00d0d7" d="M153.15,-2474.56C235.25,-2474.56 402.71,-2474.56 402.71,-2474.56 402.71,-2474.56 402.71,-2436.19 402.71,-2436.19"/>
+<polygon fill="#00d0d7" stroke="#00d0d7" points="406.21,-2436.19 402.71,-2426.19 399.21,-2436.19 406.21,-2436.19"/>
 </g>
 <!-- class clojure.lang.ArraySeq -->
 <g id="node43" class="node">
@@ -703,8 +703,8 @@
 <!-- class clojure.lang.ArraySeq&#45;&gt;class clojure.lang.ASeq -->
 <g id="edge34" class="edge">
 <title>class clojure.lang.ArraySeq&#45;&gt;class clojure.lang.ASeq</title>
-<path fill="none" stroke="#76d700" d="M754.51,-1274.87C770.89,-1269.87 789.17,-1263.99 805.67,-1258 844.62,-1243.86 852.62,-1235.84 891.67,-1222 907.53,-1216.38 924.97,-1210.97 941.03,-1206.29"/>
-<polygon fill="#76d700" stroke="#76d700" points="942.19,-1209.6 950.84,-1203.47 940.26,-1202.87 942.19,-1209.6"/>
+<path fill="none" stroke="#76d700" d="M739.49,-1267.37C761.08,-1267.37 784.71,-1267.37 784.71,-1267.37 784.71,-1267.37 784.71,-1209.5 784.71,-1209.5 784.71,-1209.5 949.37,-1209.5 949.37,-1209.5"/>
+<polygon fill="#76d700" stroke="#76d700" points="949.37,-1213 959.37,-1209.5 949.37,-1206 949.37,-1213"/>
 </g>
 <!-- interface clojure.lang.IndexedSeq -->
 <g id="node44" class="node">
@@ -716,8 +716,8 @@
 <!-- class clojure.lang.ArraySeq&#45;&gt;interface clojure.lang.IndexedSeq -->
 <g id="edge35" class="edge">
 <title>class clojure.lang.ArraySeq&#45;&gt;interface clojure.lang.IndexedSeq</title>
-<path fill="none" stroke="#76d700" d="M762.22,-1294.82C807.22,-1299.44 870.63,-1305.96 920.29,-1311.06"/>
-<polygon fill="#76d700" stroke="#76d700" points="920.05,-1314.55 930.35,-1312.09 920.76,-1307.59 920.05,-1314.55"/>
+<path fill="none" stroke="#76d700" d="M755.11,-1302.89C755.11,-1302.89 929.62,-1302.89 929.62,-1302.89"/>
+<polygon fill="#76d700" stroke="#76d700" points="929.62,-1306.39 939.62,-1302.89 929.62,-1299.39 929.62,-1306.39"/>
 </g>
 <!-- interface clojure.lang.IReduce -->
 <g id="node45" class="node">
@@ -728,20 +728,20 @@
 <!-- class clojure.lang.ArraySeq&#45;&gt;interface clojure.lang.IReduce -->
 <g id="edge36" class="edge">
 <title>class clojure.lang.ArraySeq&#45;&gt;interface clojure.lang.IReduce</title>
-<path fill="none" stroke="#76d700" d="M760.86,-1281.28C776.9,-1276.72 793.38,-1269.49 805.67,-1258 883.29,-1185.47 810.68,-1103.74 891.67,-1035 905.38,-1023.37 923.65,-1017.36 941.15,-1014.39"/>
-<polygon fill="#76d700" stroke="#76d700" points="941.9,-1017.82 951.32,-1012.98 940.93,-1010.89 941.9,-1017.82"/>
+<path fill="none" stroke="#76d700" d="M751.34,-1272.61C776.62,-1272.61 802.71,-1272.61 802.71,-1272.61 802.71,-1272.61 802.71,-1028.43 802.71,-1028.43 802.71,-1028.43 962.19,-1028.43 962.19,-1028.43"/>
+<polygon fill="#76d700" stroke="#76d700" points="962.19,-1031.93 972.19,-1028.43 962.19,-1024.93 962.19,-1031.93"/>
 </g>
 <!-- interface clojure.lang.IndexedSeq&#45;&gt;interface clojure.lang.ISeq -->
 <g id="edge80" class="edge">
 <title>interface clojure.lang.IndexedSeq&#45;&gt;interface clojure.lang.ISeq</title>
-<path fill="none" stroke="#b300d7" d="M1056.43,-1302.32C1112.59,-1285.83 1197.3,-1260.96 1248.53,-1245.92"/>
-<polygon fill="#b300d7" stroke="#b300d7" points="1249.7,-1249.23 1258.31,-1243.05 1247.73,-1242.51 1249.7,-1249.23"/>
+<path fill="none" stroke="#b300d7" d="M1048.97,-1299.21C1101.95,-1299.21 1177.71,-1299.21 1177.71,-1299.21 1177.71,-1299.21 1177.71,-1249.69 1177.71,-1249.69 1177.71,-1249.69 1253.71,-1249.69 1253.71,-1249.69"/>
+<polygon fill="#b300d7" stroke="#b300d7" points="1253.71,-1253.19 1263.71,-1249.69 1253.71,-1246.19 1253.71,-1253.19"/>
 </g>
 <!-- interface clojure.lang.IndexedSeq&#45;&gt;interface clojure.lang.Sequential -->
 <g id="edge81" class="edge">
 <title>interface clojure.lang.IndexedSeq&#45;&gt;interface clojure.lang.Sequential</title>
-<path fill="none" stroke="#b300d7" d="M1066.81,-1314.18C1111.82,-1310.96 1171.11,-1306.7 1217.64,-1303.37"/>
-<polygon fill="#b300d7" stroke="#b300d7" points="1217.94,-1306.86 1227.66,-1302.65 1217.44,-1299.88 1217.94,-1306.86"/>
+<path fill="none" stroke="#b300d7" d="M1067.01,-1308.5C1067.01,-1308.5 1217.79,-1308.5 1217.79,-1308.5"/>
+<polygon fill="#b300d7" stroke="#b300d7" points="1217.79,-1312 1227.79,-1308.5 1217.79,-1305 1217.79,-1312"/>
 </g>
 <!-- interface clojure.lang.IReduceInit -->
 <g id="node82" class="node">
@@ -752,14 +752,14 @@
 <!-- interface clojure.lang.IReduce&#45;&gt;interface clojure.lang.IReduceInit -->
 <g id="edge70" class="edge">
 <title>interface clojure.lang.IReduce&#45;&gt;interface clojure.lang.IReduceInit</title>
-<path fill="none" stroke="#00d0d7" d="M1046.02,-1013C1093.76,-1013 1168.67,-1013 1223.39,-1013"/>
-<polygon fill="#00d0d7" stroke="#00d0d7" points="1223.71,-1016.5 1233.71,-1013 1223.71,-1009.5 1223.71,-1016.5"/>
+<path fill="none" stroke="#00d0d7" d="M1045.99,-1013C1045.99,-1013 1223.79,-1013 1223.79,-1013"/>
+<polygon fill="#00d0d7" stroke="#00d0d7" points="1223.79,-1016.5 1233.79,-1013 1223.79,-1009.5 1223.79,-1016.5"/>
 </g>
 <!-- interface clojure.lang.Associative&#45;&gt;interface clojure.lang.IPersistentCollection -->
 <g id="edge37" class="edge">
 <title>interface clojure.lang.Associative&#45;&gt;interface clojure.lang.IPersistentCollection</title>
-<path fill="none" stroke="#d70000" d="M1317.15,-2071.8C1351.08,-2028.65 1417.97,-1946.05 1481.55,-1882 1500.88,-1862.53 1523.72,-1842.4 1543.25,-1825.96"/>
-<polygon fill="#d70000" stroke="#d70000" points="1545.69,-1828.48 1551.12,-1819.38 1541.2,-1823.11 1545.69,-1828.48"/>
+<path fill="none" stroke="#d70000" d="M1343.71,-2080.59C1343.71,-2014.51 1343.71,-1810.72 1343.71,-1810.72 1343.71,-1810.72 1502.86,-1810.72 1502.86,-1810.72"/>
+<polygon fill="#d70000" stroke="#d70000" points="1502.86,-1814.22 1512.86,-1810.72 1502.86,-1807.22 1502.86,-1814.22"/>
 </g>
 <!-- interface clojure.lang.ILookup -->
 <g id="node48" class="node">
@@ -770,8 +770,8 @@
 <!-- interface clojure.lang.Associative&#45;&gt;interface clojure.lang.ILookup -->
 <g id="edge38" class="edge">
 <title>interface clojure.lang.Associative&#45;&gt;interface clojure.lang.ILookup</title>
-<path fill="none" stroke="#d70000" d="M1339.07,-2123.48C1396.79,-2152.62 1496.43,-2202.92 1550.38,-2230.16"/>
-<polygon fill="#d70000" stroke="#d70000" points="1549.08,-2233.42 1559.59,-2234.81 1552.24,-2227.18 1549.08,-2233.42"/>
+<path fill="none" stroke="#d70000" d="M1363.49,-2101C1450.78,-2101 1588.71,-2101 1588.71,-2101 1588.71,-2101 1588.71,-2220.85 1588.71,-2220.85"/>
+<polygon fill="#d70000" stroke="#d70000" points="1585.21,-2220.85 1588.71,-2230.85 1592.21,-2220.85 1585.21,-2220.85"/>
 </g>
 <!-- interface clojure.lang.Seqable -->
 <g id="node79" class="node">
@@ -782,8 +782,8 @@
 <!-- interface clojure.lang.IPersistentCollection&#45;&gt;interface clojure.lang.Seqable -->
 <g id="edge60" class="edge">
 <title>interface clojure.lang.IPersistentCollection&#45;&gt;interface clojure.lang.Seqable</title>
-<path fill="none" stroke="#b300d7" d="M1695.98,-1790C1722.12,-1790 1749.08,-1790 1771.72,-1790"/>
-<polygon fill="#b300d7" stroke="#b300d7" points="1771.8,-1793.5 1781.8,-1790 1771.8,-1786.5 1771.8,-1793.5"/>
+<path fill="none" stroke="#b300d7" d="M1695.88,-1790C1695.88,-1790 1771.81,-1790 1771.81,-1790"/>
+<polygon fill="#b300d7" stroke="#b300d7" points="1771.81,-1793.5 1781.81,-1790 1771.81,-1786.5 1771.81,-1793.5"/>
 </g>
 <!-- class clojure.lang.Atom -->
 <g id="node49" class="node">
@@ -795,8 +795,8 @@
 <!-- class clojure.lang.Atom&#45;&gt;class clojure.lang.ARef -->
 <g id="edge39" class="edge">
 <title>class clojure.lang.Atom&#45;&gt;class clojure.lang.ARef</title>
-<path fill="none" stroke="#00d764" d="M433.15,-532.72C487.87,-556.25 604.83,-606.54 665.42,-632.6"/>
-<polygon fill="#00d764" stroke="#00d764" points="664.07,-635.83 674.64,-636.56 666.84,-629.4 664.07,-635.83"/>
+<path fill="none" stroke="#00d764" d="M433.48,-532.44C510.49,-532.44 704.71,-532.44 704.71,-532.44 704.71,-532.44 704.71,-611.96 704.71,-611.96"/>
+<polygon fill="#00d764" stroke="#00d764" points="701.21,-611.96 704.71,-621.96 708.21,-611.96 701.21,-611.96"/>
 </g>
 <!-- interface clojure.lang.IAtom2 -->
 <g id="node50" class="node">
@@ -807,8 +807,8 @@
 <!-- class clojure.lang.Atom&#45;&gt;interface clojure.lang.IAtom2 -->
 <g id="edge40" class="edge">
 <title>class clojure.lang.Atom&#45;&gt;interface clojure.lang.IAtom2</title>
-<path fill="none" stroke="#00d764" d="M437.11,-517.76C489.28,-514.29 590.28,-507.55 651.84,-503.45"/>
-<polygon fill="#00d764" stroke="#00d764" points="652.37,-506.92 662.11,-502.76 651.9,-499.94 652.37,-506.92"/>
+<path fill="none" stroke="#00d764" d="M431.8,-505.56C431.8,-505.56 652.1,-505.56 652.1,-505.56"/>
+<polygon fill="#00d764" stroke="#00d764" points="652.1,-509.07 662.1,-505.56 652.1,-502.07 652.1,-509.07"/>
 </g>
 <!-- interface clojure.lang.IAtom -->
 <g id="node70" class="node">
@@ -819,8 +819,8 @@
 <!-- interface clojure.lang.IAtom2&#45;&gt;interface clojure.lang.IAtom -->
 <g id="edge53" class="edge">
 <title>interface clojure.lang.IAtom2&#45;&gt;interface clojure.lang.IAtom</title>
-<path fill="none" stroke="#00d0d7" d="M746.79,-497.04C800.67,-493.16 894.78,-486.39 951.13,-482.34"/>
-<polygon fill="#00d0d7" stroke="#00d0d7" points="951.47,-485.83 961.19,-481.62 950.97,-478.84 951.47,-485.83"/>
+<path fill="none" stroke="#00d0d7" d="M740.03,-489.5C740.03,-489.5 957.48,-489.5 957.48,-489.5"/>
+<polygon fill="#00d0d7" stroke="#00d0d7" points="957.48,-493 967.48,-489.5 957.48,-486 957.48,-493"/>
 </g>
 <!-- class clojure.lang.BigInt -->
 <g id="node51" class="node">
@@ -846,8 +846,8 @@
 <!-- class clojure.lang.ChunkedCons&#45;&gt;class clojure.lang.ASeq -->
 <g id="edge41" class="edge">
 <title>class clojure.lang.ChunkedCons&#45;&gt;class clojure.lang.ASeq</title>
-<path fill="none" stroke="#76d700" d="M771.12,-1504.49C783.83,-1499.92 796.14,-1493.38 805.67,-1484 893.06,-1398.07 803.62,-1307.24 891.67,-1222 903.65,-1210.41 919.71,-1203.12 935.7,-1198.54"/>
-<polygon fill="#76d700" stroke="#76d700" points="936.77,-1201.88 945.61,-1196.03 935.05,-1195.09 936.77,-1201.88"/>
+<path fill="none" stroke="#76d700" d="M769.71,-1503.32C769.71,-1447.13 769.71,-1207.41 769.71,-1207.41 769.71,-1207.41 945.82,-1207.41 945.82,-1207.41"/>
+<polygon fill="#76d700" stroke="#76d700" points="945.82,-1210.91 955.82,-1207.41 945.82,-1203.91 945.82,-1210.91"/>
 </g>
 <!-- interface clojure.lang.IChunkedSeq -->
 <g id="node55" class="node">
@@ -859,20 +859,20 @@
 <!-- class clojure.lang.ChunkedCons&#45;&gt;interface clojure.lang.IChunkedSeq -->
 <g id="edge42" class="edge">
 <title>class clojure.lang.ChunkedCons&#45;&gt;interface clojure.lang.IChunkedSeq</title>
-<path fill="none" stroke="#76d700" d="M770.46,-1503.79C783.21,-1499.27 795.71,-1492.92 805.67,-1484 876.88,-1420.31 820.52,-1350.75 891.67,-1287 898.7,-1280.7 906.92,-1275.61 915.61,-1271.49"/>
-<polygon fill="#76d700" stroke="#76d700" points="917.01,-1274.7 924.81,-1267.53 914.24,-1268.26 917.01,-1274.7"/>
+<path fill="none" stroke="#76d700" d="M773.71,-1507.11C773.71,-1465.96 773.71,-1277.85 773.71,-1277.85 773.71,-1277.85 942.55,-1277.85 942.55,-1277.85"/>
+<polygon fill="#76d700" stroke="#76d700" points="942.55,-1281.35 952.55,-1277.85 942.55,-1274.35 942.55,-1281.35"/>
 </g>
 <!-- interface clojure.lang.IChunkedSeq&#45;&gt;interface clojure.lang.ISeq -->
 <g id="edge55" class="edge">
 <title>interface clojure.lang.IChunkedSeq&#45;&gt;interface clojure.lang.ISeq</title>
-<path fill="none" stroke="#5a00d7" d="M1075.81,-1248.54C1130.54,-1244.61 1202.42,-1239.46 1248.07,-1236.19"/>
-<polygon fill="#5a00d7" stroke="#5a00d7" points="1248.51,-1239.67 1258.23,-1235.46 1248.01,-1232.68 1248.51,-1239.67"/>
+<path fill="none" stroke="#5a00d7" d="M1063.69,-1237.31C1063.69,-1237.31 1248.14,-1237.31 1248.14,-1237.31"/>
+<polygon fill="#5a00d7" stroke="#5a00d7" points="1248.14,-1240.81 1258.14,-1237.31 1248.14,-1233.81 1248.14,-1240.81"/>
 </g>
 <!-- interface clojure.lang.IChunkedSeq&#45;&gt;interface clojure.lang.Sequential -->
 <g id="edge56" class="edge">
 <title>interface clojure.lang.IChunkedSeq&#45;&gt;interface clojure.lang.Sequential</title>
-<path fill="none" stroke="#5a00d7" d="M1075.81,-1265.45C1119.53,-1272.01 1174.2,-1280.22 1217.69,-1286.76"/>
-<polygon fill="#5a00d7" stroke="#5a00d7" points="1217.23,-1290.23 1227.64,-1288.25 1218.27,-1283.3 1217.23,-1290.23"/>
+<path fill="none" stroke="#5a00d7" d="M1049.64,-1276C1049.64,-1276 1239.85,-1276 1239.85,-1276"/>
+<polygon fill="#5a00d7" stroke="#5a00d7" points="1239.85,-1279.5 1249.85,-1276 1239.85,-1272.5 1239.85,-1279.5"/>
 </g>
 <!-- interface java.util.concurrent.ConcurrentMap -->
 <g id="node56" class="node">
@@ -883,8 +883,8 @@
 <!-- interface java.util.concurrent.ConcurrentMap&#45;&gt;interface java.util.Map -->
 <g id="edge43" class="edge">
 <title>interface java.util.concurrent.ConcurrentMap&#45;&gt;interface java.util.Map</title>
-<path fill="none" stroke="#d78100" d="M806.07,-2258C853.88,-2258 908.92,-2258 947.69,-2258"/>
-<polygon fill="#d78100" stroke="#d78100" points="948.18,-2261.5 958.18,-2258 948.18,-2254.5 948.18,-2261.5"/>
+<path fill="none" stroke="#d78100" d="M772.39,-2264C772.39,-2264 961.63,-2264 961.63,-2264"/>
+<polygon fill="#d78100" stroke="#d78100" points="961.63,-2267.5 971.63,-2264 961.63,-2260.5 961.63,-2267.5"/>
 </g>
 <!-- class clojure.lang.Cons -->
 <g id="node57" class="node">
@@ -896,8 +896,8 @@
 <!-- class clojure.lang.Cons&#45;&gt;class clojure.lang.ASeq -->
 <g id="edge44" class="edge">
 <title>class clojure.lang.Cons&#45;&gt;class clojure.lang.ASeq</title>
-<path fill="none" stroke="#5a00d7" d="M756.72,-1447.06C773.93,-1442.57 792.16,-1435.18 805.67,-1423 877.86,-1357.96 818.98,-1286.48 891.67,-1222 904.08,-1211 920.2,-1203.89 936.11,-1199.3"/>
-<polygon fill="#5a00d7" stroke="#5a00d7" points="937.15,-1202.65 945.96,-1196.76 935.4,-1195.87 937.15,-1202.65"/>
+<path fill="none" stroke="#5a00d7" d="M745.88,-1436.75C773.46,-1436.75 804.71,-1436.75 804.71,-1436.75 804.71,-1436.75 804.71,-1213.69 804.71,-1213.69 804.71,-1213.69 959.58,-1213.69 959.58,-1213.69"/>
+<polygon fill="#5a00d7" stroke="#5a00d7" points="959.58,-1217.19 969.58,-1213.69 959.58,-1210.19 959.58,-1217.19"/>
 </g>
 <!-- class clojure.lang.Cycle -->
 <g id="node58" class="node">
@@ -909,14 +909,14 @@
 <!-- class clojure.lang.Cycle&#45;&gt;class clojure.lang.ASeq -->
 <g id="edge45" class="edge">
 <title>class clojure.lang.Cycle&#45;&gt;class clojure.lang.ASeq</title>
-<path fill="none" stroke="#d70000" d="M752.48,-859.46C771.26,-866.56 791.71,-877.26 805.67,-893 888.42,-986.25 802.34,-1073.04 891.67,-1160 903.61,-1171.62 919.66,-1178.93 935.65,-1183.5"/>
-<polygon fill="#d70000" stroke="#d70000" points="935.01,-1186.95 945.56,-1186.02 936.73,-1180.17 935.01,-1186.95"/>
+<path fill="none" stroke="#d70000" d="M739.82,-867.3C789.66,-867.3 874.71,-867.3 874.71,-867.3 874.71,-867.3 874.71,-1167.85 874.71,-1167.85 874.71,-1167.85 961.11,-1167.85 961.11,-1167.85"/>
+<polygon fill="#d70000" stroke="#d70000" points="961.11,-1171.35 971.11,-1167.85 961.11,-1164.35 961.11,-1171.35"/>
 </g>
 <!-- class clojure.lang.Cycle&#45;&gt;interface clojure.lang.IReduce -->
 <g id="edge46" class="edge">
 <title>class clojure.lang.Cycle&#45;&gt;interface clojure.lang.IReduce</title>
-<path fill="none" stroke="#d70000" d="M752.52,-859.42C769.68,-864.75 788.97,-871.68 805.67,-880 867.82,-910.96 932.72,-960.02 968.87,-989.11"/>
-<polygon fill="#d70000" stroke="#d70000" points="967.02,-992.12 976.99,-995.7 971.43,-986.68 967.02,-992.12"/>
+<path fill="none" stroke="#d70000" d="M746.2,-864.01C817.82,-864.01 956.71,-864.01 956.71,-864.01 956.71,-864.01 956.71,-993.22 956.71,-993.22"/>
+<polygon fill="#d70000" stroke="#d70000" points="953.21,-993.22 956.71,-1003.22 960.21,-993.22 953.21,-993.22"/>
 </g>
 <!-- interface clojure.lang.IPending -->
 <g id="node59" class="node">
@@ -927,8 +927,8 @@
 <!-- class clojure.lang.Cycle&#45;&gt;interface clojure.lang.IPending -->
 <g id="edge47" class="edge">
 <title>class clojure.lang.Cycle&#45;&gt;interface clojure.lang.IPending</title>
-<path fill="none" stroke="#d70000" d="M758.5,-849.24C795.74,-850.75 846.75,-852.71 891.67,-854 1013.37,-857.5 1155.89,-859.95 1233.98,-861.15"/>
-<polygon fill="#d70000" stroke="#d70000" points="1234.04,-864.66 1244.1,-861.31 1234.15,-857.66 1234.04,-864.66"/>
+<path fill="none" stroke="#d70000" d="M750.78,-860.73C750.78,-860.73 1234.24,-860.73 1234.24,-860.73"/>
+<polygon fill="#d70000" stroke="#d70000" points="1234.24,-864.23 1244.24,-860.73 1234.24,-857.23 1234.24,-864.23"/>
 </g>
 <!-- class clojure.lang.Delay -->
 <g id="node60" class="node">
@@ -940,14 +940,14 @@
 <!-- class clojure.lang.Delay&#45;&gt;interface clojure.lang.IPending -->
 <g id="edge49" class="edge">
 <title>class clojure.lang.Delay&#45;&gt;interface clojure.lang.IPending</title>
-<path fill="none" stroke="#0061d7" d="M1037.6,-828.93C1087.47,-835.4 1175.52,-846.82 1233.95,-854.4"/>
-<polygon fill="#0061d7" stroke="#0061d7" points="1233.78,-857.91 1244.14,-855.72 1234.68,-850.96 1233.78,-857.91"/>
+<path fill="none" stroke="#0061d7" d="M998.71,-850.99C998.71,-854.8 998.71,-857.44 998.71,-857.44 998.71,-857.44 1234.19,-857.44 1234.19,-857.44"/>
+<polygon fill="#0061d7" stroke="#0061d7" points="1234.19,-860.94 1244.19,-857.44 1234.19,-853.94 1234.19,-860.94"/>
 </g>
 <!-- class clojure.lang.Delay&#45;&gt;interface clojure.lang.IDeref -->
 <g id="edge48" class="edge">
 <title>class clojure.lang.Delay&#45;&gt;interface clojure.lang.IDeref</title>
-<path fill="none" stroke="#0061d7" d="M1031.83,-808.87C1053.19,-798.46 1081.59,-783.86 1105.54,-769 1145.79,-744.01 1153.04,-733.62 1191.54,-706 1215.35,-688.91 1242.55,-669.82 1262.72,-655.74"/>
-<polygon fill="#0061d7" stroke="#0061d7" points="1264.97,-658.43 1271.17,-649.84 1260.97,-652.69 1264.97,-658.43"/>
+<path fill="none" stroke="#0061d7" d="M1038.17,-820.56C1054.07,-820.56 1068.71,-820.56 1068.71,-820.56 1068.71,-820.56 1068.71,-644 1068.71,-644 1068.71,-644 1249.39,-644 1249.39,-644"/>
+<polygon fill="#0061d7" stroke="#0061d7" points="1249.4,-647.5 1259.39,-644 1249.39,-640.5 1249.4,-647.5"/>
 </g>
 <!-- interface java.util.Enumeration -->
 <g id="node63" class="node">
@@ -965,8 +965,8 @@
 <!-- class clojure.lang.EnumerationSeq&#45;&gt;class clojure.lang.ASeq -->
 <g id="edge50" class="edge">
 <title>class clojure.lang.EnumerationSeq&#45;&gt;class clojure.lang.ASeq</title>
-<path fill="none" stroke="#00d764" d="M767.14,-1123.92C818.92,-1138.99 892.27,-1160.34 942.22,-1174.88"/>
-<polygon fill="#00d764" stroke="#00d764" points="941.3,-1178.26 951.88,-1177.69 943.26,-1171.54 941.3,-1178.26"/>
+<path fill="none" stroke="#00d764" d="M786.71,-1111.03C786.71,-1128.1 786.71,-1182.72 786.71,-1182.72 786.71,-1182.72 937.31,-1182.72 937.31,-1182.72"/>
+<polygon fill="#00d764" stroke="#00d764" points="937.31,-1186.22 947.31,-1182.72 937.31,-1179.22 937.31,-1186.22"/>
 </g>
 <!-- class clojure.lang.ExceptionInfo -->
 <g id="node65" class="node">
@@ -984,8 +984,8 @@
 <!-- class clojure.lang.ExceptionInfo&#45;&gt;interface clojure.lang.IExceptionInfo -->
 <g id="edge51" class="edge">
 <title>class clojure.lang.ExceptionInfo&#45;&gt;interface clojure.lang.IExceptionInfo</title>
-<path fill="none" stroke="#0061d7" d="M178.23,-2690C220.81,-2690 275.79,-2690 320.54,-2690"/>
-<polygon fill="#0061d7" stroke="#0061d7" points="320.8,-2693.5 330.8,-2690 320.8,-2686.5 320.8,-2693.5"/>
+<path fill="none" stroke="#0061d7" d="M178.44,-2690C178.44,-2690 320.9,-2690 320.9,-2690"/>
+<polygon fill="#0061d7" stroke="#0061d7" points="320.9,-2693.5 330.9,-2690 320.9,-2686.5 320.9,-2693.5"/>
 </g>
 <!-- class clojure.lang.FnLoaderThunk -->
 <g id="node67" class="node">
@@ -1004,14 +1004,14 @@
 <!-- class clojure.lang.FnLoaderThunk&#45;&gt;class clojure.lang.RestFn -->
 <g id="edge52" class="edge">
 <title>class clojure.lang.FnLoaderThunk&#45;&gt;class clojure.lang.RestFn</title>
-<path fill="none" stroke="#d70000" d="M188.4,-425C239.59,-425 304.96,-425 349.73,-425"/>
+<path fill="none" stroke="#d70000" d="M188.32,-425C188.32,-425 349.8,-425 349.8,-425"/>
 <polygon fill="#d70000" stroke="#d70000" points="349.8,-428.5 359.8,-425 349.8,-421.5 349.8,-428.5"/>
 </g>
 <!-- class clojure.lang.RestFn&#45;&gt;class clojure.lang.AFunction -->
 <g id="edge140" class="edge">
 <title>class clojure.lang.RestFn&#45;&gt;class clojure.lang.AFunction</title>
-<path fill="none" stroke="#76d700" d="M445.28,-425C495.7,-425 581.09,-425 639.79,-425"/>
-<polygon fill="#76d700" stroke="#76d700" points="640.06,-428.5 650.06,-425 640.06,-421.5 640.06,-428.5"/>
+<path fill="none" stroke="#76d700" d="M445.19,-425C445.19,-425 639.88,-425 639.88,-425"/>
+<polygon fill="#76d700" stroke="#76d700" points="639.88,-428.5 649.88,-425 639.88,-421.5 639.88,-428.5"/>
 </g>
 <!-- interface java.util.concurrent.Future -->
 <g id="node69" class="node">
@@ -1066,32 +1066,32 @@
 <!-- interface clojure.lang.IPersistentList&#45;&gt;interface clojure.lang.Sequential -->
 <g id="edge61" class="edge">
 <title>interface clojure.lang.IPersistentList&#45;&gt;interface clojure.lang.Sequential</title>
-<path fill="none" stroke="#d78100" d="M1068.37,-1143.05C1081.34,-1147.62 1094.34,-1153.49 1105.54,-1161 1155.34,-1194.42 1141.96,-1231.24 1191.54,-1265 1200.79,-1271.3 1211.34,-1276.47 1222.05,-1280.69"/>
-<polygon fill="#d78100" stroke="#d78100" points="1220.87,-1283.99 1231.47,-1284.16 1223.29,-1277.42 1220.87,-1283.99"/>
+<path fill="none" stroke="#d78100" d="M1075.82,-1139.04C1147.67,-1139.04 1243.71,-1139.04 1243.71,-1139.04 1243.71,-1139.04 1243.71,-1268.83 1243.71,-1268.83"/>
+<polygon fill="#d78100" stroke="#d78100" points="1240.21,-1268.83 1243.71,-1278.83 1247.21,-1268.83 1240.21,-1268.83"/>
 </g>
 <!-- interface clojure.lang.IPersistentList&#45;&gt;interface clojure.lang.IPersistentStack -->
 <g id="edge62" class="edge">
 <title>interface clojure.lang.IPersistentList&#45;&gt;interface clojure.lang.IPersistentStack</title>
-<path fill="none" stroke="#d78100" d="M1073.78,-1140.86C1085.54,-1145.62 1096.71,-1152.12 1105.54,-1161 1192.01,-1248.07 1267.92,-1639.43 1287.6,-1747.99"/>
-<polygon fill="#d78100" stroke="#d78100" points="1284.16,-1748.65 1289.38,-1757.88 1291.05,-1747.41 1284.16,-1748.65"/>
+<path fill="none" stroke="#d78100" d="M1054.75,-1148.06C1119.66,-1148.06 1217.71,-1148.06 1217.71,-1148.06 1217.71,-1148.06 1217.71,-1757.12 1217.71,-1757.12"/>
+<polygon fill="#d78100" stroke="#d78100" points="1214.21,-1757.12 1217.71,-1767.12 1221.21,-1757.12 1214.21,-1757.12"/>
 </g>
 <!-- interface clojure.lang.IPersistentStack&#45;&gt;interface clojure.lang.IPersistentCollection -->
 <g id="edge65" class="edge">
 <title>interface clojure.lang.IPersistentStack&#45;&gt;interface clojure.lang.IPersistentCollection</title>
-<path fill="none" stroke="#d70000" d="M1373.87,-1779.79C1403.84,-1781.22 1438.59,-1782.88 1471.26,-1784.44"/>
-<polygon fill="#d70000" stroke="#d70000" points="1471.17,-1787.94 1481.32,-1784.92 1471.5,-1780.95 1471.17,-1787.94"/>
+<path fill="none" stroke="#d70000" d="M1373.81,-1777.46C1373.81,-1777.46 1472.95,-1777.46 1472.95,-1777.46"/>
+<polygon fill="#d70000" stroke="#d70000" points="1472.95,-1780.96 1482.95,-1777.46 1472.95,-1773.96 1472.95,-1780.96"/>
 </g>
 <!-- interface clojure.lang.ITransientAssociative&#45;&gt;interface clojure.lang.ILookup -->
 <g id="edge74" class="edge">
 <title>interface clojure.lang.ITransientAssociative&#45;&gt;interface clojure.lang.ILookup</title>
-<path fill="none" stroke="#d70000" d="M1340.35,-2342.66C1396.56,-2321.37 1491.08,-2285.58 1545.56,-2264.96"/>
-<polygon fill="#d70000" stroke="#d70000" points="1546.81,-2268.22 1554.92,-2261.41 1544.33,-2261.68 1546.81,-2268.22"/>
+<path fill="none" stroke="#d70000" d="M1391.71,-2351.68C1391.71,-2328.07 1391.71,-2262.38 1391.71,-2262.38 1391.71,-2262.38 1547.49,-2262.38 1547.49,-2262.38"/>
+<polygon fill="#d70000" stroke="#d70000" points="1547.49,-2265.88 1557.49,-2262.38 1547.49,-2258.88 1547.49,-2265.88"/>
 </g>
 <!-- interface clojure.lang.ITransientAssociative&#45;&gt;interface clojure.lang.ITransientCollection -->
 <g id="edge73" class="edge">
 <title>interface clojure.lang.ITransientAssociative&#45;&gt;interface clojure.lang.ITransientCollection</title>
-<path fill="none" stroke="#d70000" d="M1360.44,-2373.66C1372.17,-2376.29 1384.24,-2379.12 1395.55,-2382 1439.91,-2393.28 1489.49,-2407.78 1527.18,-2419.2"/>
-<polygon fill="#d70000" stroke="#d70000" points="1526.4,-2422.62 1536.99,-2422.18 1528.44,-2415.92 1526.4,-2422.62"/>
+<path fill="none" stroke="#d70000" d="M1395.61,-2360C1450.77,-2360 1507.71,-2360 1507.71,-2360 1507.71,-2360 1507.71,-2417.48 1507.71,-2417.48"/>
+<polygon fill="#d70000" stroke="#d70000" points="1504.21,-2417.48 1507.71,-2427.48 1511.21,-2417.48 1504.21,-2417.48"/>
 </g>
 <!-- interface clojure.lang.ITransientVector -->
 <g id="node85" class="node">
@@ -1103,14 +1103,14 @@
 <!-- interface clojure.lang.ITransientVector&#45;&gt;interface clojure.lang.Indexed -->
 <g id="edge79" class="edge">
 <title>interface clojure.lang.ITransientVector&#45;&gt;interface clojure.lang.Indexed</title>
-<path fill="none" stroke="#00d764" d="M1087.5,-2421.8C1133.02,-2422.73 1187.58,-2423.85 1228.97,-2424.7"/>
-<polygon fill="#00d764" stroke="#00d764" points="1229.12,-2428.2 1239.19,-2424.91 1229.27,-2421.2 1229.12,-2428.2"/>
+<path fill="none" stroke="#00d764" d="M1079.98,-2434.54C1079.98,-2434.54 1228.98,-2434.54 1228.98,-2434.54"/>
+<polygon fill="#00d764" stroke="#00d764" points="1228.98,-2438.04 1238.98,-2434.54 1228.98,-2431.04 1228.98,-2438.04"/>
 </g>
 <!-- interface clojure.lang.ITransientVector&#45;&gt;interface clojure.lang.ITransientAssociative -->
 <g id="edge78" class="edge">
 <title>interface clojure.lang.ITransientVector&#45;&gt;interface clojure.lang.ITransientAssociative</title>
-<path fill="none" stroke="#00d764" d="M1076.57,-2404.24C1119.66,-2395.41 1173.2,-2384.44 1216.19,-2375.64"/>
-<polygon fill="#00d764" stroke="#00d764" points="1216.94,-2379.06 1226.04,-2373.62 1215.54,-2372.2 1216.94,-2379.06"/>
+<path fill="none" stroke="#00d764" d="M1087.22,-2420C1147.26,-2420 1215.71,-2420 1215.71,-2420 1215.71,-2420 1215.71,-2381.85 1215.71,-2381.85"/>
+<polygon fill="#00d764" stroke="#00d764" points="1219.21,-2381.85 1215.71,-2371.85 1212.21,-2381.85 1219.21,-2381.85"/>
 </g>
 <!-- interface java.lang.reflect.InvocationHandler -->
 <g id="node86" class="node">
@@ -1128,20 +1128,20 @@
 <!-- class clojure.lang.Iterate&#45;&gt;class clojure.lang.ASeq -->
 <g id="edge82" class="edge">
 <title>class clojure.lang.Iterate&#45;&gt;class clojure.lang.ASeq</title>
-<path fill="none" stroke="#d7009e" d="M756.78,-929.87C773.99,-934.35 792.21,-941.76 805.67,-954 879.09,-1020.74 817.74,-1093.84 891.67,-1160 904.03,-1171.06 920.14,-1178.18 936.05,-1182.77"/>
-<polygon fill="#d7009e" stroke="#d7009e" points="935.34,-1186.2 945.89,-1185.31 937.09,-1179.42 935.34,-1186.2"/>
+<path fill="none" stroke="#d7009e" d="M751.47,-936.44C799.35,-936.44 866.71,-936.44 866.71,-936.44 866.71,-936.44 866.71,-1171.56 866.71,-1171.56 866.71,-1171.56 951.16,-1171.56 951.16,-1171.56"/>
+<polygon fill="#d7009e" stroke="#d7009e" points="951.16,-1175.07 961.16,-1171.56 951.16,-1168.07 951.16,-1175.07"/>
 </g>
 <!-- class clojure.lang.Iterate&#45;&gt;interface clojure.lang.IReduce -->
 <g id="edge83" class="edge">
 <title>class clojure.lang.Iterate&#45;&gt;interface clojure.lang.IReduce</title>
-<path fill="none" stroke="#d7009e" d="M750.88,-936.96C805.32,-953.74 896.2,-981.75 951.15,-998.68"/>
-<polygon fill="#d7009e" stroke="#d7009e" points="950.39,-1002.11 960.97,-1001.71 952.45,-995.42 950.39,-1002.11"/>
+<path fill="none" stroke="#d7009e" d="M758.54,-923C832.07,-923 954.71,-923 954.71,-923 954.71,-923 954.71,-994.04 954.71,-994.04"/>
+<polygon fill="#d7009e" stroke="#d7009e" points="951.21,-994.04 954.71,-1004.04 958.21,-994.04 951.21,-994.04"/>
 </g>
 <!-- class clojure.lang.Iterate&#45;&gt;interface clojure.lang.IPending -->
 <g id="edge84" class="edge">
 <title>class clojure.lang.Iterate&#45;&gt;interface clojure.lang.IPending</title>
-<path fill="none" stroke="#d7009e" d="M757.4,-917.61C866.59,-906.27 1119.63,-879.97 1234.25,-868.06"/>
-<polygon fill="#d7009e" stroke="#d7009e" points="1234.66,-871.53 1244.24,-867.02 1233.93,-864.57 1234.66,-871.53"/>
+<path fill="none" stroke="#d7009e" d="M751.29,-909.56C890.63,-909.56 1293.71,-909.56 1293.71,-909.56 1293.71,-909.56 1293.71,-890.25 1293.71,-890.25"/>
+<polygon fill="#d7009e" stroke="#d7009e" points="1297.21,-890.25 1293.71,-880.25 1290.21,-890.25 1297.21,-890.25"/>
 </g>
 <!-- class clojure.lang.IteratorSeq -->
 <g id="node88" class="node">
@@ -1153,8 +1153,8 @@
 <!-- class clojure.lang.IteratorSeq&#45;&gt;class clojure.lang.ASeq -->
 <g id="edge85" class="edge">
 <title>class clojure.lang.IteratorSeq&#45;&gt;class clojure.lang.ASeq</title>
-<path fill="none" stroke="#00d0d7" d="M759.9,-1383.77C775.8,-1379.15 792.45,-1372.26 805.67,-1362 863.36,-1317.22 833.64,-1266.33 891.67,-1222 904.79,-1211.98 921.07,-1205.2 936.9,-1200.6"/>
-<polygon fill="#00d0d7" stroke="#00d0d7" points="937.9,-1203.96 946.67,-1198.01 936.1,-1197.19 937.9,-1203.96"/>
+<path fill="none" stroke="#00d0d7" d="M744.04,-1373.06C771.68,-1373.06 803.71,-1373.06 803.71,-1373.06 803.71,-1373.06 803.71,-1211.59 803.71,-1211.59 803.71,-1211.59 953.76,-1211.59 953.76,-1211.59"/>
+<polygon fill="#00d0d7" stroke="#00d0d7" points="953.76,-1215.09 963.76,-1211.59 953.76,-1208.09 953.76,-1215.09"/>
 </g>
 <!-- class clojure.lang.Keyword -->
 <g id="node89" class="node">
@@ -1167,8 +1167,8 @@
 <!-- class clojure.lang.Keyword&#45;&gt;interface clojure.lang.IFn -->
 <g id="edge86" class="edge">
 <title>class clojure.lang.Keyword&#45;&gt;interface clojure.lang.IFn</title>
-<path fill="none" stroke="#5a00d7" d="M1045.72,-2047.5C1064.48,-2040.44 1086.25,-2031.8 1105.54,-2023 1160.07,-1998.12 1221.06,-1964.73 1258.12,-1943.8"/>
-<polygon fill="#5a00d7" stroke="#5a00d7" points="1260.04,-1946.73 1267.01,-1938.75 1256.58,-1940.64 1260.04,-1946.73"/>
+<path fill="none" stroke="#5a00d7" d="M1046.95,-2049.22C1132.98,-2049.22 1303.71,-2049.22 1303.71,-2049.22 1303.71,-2049.22 1303.71,-1963.36 1303.71,-1963.36"/>
+<polygon fill="#5a00d7" stroke="#5a00d7" points="1307.21,-1963.36 1303.71,-1953.36 1300.21,-1963.36 1307.21,-1963.36"/>
 </g>
 <!-- class clojure.lang.KeywordLookupSite -->
 <g id="node90" class="node">
@@ -1179,14 +1179,14 @@
 <!-- class clojure.lang.KeywordLookupSite&#45;&gt;interface clojure.lang.ILookupSite -->
 <g id="edge87" class="edge">
 <title>class clojure.lang.KeywordLookupSite&#45;&gt;interface clojure.lang.ILookupSite</title>
-<path fill="none" stroke="#b300d7" d="M196.97,-2769.69C239.44,-2771 289.89,-2772.55 330.07,-2773.79"/>
-<polygon fill="#b300d7" stroke="#b300d7" points="330.21,-2777.3 340.31,-2774.11 330.43,-2770.3 330.21,-2777.3"/>
+<path fill="none" stroke="#b300d7" d="M195.37,-2771.5C195.37,-2771.5 330.4,-2771.5 330.4,-2771.5"/>
+<polygon fill="#b300d7" stroke="#b300d7" points="330.4,-2775 340.4,-2771.5 330.4,-2768 330.4,-2775"/>
 </g>
 <!-- class clojure.lang.KeywordLookupSite&#45;&gt;interface clojure.lang.ILookupThunk -->
 <g id="edge88" class="edge">
 <title>class clojure.lang.KeywordLookupSite&#45;&gt;interface clojure.lang.ILookupThunk</title>
-<path fill="none" stroke="#b300d7" d="M186.48,-2758.07C228.52,-2753.17 280.55,-2747.1 322.91,-2742.17"/>
-<polygon fill="#b300d7" stroke="#b300d7" points="323.37,-2745.64 332.9,-2741 322.56,-2738.68 323.37,-2745.64"/>
+<path fill="none" stroke="#b300d7" d="M172.92,-2754.5C240.32,-2754.5 336.71,-2754.5 336.71,-2754.5 336.71,-2754.5 336.71,-2751.99 336.71,-2751.99"/>
+<polygon fill="#b300d7" stroke="#b300d7" points="340.21,-2751.99 336.71,-2741.99 333.21,-2751.99 340.21,-2751.99"/>
 </g>
 <!-- class clojure.lang.LazySeq -->
 <g id="node91" class="node">
@@ -1198,32 +1198,32 @@
 <!-- class clojure.lang.LazySeq&#45;&gt;interface java.util.List -->
 <g id="edge92" class="edge">
 <title>class clojure.lang.LazySeq&#45;&gt;interface java.util.List</title>
-<path fill="none" stroke="#d78100" d="M1045.61,-1078.03C1064.26,-1083.42 1085.98,-1089.85 1105.54,-1096 1157.88,-1112.47 1217.94,-1133 1255.56,-1146.05"/>
-<polygon fill="#d78100" stroke="#d78100" points="1254.49,-1149.39 1265.09,-1149.37 1256.79,-1142.77 1254.49,-1149.39"/>
+<path fill="none" stroke="#d78100" d="M1036.39,-1084.19C1060.68,-1084.19 1087.71,-1084.19 1087.71,-1084.19 1087.71,-1084.19 1087.71,-1130.02 1087.71,-1130.02 1087.71,-1130.02 1274.43,-1130.02 1274.43,-1130.02"/>
+<polygon fill="#d78100" stroke="#d78100" points="1274.43,-1133.52 1284.43,-1130.02 1274.43,-1126.52 1274.43,-1133.52"/>
 </g>
 <!-- class clojure.lang.LazySeq&#45;&gt;class clojure.lang.Obj -->
 <g id="edge89" class="edge">
 <title>class clojure.lang.LazySeq&#45;&gt;class clojure.lang.Obj</title>
-<path fill="none" stroke="#d78100" d="M1052.65,-1065C1106.44,-1065 1189.09,-1065 1241.97,-1065"/>
-<polygon fill="#d78100" stroke="#d78100" points="1242.13,-1068.5 1252.13,-1065 1242.13,-1061.5 1242.13,-1068.5"/>
+<path fill="none" stroke="#d78100" d="M1047.31,-1053.48C1047.31,-1053.48 1246.45,-1053.48 1246.45,-1053.48"/>
+<polygon fill="#d78100" stroke="#d78100" points="1246.45,-1056.98 1256.45,-1053.48 1246.45,-1049.98 1246.45,-1056.98"/>
 </g>
 <!-- class clojure.lang.LazySeq&#45;&gt;interface clojure.lang.ISeq -->
 <g id="edge90" class="edge">
 <title>class clojure.lang.LazySeq&#45;&gt;interface clojure.lang.ISeq</title>
-<path fill="none" stroke="#d78100" d="M1049.96,-1073.28C1068.49,-1077.94 1088.97,-1085.09 1105.54,-1096 1155.63,-1128.98 1141.96,-1166.24 1191.54,-1200 1208.47,-1211.53 1229.72,-1219.27 1248.35,-1224.33"/>
-<polygon fill="#d78100" stroke="#d78100" points="1247.55,-1227.74 1258.1,-1226.81 1249.27,-1220.95 1247.55,-1227.74"/>
+<path fill="none" stroke="#d78100" d="M1052.21,-1068.84C1100.42,-1068.84 1163.71,-1068.84 1163.71,-1068.84 1163.71,-1068.84 1163.71,-1207.4 1163.71,-1207.4 1163.71,-1207.4 1264.38,-1207.4 1264.38,-1207.4"/>
+<polygon fill="#d78100" stroke="#d78100" points="1264.39,-1210.9 1274.38,-1207.4 1264.38,-1203.9 1264.39,-1210.9"/>
 </g>
 <!-- class clojure.lang.LazySeq&#45;&gt;interface clojure.lang.Sequential -->
 <g id="edge91" class="edge">
 <title>class clojure.lang.LazySeq&#45;&gt;interface clojure.lang.Sequential</title>
-<path fill="none" stroke="#d78100" d="M1051.07,-1071.35C1069.84,-1075.78 1090.2,-1083.28 1105.54,-1096 1170.41,-1149.8 1127.51,-1210.2 1191.54,-1265 1199.69,-1271.98 1209.36,-1277.49 1219.43,-1281.84"/>
-<polygon fill="#d78100" stroke="#d78100" points="1218.17,-1285.11 1228.75,-1285.52 1220.73,-1278.6 1218.17,-1285.11"/>
+<path fill="none" stroke="#d78100" d="M1051.95,-1061.16C1125.41,-1061.16 1248.71,-1061.16 1248.71,-1061.16 1248.71,-1061.16 1248.71,-1266.56 1248.71,-1266.56"/>
+<polygon fill="#d78100" stroke="#d78100" points="1245.21,-1266.56 1248.71,-1276.56 1252.21,-1266.56 1245.21,-1266.56"/>
 </g>
 <!-- class clojure.lang.LazySeq&#45;&gt;interface clojure.lang.IPending -->
 <g id="edge93" class="edge">
 <title>class clojure.lang.LazySeq&#45;&gt;interface clojure.lang.IPending</title>
-<path fill="none" stroke="#d78100" d="M1048.94,-1055.56C1067.45,-1050.75 1088.18,-1043.8 1105.54,-1034 1174.63,-994.97 1238.96,-925.86 1271.11,-888.22"/>
-<polygon fill="#d78100" stroke="#d78100" points="1274.06,-890.14 1277.83,-880.24 1268.71,-885.63 1274.06,-890.14"/>
+<path fill="none" stroke="#d78100" d="M1036.52,-1045.81C1076.79,-1045.81 1134.71,-1045.81 1134.71,-1045.81 1134.71,-1045.81 1134.71,-870.58 1134.71,-870.58 1134.71,-870.58 1236.75,-870.58 1236.75,-870.58"/>
+<polygon fill="#d78100" stroke="#d78100" points="1236.75,-874.08 1246.75,-870.58 1236.75,-867.08 1236.75,-874.08"/>
 </g>
 <!-- class clojure.lang.LongRange -->
 <g id="node92" class="node">
@@ -1235,20 +1235,20 @@
 <!-- class clojure.lang.LongRange&#45;&gt;class clojure.lang.ASeq -->
 <g id="edge95" class="edge">
 <title>class clojure.lang.LongRange&#45;&gt;class clojure.lang.ASeq</title>
-<path fill="none" stroke="#d7009e" d="M763.26,-1220.69C813.18,-1214.37 885.16,-1205.25 936.15,-1198.79"/>
-<polygon fill="#d7009e" stroke="#d7009e" points="936.9,-1202.22 946.38,-1197.49 936.02,-1195.27 936.9,-1202.22"/>
+<path fill="none" stroke="#d7009e" d="M737.44,-1205.31C737.44,-1205.31 942.98,-1205.31 942.98,-1205.31"/>
+<polygon fill="#d7009e" stroke="#d7009e" points="942.98,-1208.82 952.98,-1205.31 942.98,-1201.82 942.98,-1208.82"/>
 </g>
 <!-- class clojure.lang.LongRange&#45;&gt;interface clojure.lang.IReduce -->
 <g id="edge97" class="edge">
 <title>class clojure.lang.LongRange&#45;&gt;interface clojure.lang.IReduce</title>
-<path fill="none" stroke="#d7009e" d="M761.86,-1218.82C777.3,-1214.22 793.2,-1207.33 805.67,-1197 868.46,-1145.02 826.47,-1083.93 891.67,-1035 905.87,-1024.35 924.01,-1018.56 941.25,-1015.5"/>
-<polygon fill="#d7009e" stroke="#d7009e" points="941.89,-1018.95 951.26,-1014 940.85,-1012.02 941.89,-1018.95"/>
+<path fill="none" stroke="#d7009e" d="M728.58,-1203.22C757.35,-1203.22 801.71,-1203.22 801.71,-1203.22 801.71,-1203.22 801.71,-1025.85 801.71,-1025.85 801.71,-1025.85 955.2,-1025.85 955.2,-1025.85"/>
+<polygon fill="#d7009e" stroke="#d7009e" points="955.2,-1029.35 965.2,-1025.85 955.2,-1022.35 955.2,-1029.35"/>
 </g>
 <!-- class clojure.lang.LongRange&#45;&gt;interface clojure.lang.IChunkedSeq -->
 <g id="edge96" class="edge">
 <title>class clojure.lang.LongRange&#45;&gt;interface clojure.lang.IChunkedSeq</title>
-<path fill="none" stroke="#d7009e" d="M764.31,-1233.23C806.44,-1236.98 863.88,-1242.09 911.23,-1246.31"/>
-<polygon fill="#d7009e" stroke="#d7009e" points="911.2,-1249.82 921.47,-1247.22 911.82,-1242.85 911.2,-1249.82"/>
+<path fill="none" stroke="#d7009e" d="M759.18,-1239.89C759.18,-1239.89 916.79,-1239.89 916.79,-1239.89"/>
+<polygon fill="#d7009e" stroke="#d7009e" points="916.79,-1243.39 926.79,-1239.89 916.79,-1236.39 916.79,-1243.39"/>
 </g>
 <!-- class clojure.lang.MapEntry -->
 <g id="node93" class="node">
@@ -1260,8 +1260,8 @@
 <!-- class clojure.lang.MapEntry&#45;&gt;class clojure.lang.AMapEntry -->
 <g id="edge98" class="edge">
 <title>class clojure.lang.MapEntry&#45;&gt;class clojure.lang.AMapEntry</title>
-<path fill="none" stroke="#00d0d7" d="M162.66,-1702C210.38,-1702 280.9,-1702 332.96,-1702"/>
-<polygon fill="#00d0d7" stroke="#00d0d7" points="333.12,-1705.5 343.12,-1702 333.12,-1698.5 333.12,-1705.5"/>
+<path fill="none" stroke="#00d0d7" d="M162.71,-1702C162.71,-1702 332.97,-1702 332.97,-1702"/>
+<polygon fill="#00d0d7" stroke="#00d0d7" points="332.97,-1705.5 342.97,-1702 332.97,-1698.5 332.97,-1705.5"/>
 </g>
 <!-- class clojure.lang.MultiFn -->
 <g id="node94" class="node">
@@ -1272,8 +1272,8 @@
 <!-- class clojure.lang.MultiFn&#45;&gt;class clojure.lang.AFn -->
 <g id="edge99" class="edge">
 <title>class clojure.lang.MultiFn&#45;&gt;class clojure.lang.AFn</title>
-<path fill="none" stroke="#5a00d7" d="M744.6,-1869.08C763.96,-1871.94 787.12,-1877.43 805.67,-1888 854.31,-1915.7 842.88,-1952.58 891.67,-1980 912.92,-1991.94 939.85,-1997.43 961.24,-1999.94"/>
-<polygon fill="#5a00d7" stroke="#5a00d7" points="960.94,-2003.43 971.24,-2000.94 961.64,-1996.46 960.94,-2003.43"/>
+<path fill="none" stroke="#5a00d7" d="M741.28,-1873.48C756.96,-1873.48 771.71,-1873.48 771.71,-1873.48 771.71,-1873.48 771.71,-2000 771.71,-2000 771.71,-2000 961.69,-2000 961.69,-2000"/>
+<polygon fill="#5a00d7" stroke="#5a00d7" points="961.69,-2003.5 971.69,-2000 961.69,-1996.5 961.69,-2003.5"/>
 </g>
 <!-- class clojure.lang.Namespace -->
 <g id="node95" class="node">
@@ -1285,8 +1285,8 @@
 <!-- class clojure.lang.Namespace&#45;&gt;class clojure.lang.AReference -->
 <g id="edge100" class="edge">
 <title>class clojure.lang.Namespace&#45;&gt;class clojure.lang.AReference</title>
-<path fill="none" stroke="#76d700" d="M767.14,-727.95C813.7,-730.18 877.71,-733.25 926.45,-735.59"/>
-<polygon fill="#76d700" stroke="#76d700" points="926.46,-739.09 936.61,-736.08 926.79,-732.1 926.46,-739.09"/>
+<path fill="none" stroke="#76d700" d="M765.49,-732C765.49,-732 928.51,-732 928.51,-732"/>
+<polygon fill="#76d700" stroke="#76d700" points="928.51,-735.5 938.51,-732 928.51,-728.5 928.51,-735.5"/>
 </g>
 <!-- class clojure.lang.PersistentArrayMap -->
 <g id="node96" class="node">
@@ -1298,26 +1298,26 @@
 <!-- class clojure.lang.PersistentArrayMap&#45;&gt;class clojure.lang.APersistentMap -->
 <g id="edge101" class="edge">
 <title>class clojure.lang.PersistentArrayMap&#45;&gt;class clojure.lang.APersistentMap</title>
-<path fill="none" stroke="#d78100" d="M477.12,-2098.99C490.75,-2102.98 504.7,-2107.66 517.46,-2113 558.25,-2130.06 562.97,-2145.24 603.46,-2163 612.58,-2167 622.38,-2170.71 632.15,-2174.07"/>
-<polygon fill="#d78100" stroke="#d78100" points="631.29,-2177.47 641.88,-2177.31 633.5,-2170.83 631.29,-2177.47"/>
+<path fill="none" stroke="#d78100" d="M475.38,-2099.58C542.15,-2099.58 630.71,-2099.58 630.71,-2099.58 630.71,-2099.58 630.71,-2173.53 630.71,-2173.53"/>
+<polygon fill="#d78100" stroke="#d78100" points="627.21,-2173.53 630.71,-2183.53 634.21,-2173.53 627.21,-2173.53"/>
 </g>
 <!-- class clojure.lang.PersistentArrayMap&#45;&gt;interface clojure.lang.IEditableCollection -->
 <g id="edge102" class="edge">
 <title>class clojure.lang.PersistentArrayMap&#45;&gt;interface clojure.lang.IEditableCollection</title>
-<path fill="none" stroke="#d78100" d="M494.8,-2074.09C529.63,-2071.07 569.48,-2067.62 604.97,-2064.55"/>
-<polygon fill="#d78100" stroke="#d78100" points="605.68,-2068 615.34,-2063.65 605.08,-2061.02 605.68,-2068"/>
+<path fill="none" stroke="#d78100" d="M476.06,-2064.56C476.06,-2064.56 609.77,-2064.56 609.77,-2064.56"/>
+<polygon fill="#d78100" stroke="#d78100" points="609.77,-2068.07 619.77,-2064.56 609.77,-2061.07 609.77,-2068.07"/>
 </g>
 <!-- class clojure.lang.PersistentArrayMap&#45;&gt;interface clojure.lang.IKVReduce -->
 <g id="edge104" class="edge">
 <title>class clojure.lang.PersistentArrayMap&#45;&gt;interface clojure.lang.IKVReduce</title>
-<path fill="none" stroke="#d78100" d="M497.25,-2087.31C541.63,-2089.82 593.7,-2092.77 634.43,-2095.08"/>
-<polygon fill="#d78100" stroke="#d78100" points="634.34,-2098.58 644.53,-2095.65 634.74,-2091.59 634.34,-2098.58"/>
+<path fill="none" stroke="#d78100" d="M487.09,-2094.94C487.09,-2094.94 634.97,-2094.94 634.97,-2094.94"/>
+<polygon fill="#d78100" stroke="#d78100" points="634.97,-2098.44 644.97,-2094.94 634.97,-2091.44 634.97,-2098.44"/>
 </g>
 <!-- class clojure.lang.PersistentArrayMap&#45;&gt;interface clojure.lang.IMapIterable -->
 <g id="edge103" class="edge">
 <title>class clojure.lang.PersistentArrayMap&#45;&gt;interface clojure.lang.IMapIterable</title>
-<path fill="none" stroke="#d78100" d="M481.21,-2097.53C530.71,-2107.43 594.02,-2120.09 640.42,-2129.37"/>
-<polygon fill="#d78100" stroke="#d78100" points="639.85,-2132.83 650.35,-2131.36 641.23,-2125.96 639.85,-2132.83"/>
+<path fill="none" stroke="#d78100" d="M456.67,-2104.23C485.35,-2104.23 514.71,-2104.23 514.71,-2104.23 514.71,-2104.23 514.71,-2136 514.71,-2136 514.71,-2136 629.76,-2136 629.76,-2136"/>
+<polygon fill="#d78100" stroke="#d78100" points="629.76,-2139.5 639.76,-2136 629.76,-2132.5 629.76,-2139.5"/>
 </g>
 <!-- class clojure.lang.PersistentHashMap -->
 <g id="node97" class="node">
@@ -1329,26 +1329,26 @@
 <!-- class clojure.lang.PersistentHashMap&#45;&gt;class clojure.lang.APersistentMap -->
 <g id="edge105" class="edge">
 <title>class clojure.lang.PersistentHashMap&#45;&gt;class clojure.lang.APersistentMap</title>
-<path fill="none" stroke="#d78100" d="M484.75,-2156.8C527.64,-2164.09 580.12,-2173.01 622.93,-2180.29"/>
-<polygon fill="#d78100" stroke="#d78100" points="622.59,-2183.78 633.03,-2182.01 623.76,-2176.88 622.59,-2183.78"/>
+<path fill="none" stroke="#d78100" d="M464.13,-2163.56C533.2,-2163.56 635.71,-2163.56 635.71,-2163.56 635.71,-2163.56 635.71,-2170.21 635.71,-2170.21"/>
+<polygon fill="#d78100" stroke="#d78100" points="632.21,-2170.21 635.71,-2180.21 639.21,-2170.21 632.21,-2170.21"/>
 </g>
 <!-- class clojure.lang.PersistentHashMap&#45;&gt;interface clojure.lang.IEditableCollection -->
 <g id="edge106" class="edge">
 <title>class clojure.lang.PersistentHashMap&#45;&gt;interface clojure.lang.IEditableCollection</title>
-<path fill="none" stroke="#d78100" d="M474.1,-2125.11C488.53,-2121.08 503.56,-2116.62 517.46,-2112 556.46,-2099.03 564.15,-2090.01 603.46,-2078 611.81,-2075.45 620.63,-2073.07 629.44,-2070.89"/>
-<polygon fill="#d78100" stroke="#d78100" points="630.44,-2074.25 639.35,-2068.51 628.81,-2067.44 630.44,-2074.25"/>
+<path fill="none" stroke="#d78100" d="M447.82,-2119.33C511.46,-2119.33 619.71,-2119.33 619.71,-2119.33 619.71,-2119.33 619.71,-2074.54 619.71,-2074.54"/>
+<polygon fill="#d78100" stroke="#d78100" points="623.21,-2074.54 619.71,-2064.54 616.21,-2074.54 623.21,-2074.54"/>
 </g>
 <!-- class clojure.lang.PersistentHashMap&#45;&gt;interface clojure.lang.IKVReduce -->
 <g id="edge108" class="edge">
 <title>class clojure.lang.PersistentHashMap&#45;&gt;interface clojure.lang.IKVReduce</title>
-<path fill="none" stroke="#d78100" d="M487.53,-2130.69C534.81,-2123.75 593.03,-2115.21 637.11,-2108.75"/>
-<polygon fill="#d78100" stroke="#d78100" points="637.75,-2112.19 647.14,-2107.28 636.74,-2105.26 637.75,-2112.19"/>
+<path fill="none" stroke="#d78100" d="M460.82,-2121.67C548.62,-2121.67 704.71,-2121.67 704.71,-2121.67 704.71,-2121.67 704.71,-2121.23 704.71,-2121.23"/>
+<polygon fill="#d78100" stroke="#d78100" points="708.21,-2127.3 704.71,-2117.3 701.21,-2127.3 708.21,-2127.3"/>
 </g>
 <!-- class clojure.lang.PersistentHashMap&#45;&gt;interface clojure.lang.IMapIterable -->
 <g id="edge107" class="edge">
 <title>class clojure.lang.PersistentHashMap&#45;&gt;interface clojure.lang.IMapIterable</title>
-<path fill="none" stroke="#d78100" d="M498.08,-2142.68C540.42,-2142.54 589.63,-2142.38 629.28,-2142.25"/>
-<polygon fill="#d78100" stroke="#d78100" points="629.41,-2145.75 639.4,-2142.21 629.39,-2138.75 629.41,-2145.75"/>
+<path fill="none" stroke="#d78100" d="M496.46,-2148C496.46,-2148 629.44,-2148 629.44,-2148"/>
+<polygon fill="#d78100" stroke="#d78100" points="629.44,-2151.5 639.44,-2148 629.44,-2144.5 629.44,-2151.5"/>
 </g>
 <!-- class clojure.lang.PersistentHashSet -->
 <g id="node98" class="node">
@@ -1360,14 +1360,14 @@
 <!-- class clojure.lang.PersistentHashSet&#45;&gt;class clojure.lang.APersistentSet -->
 <g id="edge109" class="edge">
 <title>class clojure.lang.PersistentHashSet&#45;&gt;class clojure.lang.APersistentSet</title>
-<path fill="none" stroke="#5a00d7" d="M468.23,-1850.41C484.53,-1845.07 501.83,-1838.82 517.46,-1832 557.58,-1814.49 563.22,-1801.23 603.46,-1784 613.38,-1779.75 624.08,-1775.8 634.67,-1772.25"/>
-<polygon fill="#5a00d7" stroke="#5a00d7" points="635.91,-1775.53 644.33,-1769.1 633.74,-1768.87 635.91,-1775.53"/>
+<path fill="none" stroke="#5a00d7" d="M488.04,-1860C501.31,-1860 510.71,-1860 510.71,-1860 510.71,-1860 510.71,-1759.71 510.71,-1759.71 510.71,-1759.71 621.83,-1759.71 621.83,-1759.71"/>
+<polygon fill="#5a00d7" stroke="#5a00d7" points="621.83,-1763.21 631.83,-1759.71 621.83,-1756.21 621.83,-1763.21"/>
 </g>
 <!-- class clojure.lang.PersistentHashSet&#45;&gt;interface clojure.lang.IEditableCollection -->
 <g id="edge110" class="edge">
 <title>class clojure.lang.PersistentHashSet&#45;&gt;interface clojure.lang.IEditableCollection</title>
-<path fill="none" stroke="#5a00d7" d="M463.24,-1889.05C481.74,-1896.95 501.45,-1907.24 517.46,-1920 567.1,-1959.55 550.04,-1999.73 603.46,-2034 608.35,-2037.14 613.63,-2039.84 619.11,-2042.15"/>
-<polygon fill="#5a00d7" stroke="#5a00d7" points="617.9,-2045.44 628.49,-2045.7 620.37,-2038.89 617.9,-2045.44"/>
+<path fill="none" stroke="#5a00d7" d="M492.81,-1872C559.12,-1872 637.71,-1872 637.71,-1872 637.71,-1872 637.71,-2033.64 637.71,-2033.64"/>
+<polygon fill="#5a00d7" stroke="#5a00d7" points="634.21,-2033.64 637.71,-2043.64 641.21,-2033.64 634.21,-2033.64"/>
 </g>
 <!-- class clojure.lang.PersistentList -->
 <g id="node99" class="node">
@@ -1379,26 +1379,26 @@
 <!-- class clojure.lang.PersistentList&#45;&gt;interface java.util.List -->
 <g id="edge114" class="edge">
 <title>class clojure.lang.PersistentList&#45;&gt;interface java.util.List</title>
-<path fill="none" stroke="#76d700" d="M764.66,-970.62C845.93,-955.34 994.71,-938.8 1105.54,-992 1159.3,-1017.81 1146.7,-1055.68 1191.54,-1095 1212.11,-1113.04 1238.27,-1129.47 1258.82,-1141.17"/>
-<polygon fill="#76d700" stroke="#76d700" points="1257.39,-1144.37 1267.82,-1146.2 1260.8,-1138.26 1257.39,-1144.37"/>
+<path fill="none" stroke="#76d700" d="M737.31,-1007.7C763.8,-1007.7 796.71,-1007.7 796.71,-1007.7 796.71,-1007.7 796.71,-1159.43 796.71,-1159.43 796.71,-1159.43 1245.79,-1159.43 1245.79,-1159.43"/>
+<polygon fill="#76d700" stroke="#76d700" points="1245.79,-1162.93 1255.79,-1159.43 1245.79,-1155.93 1245.79,-1162.93"/>
 </g>
 <!-- class clojure.lang.PersistentList&#45;&gt;class clojure.lang.ASeq -->
 <g id="edge111" class="edge">
 <title>class clojure.lang.PersistentList&#45;&gt;class clojure.lang.ASeq</title>
-<path fill="none" stroke="#76d700" d="M767.56,-995.46C781.06,-999.98 794.6,-1006.27 805.67,-1015 864.5,-1061.4 832.49,-1114.06 891.67,-1160 904.71,-1170.12 920.96,-1176.94 936.8,-1181.53"/>
-<polygon fill="#76d700" stroke="#76d700" points="936,-1184.94 946.57,-1184.12 937.79,-1178.18 936,-1184.94"/>
+<path fill="none" stroke="#76d700" d="M749.69,-1004.52C794.86,-1004.52 857.71,-1004.52 857.71,-1004.52 857.71,-1004.52 857.71,-1175.28 857.71,-1175.28 857.71,-1175.28 944.8,-1175.28 944.8,-1175.28"/>
+<polygon fill="#76d700" stroke="#76d700" points="944.8,-1178.78 954.8,-1175.28 944.8,-1171.78 944.8,-1178.78"/>
 </g>
 <!-- class clojure.lang.PersistentList&#45;&gt;interface clojure.lang.IReduce -->
 <g id="edge113" class="edge">
 <title>class clojure.lang.PersistentList&#45;&gt;interface clojure.lang.IReduce</title>
-<path fill="none" stroke="#76d700" d="M771.83,-990.58C822.9,-995.65 892.73,-1002.59 941.15,-1007.39"/>
-<polygon fill="#76d700" stroke="#76d700" points="940.84,-1010.88 951.14,-1008.39 941.54,-1003.91 940.84,-1010.88"/>
+<path fill="none" stroke="#76d700" d="M763.72,-998.17C763.72,-998.17 960.66,-998.17 960.66,-998.17"/>
+<polygon fill="#76d700" stroke="#76d700" points="960.66,-1001.67 970.66,-998.17 960.66,-994.67 960.66,-1001.67"/>
 </g>
 <!-- class clojure.lang.PersistentList&#45;&gt;interface clojure.lang.IPersistentList -->
 <g id="edge112" class="edge">
 <title>class clojure.lang.PersistentList&#45;&gt;interface clojure.lang.IPersistentList</title>
-<path fill="none" stroke="#76d700" d="M764.59,-997.47C778.58,-1001.95 793.08,-1007.71 805.67,-1015 850.85,-1041.16 846.52,-1068.81 891.67,-1095 900.92,-1100.36 911.14,-1104.95 921.47,-1108.85"/>
-<polygon fill="#76d700" stroke="#76d700" points="920.38,-1112.18 930.97,-1112.24 922.73,-1105.58 920.38,-1112.18"/>
+<path fill="none" stroke="#76d700" d="M757.54,-1001.35C822.96,-1001.35 925.71,-1001.35 925.71,-1001.35 925.71,-1001.35 925.71,-1103.96 925.71,-1103.96"/>
+<polygon fill="#76d700" stroke="#76d700" points="922.21,-1103.96 925.71,-1113.96 929.21,-1103.96 922.21,-1103.96"/>
 </g>
 <!-- class clojure.lang.PersistentQueue -->
 <g id="node100" class="node">
@@ -1410,20 +1410,20 @@
 <!-- class clojure.lang.PersistentQueue&#45;&gt;interface java.util.Collection -->
 <g id="edge117" class="edge">
 <title>class clojure.lang.PersistentQueue&#45;&gt;interface java.util.Collection</title>
-<path fill="none" stroke="#0061d7" d="M786.71,-780.95C949,-772.64 1305.76,-763.82 1395.55,-840 1558.42,-978.18 1583.9,-1258.13 1587.4,-1370.12"/>
-<polygon fill="#0061d7" stroke="#0061d7" points="1583.91,-1370.52 1587.67,-1380.42 1590.91,-1370.33 1583.91,-1370.52"/>
+<path fill="none" stroke="#0061d7" d="M787.34,-782.61C1011.71,-782.61 1614.71,-782.61 1614.71,-782.61 1614.71,-782.61 1614.71,-1382.7 1614.71,-1382.7"/>
+<polygon fill="#0061d7" stroke="#0061d7" points="1611.21,-1382.7 1614.71,-1392.7 1618.21,-1382.7 1611.21,-1382.7"/>
 </g>
 <!-- class clojure.lang.PersistentQueue&#45;&gt;class clojure.lang.Obj -->
 <g id="edge115" class="edge">
 <title>class clojure.lang.PersistentQueue&#45;&gt;class clojure.lang.Obj</title>
-<path fill="none" stroke="#0061d7" d="M767.41,-803.76C780.17,-807.81 793.44,-812.31 805.67,-817 839.92,-830.12 1075,-934.68 1105.54,-955 1148.74,-983.75 1146.5,-1008.19 1191.54,-1034 1207.63,-1043.23 1226.78,-1050 1244.05,-1054.82"/>
-<polygon fill="#0061d7" stroke="#0061d7" points="1243.4,-1058.27 1253.97,-1057.44 1245.19,-1051.5 1243.4,-1058.27"/>
+<path fill="none" stroke="#0061d7" d="M781.71,-796.36C781.71,-843.41 781.71,-1034.56 781.71,-1034.56 781.71,-1034.56 1293.71,-1034.56 1293.71,-1034.56 1293.71,-1034.56 1293.71,-1034.89 1293.71,-1034.89"/>
+<polygon fill="#0061d7" stroke="#0061d7" points="1290.21,-1027.82 1293.71,-1037.82 1297.21,-1027.82 1290.21,-1027.82"/>
 </g>
 <!-- class clojure.lang.PersistentQueue&#45;&gt;interface clojure.lang.IPersistentList -->
 <g id="edge116" class="edge">
 <title>class clojure.lang.PersistentQueue&#45;&gt;interface clojure.lang.IPersistentList</title>
-<path fill="none" stroke="#0061d7" d="M777.93,-799C788.2,-803.38 797.89,-809.22 805.67,-817 897.11,-908.47 800.31,-1003.46 891.67,-1095 898.17,-1101.51 905.93,-1106.74 914.25,-1110.94"/>
-<polygon fill="#0061d7" stroke="#0061d7" points="912.91,-1114.17 923.46,-1115.1 915.79,-1107.79 912.91,-1114.17"/>
+<path fill="none" stroke="#0061d7" d="M763.72,-805C830.43,-805 929.71,-805 929.71,-805 929.71,-805 929.71,-1102.42 929.71,-1102.42"/>
+<polygon fill="#0061d7" stroke="#0061d7" points="926.21,-1102.42 929.71,-1112.42 933.21,-1102.42 926.21,-1102.42"/>
 </g>
 <!-- class clojure.lang.PersistentStructMap -->
 <g id="node101" class="node">
@@ -1435,8 +1435,8 @@
 <!-- class clojure.lang.PersistentStructMap&#45;&gt;class clojure.lang.APersistentMap -->
 <g id="edge118" class="edge">
 <title>class clojure.lang.PersistentStructMap&#45;&gt;class clojure.lang.APersistentMap</title>
-<path fill="none" stroke="#b300d7" d="M500.55,-2200.77C537.17,-2199.55 578.62,-2198.16 614.48,-2196.97"/>
-<polygon fill="#b300d7" stroke="#b300d7" points="615.04,-2200.45 624.92,-2196.62 614.81,-2193.46 615.04,-2200.45"/>
+<path fill="none" stroke="#b300d7" d="M499.37,-2199C499.37,-2199 615.95,-2199 615.95,-2199"/>
+<polygon fill="#b300d7" stroke="#b300d7" points="615.95,-2202.5 625.95,-2199 615.95,-2195.5 615.95,-2202.5"/>
 </g>
 <!-- class clojure.lang.PersistentTreeMap -->
 <g id="node102" class="node">
@@ -1448,14 +1448,14 @@
 <!-- class clojure.lang.PersistentTreeMap&#45;&gt;class clojure.lang.APersistentMap -->
 <g id="edge119" class="edge">
 <title>class clojure.lang.PersistentTreeMap&#45;&gt;class clojure.lang.APersistentMap</title>
-<path fill="none" stroke="#00d0d7" d="M481.85,-2035.07C494.37,-2039.31 506.72,-2044.83 517.46,-2052 569.36,-2086.65 552.16,-2127.46 603.46,-2163 610.74,-2168.04 618.87,-2172.29 627.27,-2175.86"/>
-<polygon fill="#00d0d7" stroke="#00d0d7" points="626.24,-2179.22 636.82,-2179.61 628.79,-2172.7 626.24,-2179.22"/>
+<path fill="none" stroke="#00d0d7" d="M446.99,-2044.58C489.34,-2044.58 546.71,-2044.58 546.71,-2044.58 546.71,-2044.58 546.71,-2173.5 546.71,-2173.5 546.71,-2173.5 642.88,-2173.5 642.88,-2173.5"/>
+<polygon fill="#00d0d7" stroke="#00d0d7" points="642.88,-2177 652.88,-2173.5 642.88,-2170 642.88,-2177"/>
 </g>
 <!-- class clojure.lang.PersistentTreeMap&#45;&gt;interface clojure.lang.IKVReduce -->
 <g id="edge121" class="edge">
 <title>class clojure.lang.PersistentTreeMap&#45;&gt;interface clojure.lang.IKVReduce</title>
-<path fill="none" stroke="#00d0d7" d="M471.07,-2039.17C486.34,-2043.33 502.47,-2047.78 517.46,-2052 555.78,-2062.78 564.89,-2067.17 603.46,-2077 616.51,-2080.33 630.6,-2083.61 643.97,-2086.59"/>
-<polygon fill="#00d0d7" stroke="#00d0d7" points="643.5,-2090.07 654.02,-2088.8 645.01,-2083.23 643.5,-2090.07"/>
+<path fill="none" stroke="#00d0d7" d="M463.71,-2041.29C508.21,-2041.29 560.71,-2041.29 560.71,-2041.29 560.71,-2041.29 560.71,-2090.29 560.71,-2090.29 560.71,-2090.29 638.95,-2090.29 638.95,-2090.29"/>
+<polygon fill="#00d0d7" stroke="#00d0d7" points="638.95,-2093.79 648.95,-2090.29 638.95,-2086.79 638.95,-2093.79"/>
 </g>
 <!-- interface clojure.lang.Sorted -->
 <g id="node103" class="node">
@@ -1467,8 +1467,8 @@
 <!-- class clojure.lang.PersistentTreeMap&#45;&gt;interface clojure.lang.Sorted -->
 <g id="edge120" class="edge">
 <title>class clojure.lang.PersistentTreeMap&#45;&gt;interface clojure.lang.Sorted</title>
-<path fill="none" stroke="#00d0d7" d="M493.17,-2015.33C543.04,-2012.17 603.6,-2008.33 646.92,-2005.59"/>
-<polygon fill="#00d0d7" stroke="#00d0d7" points="647.24,-2009.07 656.99,-2004.95 646.79,-2002.09 647.24,-2009.07"/>
+<path fill="none" stroke="#00d0d7" d="M490.73,-2012.61C490.73,-2012.61 647.04,-2012.61 647.04,-2012.61"/>
+<polygon fill="#00d0d7" stroke="#00d0d7" points="647.04,-2016.11 657.04,-2012.61 647.04,-2009.11 647.04,-2016.11"/>
 </g>
 <!-- class clojure.lang.PersistentTreeSet -->
 <g id="node104" class="node">
@@ -1480,14 +1480,14 @@
 <!-- class clojure.lang.PersistentTreeSet&#45;&gt;class clojure.lang.APersistentSet -->
 <g id="edge122" class="edge">
 <title>class clojure.lang.PersistentTreeSet&#45;&gt;class clojure.lang.APersistentSet</title>
-<path fill="none" stroke="#76d700" d="M480.82,-1789.38C525.37,-1782.11 581.21,-1772.98 625.84,-1765.7"/>
-<polygon fill="#76d700" stroke="#76d700" points="626.46,-1769.14 635.76,-1764.07 625.33,-1762.23 626.46,-1769.14"/>
+<path fill="none" stroke="#76d700" d="M476.71,-1787.14C476.71,-1770.04 476.71,-1744.29 476.71,-1744.29 476.71,-1744.29 623.41,-1744.29 623.41,-1744.29"/>
+<polygon fill="#76d700" stroke="#76d700" points="623.41,-1747.79 633.41,-1744.29 623.41,-1740.79 623.41,-1747.79"/>
 </g>
 <!-- class clojure.lang.PersistentTreeSet&#45;&gt;interface clojure.lang.Sorted -->
 <g id="edge123" class="edge">
 <title>class clojure.lang.PersistentTreeSet&#45;&gt;interface clojure.lang.Sorted</title>
-<path fill="none" stroke="#76d700" d="M475.55,-1817.28C490.33,-1822.57 505.13,-1829.62 517.46,-1839 572.6,-1880.94 548.41,-1926.94 603.46,-1969 616.22,-1978.75 632,-1985.7 647.23,-1990.61"/>
-<polygon fill="#76d700" stroke="#76d700" points="646.54,-1994.06 657.12,-1993.56 648.53,-1987.35 646.54,-1994.06"/>
+<path fill="none" stroke="#76d700" d="M488.74,-1808C537.86,-1808 589.71,-1808 589.71,-1808 589.71,-1808 589.71,-1985.5 589.71,-1985.5 589.71,-1985.5 654.07,-1985.5 654.07,-1985.5"/>
+<polygon fill="#76d700" stroke="#76d700" points="654.07,-1989 664.07,-1985.5 654.07,-1982 654.07,-1989"/>
 </g>
 <!-- class clojure.lang.PersistentVector -->
 <g id="node105" class="node">
@@ -1499,26 +1499,26 @@
 <!-- class clojure.lang.PersistentVector&#45;&gt;class clojure.lang.APersistentVector -->
 <g id="edge124" class="edge">
 <title>class clojure.lang.PersistentVector&#45;&gt;class clojure.lang.APersistentVector</title>
-<path fill="none" stroke="#0061d7" d="M454.47,-1929.02C474.41,-1920.33 497.3,-1909.77 517.46,-1899 557.26,-1877.73 562.44,-1863.83 603.46,-1845 611.33,-1841.39 619.73,-1838.05 628.2,-1835"/>
-<polygon fill="#0061d7" stroke="#0061d7" points="629.45,-1838.27 637.76,-1831.69 627.16,-1831.65 629.45,-1838.27"/>
+<path fill="none" stroke="#0061d7" d="M484.6,-1951.36C547.53,-1951.36 623.71,-1951.36 623.71,-1951.36 623.71,-1951.36 623.71,-1835.24 623.71,-1835.24"/>
+<polygon fill="#0061d7" stroke="#0061d7" points="627.21,-1835.24 623.71,-1825.24 620.21,-1835.24 627.21,-1835.24"/>
 </g>
 <!-- class clojure.lang.PersistentVector&#45;&gt;interface clojure.lang.IReduce -->
 <g id="edge126" class="edge">
 <title>class clojure.lang.PersistentVector&#45;&gt;interface clojure.lang.IReduce</title>
-<path fill="none" stroke="#0061d7" d="M469.1,-1934.28C487.57,-1926.65 505.79,-1915.43 517.46,-1899 647.38,-1716.07 438.19,-1044.75 603.46,-893 620.01,-877.8 784.08,-886.8 805.67,-893 870.54,-911.61 934.75,-959.25 969.99,-988.6"/>
-<polygon fill="#0061d7" stroke="#0061d7" points="968,-991.5 977.9,-995.28 972.52,-986.15 968,-991.5"/>
+<path fill="none" stroke="#0061d7" d="M475.02,-1937.25C493.23,-1937.25 507.71,-1937.25 507.71,-1937.25 507.71,-1937.25 507.71,-1016.31 507.71,-1016.31 507.71,-1016.31 941.09,-1016.31 941.09,-1016.31"/>
+<polygon fill="#0061d7" stroke="#0061d7" points="941.09,-1019.82 951.09,-1016.31 941.09,-1012.82 941.09,-1019.82"/>
 </g>
 <!-- class clojure.lang.PersistentVector&#45;&gt;interface clojure.lang.IEditableCollection -->
 <g id="edge125" class="edge">
 <title>class clojure.lang.PersistentVector&#45;&gt;interface clojure.lang.IEditableCollection</title>
-<path fill="none" stroke="#0061d7" d="M460.56,-1969.03C478.9,-1975.55 499.2,-1983.18 517.46,-1991 556.74,-2007.82 563.17,-2019.75 603.46,-2034 611.24,-2036.75 619.48,-2039.23 627.77,-2041.44"/>
-<polygon fill="#0061d7" stroke="#0061d7" points="626.93,-2044.84 637.49,-2043.91 628.66,-2038.05 626.93,-2044.84"/>
+<path fill="none" stroke="#0061d7" d="M463.7,-1967.96C531.28,-1967.96 630.71,-1967.96 630.71,-1967.96 630.71,-1967.96 630.71,-2035.2 630.71,-2035.2"/>
+<polygon fill="#0061d7" stroke="#0061d7" points="627.21,-2035.2 630.71,-2045.2 634.21,-2035.2 627.21,-2035.2"/>
 </g>
 <!-- class clojure.lang.PersistentVector&#45;&gt;interface clojure.lang.IKVReduce -->
 <g id="edge127" class="edge">
 <title>class clojure.lang.PersistentVector&#45;&gt;interface clojure.lang.IKVReduce</title>
-<path fill="none" stroke="#0061d7" d="M466.16,-1966.99C483.51,-1973.15 501.84,-1981.09 517.46,-1991 563.1,-2019.96 556.04,-2051.04 603.46,-2077 613.14,-2082.3 624,-2086.32 634.91,-2089.38"/>
-<polygon fill="#0061d7" stroke="#0061d7" points="634.35,-2092.84 644.91,-2091.92 636.08,-2086.06 634.35,-2092.84"/>
+<path fill="none" stroke="#0061d7" d="M455.93,-1970.44C506.8,-1970.44 575.71,-1970.44 575.71,-1970.44 575.71,-1970.44 575.71,-2085.65 575.71,-2085.65 575.71,-2085.65 654.5,-2085.65 654.5,-2085.65"/>
+<polygon fill="#0061d7" stroke="#0061d7" points="654.5,-2089.15 664.5,-2085.65 654.5,-2082.15 654.5,-2089.15"/>
 </g>
 <!-- class clojure.lang.ProxyHandler -->
 <g id="node106" class="node">
@@ -1529,8 +1529,8 @@
 <!-- class clojure.lang.ProxyHandler&#45;&gt;interface java.lang.reflect.InvocationHandler -->
 <g id="edge128" class="edge">
 <title>class clojure.lang.ProxyHandler&#45;&gt;interface java.lang.reflect.InvocationHandler</title>
-<path fill="none" stroke="#d7009e" d="M172.78,-2827C203.4,-2827 241.32,-2827 277.43,-2827"/>
-<polygon fill="#d7009e" stroke="#d7009e" points="277.55,-2830.5 287.55,-2827 277.55,-2823.5 277.55,-2830.5"/>
+<path fill="none" stroke="#d7009e" d="M172.57,-2827C172.57,-2827 277.73,-2827 277.73,-2827"/>
+<polygon fill="#d7009e" stroke="#d7009e" points="277.73,-2830.5 287.73,-2827 277.73,-2823.5 277.73,-2830.5"/>
 </g>
 <!-- class clojure.lang.Range -->
 <g id="node107" class="node">
@@ -1542,20 +1542,20 @@
 <!-- class clojure.lang.Range&#45;&gt;class clojure.lang.ASeq -->
 <g id="edge129" class="edge">
 <title>class clojure.lang.Range&#45;&gt;class clojure.lang.ASeq</title>
-<path fill="none" stroke="#00d0d7" d="M757.78,-1171.29C807.46,-1175.37 882.26,-1181.52 935.09,-1185.86"/>
-<polygon fill="#00d0d7" stroke="#00d0d7" points="935.1,-1189.38 945.35,-1186.71 935.67,-1182.4 935.1,-1189.38"/>
+<path fill="none" stroke="#00d0d7" d="M741.81,-1186.44C741.81,-1186.44 935.52,-1186.44 935.52,-1186.44"/>
+<polygon fill="#00d0d7" stroke="#00d0d7" points="935.52,-1189.94 945.52,-1186.44 935.52,-1182.94 935.52,-1189.94"/>
 </g>
 <!-- class clojure.lang.Range&#45;&gt;interface clojure.lang.IReduce -->
 <g id="edge131" class="edge">
 <title>class clojure.lang.Range&#45;&gt;interface clojure.lang.IReduce</title>
-<path fill="none" stroke="#00d0d7" d="M755.12,-1157.58C772.07,-1152.87 790.56,-1145.96 805.67,-1136 854.9,-1103.55 840.96,-1065.06 891.67,-1035 906.53,-1026.2 924.37,-1020.88 941.14,-1017.68"/>
-<polygon fill="#00d0d7" stroke="#00d0d7" points="942.13,-1021.06 951.41,-1015.95 940.97,-1014.16 942.13,-1021.06"/>
+<path fill="none" stroke="#00d0d7" d="M743.95,-1148.61C770.5,-1148.61 800.71,-1148.61 800.71,-1148.61 800.71,-1148.61 800.71,-1023.28 800.71,-1023.28 800.71,-1023.28 948.56,-1023.28 948.56,-1023.28"/>
+<polygon fill="#00d0d7" stroke="#00d0d7" points="948.56,-1026.78 958.56,-1023.28 948.56,-1019.78 948.56,-1026.78"/>
 </g>
 <!-- class clojure.lang.Range&#45;&gt;interface clojure.lang.IChunkedSeq -->
 <g id="edge130" class="edge">
 <title>class clojure.lang.Range&#45;&gt;interface clojure.lang.IChunkedSeq</title>
-<path fill="none" stroke="#00d0d7" d="M751.2,-1180.59C798.41,-1194.66 872.77,-1216.81 927.47,-1233.11"/>
-<polygon fill="#00d0d7" stroke="#00d0d7" points="926.51,-1236.47 937.09,-1235.97 928.51,-1229.76 926.51,-1236.47"/>
+<path fill="none" stroke="#00d0d7" d="M732.21,-1190.15C793.15,-1190.15 933.71,-1190.15 933.71,-1190.15 933.71,-1190.15 933.71,-1227.22 933.71,-1227.22"/>
+<polygon fill="#00d0d7" stroke="#00d0d7" points="930.21,-1227.22 933.71,-1237.22 937.21,-1227.22 930.21,-1227.22"/>
 </g>
 <!-- class clojure.lang.Ratio -->
 <g id="node108" class="node">
@@ -1575,8 +1575,8 @@
 <!-- class clojure.lang.ReaderConditional&#45;&gt;interface clojure.lang.ILookup -->
 <g id="edge132" class="edge">
 <title>class clojure.lang.ReaderConditional&#45;&gt;interface clojure.lang.ILookup</title>
-<path fill="none" stroke="#b300d7" d="M1381.31,-2270.82C1430.29,-2265.65 1490.02,-2259.33 1532.59,-2254.83"/>
-<polygon fill="#b300d7" stroke="#b300d7" points="1533.18,-2258.28 1542.76,-2253.75 1532.45,-2251.32 1533.18,-2258.28"/>
+<path fill="none" stroke="#b300d7" d="M1345.97,-2257.75C1345.97,-2257.75 1535.86,-2257.75 1535.86,-2257.75"/>
+<polygon fill="#b300d7" stroke="#b300d7" points="1535.86,-2261.25 1545.86,-2257.75 1535.86,-2254.25 1535.86,-2261.25"/>
 </g>
 <!-- class clojure.lang.RecordIterator -->
 <g id="node110" class="node">
@@ -1587,8 +1587,8 @@
 <!-- class clojure.lang.RecordIterator&#45;&gt;interface java.util.Iterator -->
 <g id="edge133" class="edge">
 <title>class clojure.lang.RecordIterator&#45;&gt;interface java.util.Iterator</title>
-<path fill="none" stroke="#0061d7" d="M173.5,-2425.2C225.62,-2421.27 298.53,-2415.77 347.77,-2412.06"/>
-<polygon fill="#0061d7" stroke="#0061d7" points="348.19,-2415.54 357.9,-2411.29 347.66,-2408.55 348.19,-2415.54"/>
+<path fill="none" stroke="#0061d7" d="M162.03,-2419C162.03,-2419 371.2,-2419 371.2,-2419"/>
+<polygon fill="#0061d7" stroke="#0061d7" points="371.2,-2422.5 381.2,-2419 371.2,-2415.5 371.2,-2422.5"/>
 </g>
 <!-- class clojure.lang.Reduced -->
 <g id="node111" class="node">
@@ -1599,8 +1599,8 @@
 <!-- class clojure.lang.Reduced&#45;&gt;interface clojure.lang.IDeref -->
 <g id="edge134" class="edge">
 <title>class clojure.lang.Reduced&#45;&gt;interface clojure.lang.IDeref</title>
-<path fill="none" stroke="#0061d7" d="M1040.95,-590.34C1095.15,-599.96 1189.91,-616.78 1246.39,-626.81"/>
-<polygon fill="#0061d7" stroke="#0061d7" points="1246.01,-630.29 1256.47,-628.6 1247.24,-623.4 1246.01,-630.29"/>
+<path fill="none" stroke="#0061d7" d="M1033.03,-595C1110.88,-595 1293.71,-595 1293.71,-595 1293.71,-595 1293.71,-606.87 1293.71,-606.87"/>
+<polygon fill="#0061d7" stroke="#0061d7" points="1290.21,-606.87 1293.71,-616.87 1297.21,-606.87 1290.21,-606.87"/>
 </g>
 <!-- class clojure.lang.Ref -->
 <g id="node112" class="node">
@@ -1612,20 +1612,20 @@
 <!-- class clojure.lang.Ref&#45;&gt;interface clojure.lang.IFn -->
 <g id="edge136" class="edge">
 <title>class clojure.lang.Ref&#45;&gt;interface clojure.lang.IFn</title>
-<path fill="none" stroke="#00d0d7" d="M414.3,-701.35C436.86,-755.65 489.42,-887.63 517.46,-1003 549.42,-1134.53 501.21,-1517.3 603.46,-1606 637.4,-1635.45 760.9,-1609.88 805.67,-1606 938.62,-1594.49 994.55,-1516.92 1105.54,-1591 1188.4,-1646.3 1140.76,-1712.28 1191.54,-1798 1212.94,-1834.13 1243.87,-1871.12 1265.86,-1895.59"/>
-<polygon fill="#00d0d7" stroke="#00d0d7" points="1263.35,-1898.03 1272.66,-1903.08 1268.53,-1893.32 1263.35,-1898.03"/>
+<path fill="none" stroke="#00d0d7" d="M431.05,-687C521.89,-687 798.71,-687 798.71,-687 798.71,-687 798.71,-1938.52 798.71,-1938.52 798.71,-1938.52 1256.59,-1938.52 1256.59,-1938.52"/>
+<polygon fill="#00d0d7" stroke="#00d0d7" points="1256.59,-1942.02 1266.59,-1938.52 1256.59,-1935.02 1256.59,-1942.02"/>
 </g>
 <!-- class clojure.lang.Ref&#45;&gt;class clojure.lang.ARef -->
 <g id="edge135" class="edge">
 <title>class clojure.lang.Ref&#45;&gt;class clojure.lang.ARef</title>
-<path fill="none" stroke="#00d0d7" d="M433.7,-673.29C487.36,-668.46 599.57,-658.36 661.05,-652.83"/>
-<polygon fill="#00d0d7" stroke="#00d0d7" points="661.54,-656.3 671.19,-651.91 660.91,-649.32 661.54,-656.3"/>
+<path fill="none" stroke="#00d0d7" d="M425.76,-658.04C425.76,-658.04 662.86,-658.04 662.86,-658.04"/>
+<polygon fill="#00d0d7" stroke="#00d0d7" points="662.86,-661.54 672.86,-658.04 662.86,-654.54 662.86,-661.54"/>
 </g>
 <!-- class clojure.lang.Ref&#45;&gt;interface clojure.lang.IRef -->
 <g id="edge137" class="edge">
 <title>class clojure.lang.Ref&#45;&gt;interface clojure.lang.IRef</title>
-<path fill="none" stroke="#00d0d7" d="M432.65,-668.32C455.7,-662.18 488.7,-653.26 517.46,-645 555.84,-633.98 563.96,-624.84 603.46,-619 692.37,-605.85 718.5,-597.15 805.67,-619 847.72,-629.54 850.93,-650.22 891.67,-665 913.58,-672.94 939.12,-678.36 959.64,-681.82"/>
-<polygon fill="#00d0d7" stroke="#00d0d7" points="959.14,-685.29 969.57,-683.42 960.25,-678.38 959.14,-685.29"/>
+<path fill="none" stroke="#00d0d7" d="M433.36,-681.44C433.36,-681.44 959.76,-681.44 959.76,-681.44"/>
+<polygon fill="#00d0d7" stroke="#00d0d7" points="959.76,-684.94 969.76,-681.44 959.76,-677.94 959.76,-684.94"/>
 </g>
 <!-- class clojure.lang.Repeat -->
 <g id="node113" class="node">
@@ -1637,14 +1637,14 @@
 <!-- class clojure.lang.Repeat&#45;&gt;class clojure.lang.ASeq -->
 <g id="edge138" class="edge">
 <title>class clojure.lang.Repeat&#45;&gt;class clojure.lang.ASeq</title>
-<path fill="none" stroke="#d78100" d="M754.37,-1055.14C771.35,-1059.93 790.04,-1066.69 805.67,-1076 851.58,-1103.33 845.55,-1133.03 891.67,-1160 905.85,-1168.29 922.41,-1174.51 938.17,-1179.1"/>
-<polygon fill="#d78100" stroke="#d78100" points="937.27,-1182.49 947.84,-1181.76 939.13,-1175.74 937.27,-1182.49"/>
+<path fill="none" stroke="#d78100" d="M754.58,-1055C796.21,-1055 848.71,-1055 848.71,-1055 848.71,-1055 848.71,-1179 848.71,-1179 848.71,-1179 940.35,-1179 940.35,-1179"/>
+<polygon fill="#d78100" stroke="#d78100" points="940.35,-1182.5 950.35,-1179 940.35,-1175.5 940.35,-1182.5"/>
 </g>
 <!-- class clojure.lang.Repeat&#45;&gt;interface clojure.lang.IReduce -->
 <g id="edge139" class="edge">
 <title>class clojure.lang.Repeat&#45;&gt;interface clojure.lang.IReduce</title>
-<path fill="none" stroke="#d78100" d="M757.44,-1039.32C809.02,-1033.66 887.94,-1025.02 941.09,-1019.19"/>
-<polygon fill="#d78100" stroke="#d78100" points="941.47,-1022.67 951.03,-1018.1 940.71,-1015.71 941.47,-1022.67"/>
+<path fill="none" stroke="#d78100" d="M727.64,-1020.7C727.64,-1020.7 941.89,-1020.7 941.89,-1020.7"/>
+<polygon fill="#d78100" stroke="#d78100" points="941.89,-1024.2 951.89,-1020.7 941.89,-1017.2 941.89,-1024.2"/>
 </g>
 <!-- class clojure.lang.SeqEnumeration -->
 <g id="node114" class="node">
@@ -1655,8 +1655,8 @@
 <!-- class clojure.lang.SeqEnumeration&#45;&gt;interface java.util.Enumeration -->
 <g id="edge141" class="edge">
 <title>class clojure.lang.SeqEnumeration&#45;&gt;interface java.util.Enumeration</title>
-<path fill="none" stroke="#00d0d7" d="M185.72,-2638C222.37,-2638 266.75,-2638 305.71,-2638"/>
-<polygon fill="#00d0d7" stroke="#00d0d7" points="306.02,-2641.5 316.02,-2638 306.02,-2634.5 306.02,-2641.5"/>
+<path fill="none" stroke="#00d0d7" d="M185.63,-2638C185.63,-2638 306.12,-2638 306.12,-2638"/>
+<polygon fill="#00d0d7" stroke="#00d0d7" points="306.12,-2641.5 316.12,-2638 306.12,-2634.5 306.12,-2641.5"/>
 </g>
 <!-- class clojure.lang.SeqIterator -->
 <g id="node115" class="node">
@@ -1667,8 +1667,8 @@
 <!-- class clojure.lang.SeqIterator&#45;&gt;interface java.util.Iterator -->
 <g id="edge142" class="edge">
 <title>class clojure.lang.SeqIterator&#45;&gt;interface java.util.Iterator</title>
-<path fill="none" stroke="#5a00d7" d="M161.65,-2390.73C213.84,-2394.49 294.04,-2400.26 347.14,-2404.08"/>
-<polygon fill="#5a00d7" stroke="#5a00d7" points="347.15,-2407.59 357.38,-2404.82 347.66,-2400.61 347.15,-2407.59"/>
+<path fill="none" stroke="#5a00d7" d="M146.33,-2400C146.33,-2400 361.97,-2400 361.97,-2400"/>
+<polygon fill="#5a00d7" stroke="#5a00d7" points="361.97,-2403.5 371.97,-2400 361.97,-2396.5 361.97,-2403.5"/>
 </g>
 <!-- interface clojure.lang.Settable -->
 <g id="node116" class="node">
@@ -1686,14 +1686,14 @@
 <!-- class clojure.lang.StringSeq&#45;&gt;class clojure.lang.ASeq -->
 <g id="edge144" class="edge">
 <title>class clojure.lang.StringSeq&#45;&gt;class clojure.lang.ASeq</title>
-<path fill="none" stroke="#d7009e" d="M761.38,-1569.14C777.53,-1564.63 793.95,-1557.2 805.67,-1545 908.59,-1437.87 787.92,-1328.32 891.67,-1222 903.37,-1210.02 919.42,-1202.6 935.49,-1198.04"/>
-<polygon fill="#d7009e" stroke="#d7009e" points="936.6,-1201.36 945.46,-1195.54 934.91,-1194.57 936.6,-1201.36"/>
+<path fill="none" stroke="#d7009e" d="M759.95,-1567.04C791.07,-1567.04 823.71,-1567.04 823.71,-1567.04 823.71,-1567.04 823.71,-1215.78 823.71,-1215.78 823.71,-1215.78 967.51,-1215.78 967.51,-1215.78"/>
+<polygon fill="#d7009e" stroke="#d7009e" points="967.51,-1219.28 977.51,-1215.78 967.51,-1212.28 967.51,-1219.28"/>
 </g>
 <!-- class clojure.lang.StringSeq&#45;&gt;interface clojure.lang.IndexedSeq -->
 <g id="edge145" class="edge">
 <title>class clojure.lang.StringSeq&#45;&gt;interface clojure.lang.IndexedSeq</title>
-<path fill="none" stroke="#d7009e" d="M758.72,-1565.56C774.66,-1560.89 791.63,-1554.27 805.67,-1545 881.25,-1495.1 943.6,-1407.05 975.21,-1356.85"/>
-<polygon fill="#d7009e" stroke="#d7009e" points="978.25,-1358.57 980.56,-1348.23 972.31,-1354.88 978.25,-1358.57"/>
+<path fill="none" stroke="#d7009e" d="M760.1,-1584.96C830.47,-1584.96 942.71,-1584.96 942.71,-1584.96 942.71,-1584.96 942.71,-1346.45 942.71,-1346.45"/>
+<polygon fill="#d7009e" stroke="#d7009e" points="946.21,-1346.45 942.71,-1336.45 939.21,-1346.45 946.21,-1346.45"/>
 </g>
 <!-- class clojure.lang.Symbol -->
 <g id="node118" class="node">
@@ -1706,8 +1706,8 @@
 <!-- class clojure.lang.Symbol&#45;&gt;class clojure.lang.AFn -->
 <g id="edge146" class="edge">
 <title>class clojure.lang.Symbol&#45;&gt;class clojure.lang.AFn</title>
-<path fill="none" stroke="#d7009e" d="M759.87,-1944.22C796.86,-1955.01 847.02,-1969.14 891.67,-1980 915.09,-1985.7 941.65,-1991.21 962.31,-1995.29"/>
-<polygon fill="#d7009e" stroke="#d7009e" points="961.75,-1998.75 972.24,-1997.23 963.1,-1991.88 961.75,-1998.75"/>
+<path fill="none" stroke="#d7009e" d="M758.71,-1945.25C758.71,-1967.67 758.71,-2004 758.71,-2004 758.71,-2004 961.55,-2004 961.55,-2004"/>
+<polygon fill="#d7009e" stroke="#d7009e" points="961.55,-2007.5 971.55,-2004 961.55,-2000.5 961.55,-2007.5"/>
 </g>
 <!-- class clojure.lang.TaggedLiteral -->
 <g id="node119" class="node">
@@ -1719,8 +1719,8 @@
 <!-- class clojure.lang.TaggedLiteral&#45;&gt;interface clojure.lang.ILookup -->
 <g id="edge147" class="edge">
 <title>class clojure.lang.TaggedLiteral&#45;&gt;interface clojure.lang.ILookup</title>
-<path fill="none" stroke="#b300d7" d="M1363.27,-2226.03C1414.83,-2231.31 1484.49,-2238.44 1532.46,-2243.35"/>
-<polygon fill="#b300d7" stroke="#b300d7" points="1532.34,-2246.85 1542.65,-2244.39 1533.06,-2239.89 1532.34,-2246.85"/>
+<path fill="none" stroke="#b300d7" d="M1343.61,-2238.44C1343.61,-2238.44 1540.61,-2238.44 1540.61,-2238.44"/>
+<polygon fill="#b300d7" stroke="#b300d7" points="1540.61,-2241.94 1550.61,-2238.44 1540.61,-2234.94 1540.61,-2241.94"/>
 </g>
 <!-- class clojure.lang.TransactionalHashMap -->
 <g id="node120" class="node">
@@ -1731,8 +1731,8 @@
 <!-- class clojure.lang.TransactionalHashMap&#45;&gt;interface java.util.concurrent.ConcurrentMap -->
 <g id="edge148" class="edge">
 <title>class clojure.lang.TransactionalHashMap&#45;&gt;interface java.util.concurrent.ConcurrentMap</title>
-<path fill="none" stroke="#00d0d7" d="M504.3,-2258C532.85,-2258 564.08,-2258 593.16,-2258"/>
-<polygon fill="#00d0d7" stroke="#00d0d7" points="593.36,-2261.5 603.36,-2258 593.36,-2254.5 593.36,-2261.5"/>
+<path fill="none" stroke="#00d0d7" d="M503.97,-2258C503.97,-2258 593.43,-2258 593.43,-2258"/>
+<polygon fill="#00d0d7" stroke="#00d0d7" points="593.43,-2261.5 603.43,-2258 593.43,-2254.5 593.43,-2261.5"/>
 </g>
 <!-- class clojure.lang.TransformerIterator -->
 <g id="node121" class="node">
@@ -1743,8 +1743,8 @@
 <!-- class clojure.lang.TransformerIterator&#45;&gt;interface java.util.Iterator -->
 <g id="edge149" class="edge">
 <title>class clojure.lang.TransformerIterator&#45;&gt;interface java.util.Iterator</title>
-<path fill="none" stroke="#00d0d7" d="M169.22,-2357.03C225.8,-2369.44 309.54,-2387.81 359.52,-2398.78"/>
-<polygon fill="#00d0d7" stroke="#00d0d7" points="358.83,-2402.21 369.35,-2400.93 360.33,-2395.37 358.83,-2402.21"/>
+<path fill="none" stroke="#00d0d7" d="M191.71,-2349.85C191.71,-2363.25 191.71,-2395 191.71,-2395 191.71,-2395 377.4,-2395 377.4,-2395"/>
+<polygon fill="#00d0d7" stroke="#00d0d7" points="377.4,-2398.5 387.4,-2395 377.4,-2391.5 377.4,-2398.5"/>
 </g>
 <!-- class clojure.lang.Var -->
 <g id="node122" class="node">
@@ -1757,26 +1757,26 @@
 <!-- class clojure.lang.Var&#45;&gt;interface clojure.lang.IFn -->
 <g id="edge151" class="edge">
 <title>class clojure.lang.Var&#45;&gt;interface clojure.lang.IFn</title>
-<path fill="none" stroke="#d70000" d="M403.1,-1081.7C404.08,-1188.03 423.23,-1490.84 603.46,-1619 676.7,-1671.08 716.09,-1626.24 805.67,-1619 844.27,-1615.88 853.07,-1608.12 891.67,-1605 939.04,-1601.17 1065.67,-1579.12 1105.54,-1605 1184.3,-1656.13 1142.65,-1717.82 1191.54,-1798 1213.39,-1833.86 1244.25,-1870.89 1266.1,-1895.45"/>
-<polygon fill="#d70000" stroke="#d70000" points="1263.56,-1897.86 1272.85,-1902.96 1268.77,-1893.19 1263.56,-1897.86"/>
+<path fill="none" stroke="#d70000" d="M419.46,-1075.5C506.65,-1075.5 901.71,-1075.5 901.71,-1075.5 901.71,-1075.5 901.71,-1936.04 901.71,-1936.04 901.71,-1936.04 1254.41,-1936.04 1254.41,-1936.04"/>
+<polygon fill="#d70000" stroke="#d70000" points="1254.41,-1939.54 1264.41,-1936.04 1254.41,-1932.54 1254.41,-1939.54"/>
 </g>
 <!-- class clojure.lang.Var&#45;&gt;class clojure.lang.ARef -->
 <g id="edge150" class="edge">
 <title>class clojure.lang.Var&#45;&gt;class clojure.lang.ARef</title>
-<path fill="none" stroke="#d70000" d="M413.43,-1008.74C435.36,-936.72 495.01,-771.94 603.46,-682 620.01,-668.27 642.46,-660.19 661.91,-655.47"/>
-<polygon fill="#d70000" stroke="#d70000" points="662.75,-658.87 671.76,-653.3 661.24,-652.04 662.75,-658.87"/>
+<path fill="none" stroke="#d70000" d="M419.85,-1012.69C455.25,-1012.69 532.71,-1012.69 532.71,-1012.69 532.71,-1012.69 532.71,-666.96 532.71,-666.96 532.71,-666.96 669.58,-666.96 669.58,-666.96"/>
+<polygon fill="#d70000" stroke="#d70000" points="669.58,-670.46 679.58,-666.96 669.58,-663.46 669.58,-670.46"/>
 </g>
 <!-- class clojure.lang.Var&#45;&gt;interface clojure.lang.IRef -->
 <g id="edge152" class="edge">
 <title>class clojure.lang.Var&#45;&gt;interface clojure.lang.IRef</title>
-<path fill="none" stroke="#d70000" d="M411.67,-1008.12C430.56,-934.02 485.16,-765.19 603.46,-695 633.53,-677.16 866.79,-682.7 959.65,-685.67"/>
-<polygon fill="#d70000" stroke="#d70000" points="959.63,-689.17 969.74,-686 959.86,-682.17 959.63,-689.17"/>
+<path fill="none" stroke="#d70000" d="M421.79,-1014.5C500.72,-1014.5 795.71,-1014.5 795.71,-1014.5 795.71,-1014.5 795.71,-692.56 795.71,-692.56 795.71,-692.56 959.53,-692.56 959.53,-692.56"/>
+<polygon fill="#d70000" stroke="#d70000" points="959.54,-696.07 969.53,-692.56 959.53,-689.07 959.54,-696.07"/>
 </g>
 <!-- class clojure.lang.Var&#45;&gt;interface clojure.lang.Settable -->
 <g id="edge153" class="edge">
 <title>class clojure.lang.Var&#45;&gt;interface clojure.lang.Settable</title>
-<path fill="none" stroke="#d70000" d="M417.86,-1077.17C444.96,-1135.86 509.61,-1257.61 603.46,-1319 616.65,-1327.63 632.7,-1332.92 648.05,-1336.15"/>
-<polygon fill="#d70000" stroke="#d70000" points="647.53,-1339.62 658,-1337.99 648.81,-1332.73 647.53,-1339.62"/>
+<path fill="none" stroke="#d70000" d="M402.71,-1081.62C402.71,-1161.53 402.71,-1341 402.71,-1341 402.71,-1341 648.06,-1341 648.06,-1341"/>
+<polygon fill="#d70000" stroke="#d70000" points="648.06,-1344.5 658.06,-1341 648.06,-1337.5 648.06,-1344.5"/>
 </g>
 <!-- class clojure.lang.Volatile -->
 <g id="node123" class="node">
@@ -1788,8 +1788,8 @@
 <!-- class clojure.lang.Volatile&#45;&gt;interface clojure.lang.IDeref -->
 <g id="edge154" class="edge">
 <title>class clojure.lang.Volatile&#45;&gt;interface clojure.lang.IDeref</title>
-<path fill="none" stroke="#0061d7" d="M1045.38,-635C1100.1,-635 1191.17,-635 1246.16,-635"/>
-<polygon fill="#0061d7" stroke="#0061d7" points="1246.33,-638.5 1256.33,-635 1246.33,-631.5 1246.33,-638.5"/>
+<path fill="none" stroke="#0061d7" d="M1045.34,-635C1045.34,-635 1246.37,-635 1246.37,-635"/>
+<polygon fill="#0061d7" stroke="#0061d7" points="1246.37,-638.5 1256.37,-635 1246.37,-631.5 1246.37,-638.5"/>
 </g>
 <!-- interface clojure.lang.WarnBoxedMath -->
 <g id="node124" class="node">
@@ -1800,8 +1800,8 @@
 <!-- interface clojure.lang.WarnBoxedMath&#45;&gt;interface java.lang.annotation.Annotation -->
 <g id="edge155" class="edge">
 <title>interface clojure.lang.WarnBoxedMath&#45;&gt;interface java.lang.annotation.Annotation</title>
-<path fill="none" stroke="#00d0d7" d="M191.87,-2301C231.25,-2301 278.36,-2301 317.94,-2301"/>
-<polygon fill="#00d0d7" stroke="#00d0d7" points="318.1,-2304.5 328.1,-2301 318.1,-2297.5 318.1,-2304.5"/>
+<path fill="none" stroke="#00d0d7" d="M192.22,-2301C192.22,-2301 317.99,-2301 317.99,-2301"/>
+<polygon fill="#00d0d7" stroke="#00d0d7" points="317.99,-2304.5 327.99,-2301 317.99,-2297.5 317.99,-2304.5"/>
 </g>
 <!-- class clojure.core$future_call$reify__8454 -->
 <g id="node125" class="node">
@@ -1813,26 +1813,26 @@
 <!-- class clojure.core$future_call$reify__8454&#45;&gt;interface clojure.lang.IPending -->
 <g id="edge156" class="edge">
 <title>class clojure.core$future_call$reify__8454&#45;&gt;interface clojure.lang.IPending</title>
-<path fill="none" stroke="#76d700" d="M1040.71,-534.49C1062.27,-538.26 1087.81,-546.03 1105.54,-562 1180.46,-629.51 1133.28,-689.67 1191.54,-772 1210.34,-798.57 1238.39,-822.75 1260.16,-839.34"/>
-<polygon fill="#76d700" stroke="#76d700" points="1258.36,-842.36 1268.46,-845.54 1262.54,-836.75 1258.36,-842.36"/>
+<path fill="none" stroke="#76d700" d="M1033.21,-546.65C1049.2,-546.65 1064.71,-546.65 1064.71,-546.65 1064.71,-546.65 1064.71,-854.16 1064.71,-854.16 1064.71,-854.16 1235.01,-854.16 1235.01,-854.16"/>
+<polygon fill="#76d700" stroke="#76d700" points="1235.01,-857.66 1245.01,-854.16 1235.01,-850.66 1235.01,-857.66"/>
 </g>
 <!-- class clojure.core$future_call$reify__8454&#45;&gt;interface clojure.lang.IDeref -->
 <g id="edge159" class="edge">
 <title>class clojure.core$future_call$reify__8454&#45;&gt;interface clojure.lang.IDeref</title>
-<path fill="none" stroke="#76d700" d="M1038.1,-541.39C1058.31,-547.07 1083.41,-554.46 1105.54,-562 1158.23,-579.96 1217.97,-603.92 1255.45,-619.41"/>
-<polygon fill="#76d700" stroke="#76d700" points="1254.36,-622.75 1264.94,-623.35 1257.05,-616.28 1254.36,-622.75"/>
+<path fill="none" stroke="#76d700" d="M1040.85,-535.44C1057.5,-535.44 1072.71,-535.44 1072.71,-535.44 1072.71,-535.44 1072.71,-626 1072.71,-626 1072.71,-626 1249.52,-626 1249.52,-626"/>
+<polygon fill="#76d700" stroke="#76d700" points="1249.52,-629.5 1259.52,-626 1249.52,-622.5 1249.52,-629.5"/>
 </g>
 <!-- class clojure.core$future_call$reify__8454&#45;&gt;interface java.util.concurrent.Future -->
 <g id="edge158" class="edge">
 <title>class clojure.core$future_call$reify__8454&#45;&gt;interface java.util.concurrent.Future</title>
-<path fill="none" stroke="#76d700" d="M1040.95,-533.82C1090.2,-537.19 1172.95,-542.84 1230.03,-546.73"/>
-<polygon fill="#76d700" stroke="#76d700" points="1229.8,-550.22 1240.02,-547.41 1230.28,-543.24 1229.8,-550.22"/>
+<path fill="none" stroke="#76d700" d="M1039.92,-524.22C1039.92,-524.22 1266.11,-524.22 1266.11,-524.22"/>
+<polygon fill="#76d700" stroke="#76d700" points="1266.11,-527.72 1276.11,-524.22 1266.11,-520.72 1266.11,-527.72"/>
 </g>
 <!-- class clojure.core$future_call$reify__8454&#45;&gt;interface clojure.lang.IBlockingDeref -->
 <g id="edge157" class="edge">
 <title>class clojure.core$future_call$reify__8454&#45;&gt;interface clojure.lang.IBlockingDeref</title>
-<path fill="none" stroke="#76d700" d="M1040.03,-525.07C1085.85,-518.34 1161.53,-507.23 1218.11,-498.93"/>
-<polygon fill="#76d700" stroke="#76d700" points="1218.7,-502.38 1228.08,-497.46 1217.68,-495.45 1218.7,-502.38"/>
+<path fill="none" stroke="#76d700" d="M1024.1,-509.5C1083.24,-509.5 1224.71,-509.5 1224.71,-509.5 1224.71,-509.5 1224.71,-506.74 1224.71,-506.74"/>
+<polygon fill="#76d700" stroke="#76d700" points="1228.21,-506.74 1224.71,-496.74 1221.21,-506.74 1228.21,-506.74"/>
 </g>
 </g>
 </svg>

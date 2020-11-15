@@ -109,9 +109,11 @@ digraph {
   "interface clojure.lang.Fn" [ label="Fn\nfn?" color="#d7009e" shape="octagon"];
   "class clojure.lang.FnLoaderThunk" [ label="FnLoaderThunk\n[MWZ]" color="#d70000" shape="oval"];
   "class clojure.lang.FnLoaderThunk" -> "class clojure.lang.RestFn" [ color="#d70000" ];
+  "interface java.util.concurrent.Future" [ label="Future\nfuture?" color="#5a00d7" shape="diamond"];
   "interface clojure.lang.IAtom" [ label="IAtom" color="#76d700" shape="octagon"];
   "interface clojure.lang.IAtom2" [ label="IAtom2" color="#00d0d7" shape="octagon"];
   "interface clojure.lang.IAtom2" -> "interface clojure.lang.IAtom" [ color="#00d0d7" ];
+  "interface clojure.lang.IBlockingDeref" [ label="IBlockingDeref" color="#b300d7" shape="octagon"];
   "interface clojure.lang.IChunk" [ label="IChunk\n[1]" color="#00d764" shape="octagon"];
   "interface clojure.lang.IChunk" -> "interface clojure.lang.Indexed" [ color="#00d764" ];
   "interface clojure.lang.IChunkedSeq" [ label="IChunkedSeq\nchunked-seq?" color="#5a00d7" shape="octagon"];
@@ -296,4 +298,9 @@ digraph {
   "class clojure.lang.Volatile" -> "interface clojure.lang.IDeref" [ color="#0061d7" ];
   "interface clojure.lang.WarnBoxedMath" [ label="WarnBoxedMath" color="#00d0d7" shape="octagon"];
   "interface clojure.lang.WarnBoxedMath" -> "interface java.lang.annotation.Annotation" [ color="#00d0d7" ];
+  "class clojure.core$future_call$reify__8454" [ label="(future)\n[MW]" color="#76d700" shape="oval"];
+  "class clojure.core$future_call$reify__8454" -> "interface clojure.lang.IPending" [ color="#76d700" ];
+  "class clojure.core$future_call$reify__8454" -> "interface clojure.lang.IBlockingDeref" [ color="#76d700" ];
+  "class clojure.core$future_call$reify__8454" -> "interface java.util.concurrent.Future" [ color="#76d700" ];
+  "class clojure.core$future_call$reify__8454" -> "interface clojure.lang.IDeref" [ color="#76d700" ];
 }
