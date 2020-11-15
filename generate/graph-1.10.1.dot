@@ -113,7 +113,7 @@ digraph {
   "interface clojure.lang.IAtom2" -> "interface clojure.lang.IAtom" [ color="#00d0d7" ];
   "interface clojure.lang.IChunk" [ label="IChunk\n[1]" color="#00d764" shape="octagon"];
   "interface clojure.lang.IChunk" -> "interface clojure.lang.Indexed" [ color="#00d764" ];
-  "interface clojure.lang.IChunkedSeq" [ label="IChunkedSeq" color="#5a00d7" shape="octagon"];
+  "interface clojure.lang.IChunkedSeq" [ label="IChunkedSeq\nchunked-seq?" color="#5a00d7" shape="octagon"];
   "interface clojure.lang.IChunkedSeq" -> "interface clojure.lang.ISeq" [ color="#5a00d7" ];
   "interface clojure.lang.IChunkedSeq" -> "interface clojure.lang.Sequential" [ color="#5a00d7" ];
   "interface clojure.lang.IDeref" [ label="IDeref" color="#b300d7" shape="octagon"];
@@ -167,7 +167,7 @@ digraph {
   "interface clojure.lang.ITransientVector" [ label="ITransientVector\n[1]" color="#00d764" shape="octagon"];
   "interface clojure.lang.ITransientVector" -> "interface clojure.lang.ITransientAssociative" [ color="#00d764" ];
   "interface clojure.lang.ITransientVector" -> "interface clojure.lang.Indexed" [ color="#00d764" ];
-  "interface clojure.lang.Indexed" [ label="Indexed\n[1]" color="#00d764" shape="octagon"];
+  "interface clojure.lang.Indexed" [ label="Indexed\nindexed?\n[1]" color="#00d764" shape="octagon"];
   "interface clojure.lang.IndexedSeq" [ label="IndexedSeq\n[1]" color="#b300d7" shape="octagon"];
   "interface clojure.lang.IndexedSeq" -> "interface clojure.lang.ISeq" [ color="#b300d7" ];
   "interface clojure.lang.IndexedSeq" -> "interface clojure.lang.Sequential" [ color="#b300d7" ];
@@ -249,7 +249,7 @@ digraph {
   "class clojure.lang.Range" -> "interface clojure.lang.IChunkedSeq" [ color="#00d0d7" ];
   "class clojure.lang.Range" -> "interface clojure.lang.IReduce" [ color="#00d0d7" ];
   "class clojure.lang.Ratio" [ label="Ratio\nratio?\n[Z=]" color="#5a00d7" shape="oval"];
-  "class clojure.lang.ReaderConditional" [ label="ReaderConditional" color="#b300d7" shape="oval"];
+  "class clojure.lang.ReaderConditional" [ label="ReaderConditional\nreader-conditional?" color="#b300d7" shape="oval"];
   "class clojure.lang.ReaderConditional" -> "interface clojure.lang.ILookup" [ color="#b300d7" ];
   "class clojure.lang.RecordIterator" [ label="RecordIterator" color="#0061d7" shape="oval"];
   "class clojure.lang.RecordIterator" -> "interface java.util.Iterator" [ color="#0061d7" ];
@@ -280,7 +280,7 @@ digraph {
   "class clojure.lang.StringSeq" -> "interface clojure.lang.IndexedSeq" [ color="#d7009e" ];
   "class clojure.lang.Symbol" [ label="Symbol\nsymbol?\n[MWHZN=]" color="#d7009e" shape="oval"];
   "class clojure.lang.Symbol" -> "class clojure.lang.AFn" [ color="#d7009e" ];
-  "class clojure.lang.TaggedLiteral" [ label="TaggedLiteral" color="#b300d7" shape="oval"];
+  "class clojure.lang.TaggedLiteral" [ label="TaggedLiteral\ntagged-literal?" color="#b300d7" shape="oval"];
   "class clojure.lang.TaggedLiteral" -> "interface clojure.lang.ILookup" [ color="#b300d7" ];
   "class clojure.lang.TransactionalHashMap" [ label="TransactionalHashMap" color="#00d0d7" shape="oval"];
   "class clojure.lang.TransactionalHashMap" -> "interface java.util.concurrent.ConcurrentMap" [ color="#00d0d7" ];
@@ -291,7 +291,7 @@ digraph {
   "class clojure.lang.Var" -> "interface clojure.lang.IFn" [ color="#d70000" ];
   "class clojure.lang.Var" -> "interface clojure.lang.IRef" [ color="#d70000" ];
   "class clojure.lang.Var" -> "interface clojure.lang.Settable" [ color="#d70000" ];
-  "class clojure.lang.Volatile" [ label="Volatile" color="#0061d7" shape="oval"];
+  "class clojure.lang.Volatile" [ label="Volatile\nvolatile?" color="#0061d7" shape="oval"];
   "class clojure.lang.Volatile" -> "interface clojure.lang.IDeref" [ color="#0061d7" ];
   "interface clojure.lang.WarnBoxedMath" [ label="WarnBoxedMath" color="#00d0d7" shape="octagon"];
   "interface clojure.lang.WarnBoxedMath" -> "interface java.lang.annotation.Annotation" [ color="#00d0d7" ];

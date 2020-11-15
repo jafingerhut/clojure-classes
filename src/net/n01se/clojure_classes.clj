@@ -43,14 +43,52 @@
 ; Some lighter colors:
 ; "#ff817f" "#ff7fea" "#b47fff" "#7fa5ff" "#7ffffb" "#a8ff7f" "#ffd97f"
 
-(def preds '{ISeq seq?, IPersistentMap map?, IPersistentVector vector?,
-             Symbol symbol?, Keyword keyword?, Var var?,
-             IPersistentCollection coll?, IPersistentList list?,
-             IPersistentSet set?, Number number?, IFn ifn?,
-             Associative associative?, Sequential sequential?,
-             Sorted sorted?, Reversible reversible?, Ratio ratio?
-             Fn fn?, Delay delay?, Class class?, BigDecimal decimal?,
-             String string?})
+;; Functions in src/clj/clojure/core.clj as of Clojure 1.10.1 that
+;; return (instance? some-class x) are all included in the map 'preds'
+;; below.
+
+;; g means that the predicate occurs at least once in the generated graph
+;; b means that it is an interface that is in the map 'badges'
+
+(def preds '{
+             ;; classes and interfaces in clojure.lang package
+             Associative associative?,       ;; g
+             Counted counted?,               ;;  b
+             Delay delay?,                   ;; g
+             Fn fn?,                         ;; g
+             IChunkedSeq chunked-seq?,       ;; g
+             IFn ifn?,                       ;; g
+             IPersistentCollection coll?,    ;; g
+             IPersistentList list?,          ;; g
+             IPersistentMap map?,            ;; g
+             IPersistentSet set?,            ;; g
+             IPersistentVector vector?,      ;; g
+             ISeq seq?,                      ;; g
+             Indexed indexed?,               ;; g
+             Keyword keyword?,               ;; g
+             Ratio ratio?,                   ;; g
+             ReaderConditional reader-conditional?, ;; g
+             Reversible reversible?,         ;;  b
+             Sequential sequential?,         ;; g
+             Sorted sorted?,                 ;; g
+             Symbol symbol?,                 ;; g
+             TaggedLiteral tagged-literal?,  ;; g
+             Var var?,                       ;; g
+             Volatile volatile?,             ;; g
+
+             ;; classes and interfaces in java.lang or other java.* package
+             BigDecimal decimal?,            ;;    package java.math
+             Boolean boolean?,               ;;    package java.lang
+             Character char?,                ;;    package java.lang
+             Class class?,                   ;;    package java.lang
+             Double double?,                 ;;    package java.lang
+             Future future?,                 ;;    package java.util.concurrent
+             Map$Entry map-entry?            ;;    package java.util
+             Number number?,                 ;;    package java.lang
+             String string?,                 ;;    package java.lang
+             URI uri?,                       ;;    package java.net
+             UUID uuid?                      ;;    package java.util
+             })
 
 (def ctors '{IteratorSeq iterator-seq PersistentList list ISeq seq
              EnumerationSeq enumeration-seq Var "intern, with-local-vars"
@@ -82,17 +120,27 @@
 
 (def badges
   (apply array-map
-   '[IMeta M
-     IObj W
-     Iterable T
-     Counted 1
-     IHashEq H
-     Serializable Z
-     Reversible R
-     Named N
-     Comparable =]))
+   '[IMeta M          ;; package clojure.lang
+     IObj W           ;; package clojure.lang
+     Iterable T       ;; package java.lang
+     Counted 1        ;; package clojure.lang
+     IHashEq H        ;; package clojure.lang
+     Serializable Z   ;; package java.io
+     Reversible R     ;; package clojure.lang
+     Named N          ;; package clojure.lang
+     Comparable =]))  ;; package java.lang
 
-(def color-override '{PersistentList "#76d700" PersistentQueue "#0061d7"
+;; These nodes represent classes, not interfaces, so I don't want to
+;; use the badges idea to represent them, but to avoid long edges
+;; stretching across the page, putting a class X in this map will
+;; cause each edge "A -> X" to be represented as "A -> X copy #n".
+;; All edges "X -> B" will still share a single drawn node X.
+
+;;(def nodes-to-duplicate '#{AFn ASeq})
+(def nodes-to-duplicate '#{})
+
+(def color-override '{PersistentList "#76d700"
+                      PersistentQueue "#0061d7"
                       LazySeq "#d78100"})
 
 ;; TBD: See if there is a way to get this class name reliably at run
@@ -158,6 +206,11 @@
         (recur (assoc found cls kids)
                (into (pop work) (remove found kids)))))))
 
+(defn inc-freq [frequencies-map k]
+  (assoc frequencies-map k (inc (get frequencies-map k 0))))
+
+(def duplicated-node-counts (atom {}))
+
 (defn dotstr [classes graph]
   (str
     "digraph {\n"
@@ -206,9 +259,18 @@
               node
               (when cluster "}\n")
               (str-for [sub (graph cls)]
-                (when-not (badges (class-name sub))
-                  (str "  \"" cls "\" -> \"" sub "\""
-                       " [ color=\"" color "\" ];\n")))))))
+                (let [sub-name (class-name sub)]
+                  (if (badges sub-name)
+                    nil
+                    (let [dest-node
+                          (if (contains? nodes-to-duplicate sub-name)
+                            (str sub " copy #"
+                                 (let [new-counts (swap! duplicated-node-counts
+                                                         inc-freq sub-name)]
+                                   (@duplicated-node-counts sub-name)))
+                            (str sub))]
+                      (str "  \"" cls "\" -> \"" dest-node "\""
+                           " [ color=\"" color "\" ];\n")))))))))
     "}\n"))
 
 
