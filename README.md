@@ -56,3 +56,32 @@ number of colors and therefore the file size.
 
 --Chouser, Feb 2009
 [updated Feb 2011]
+
+
+## Tweaking the Graphviz file further
+
+There are many, many options to Graphviz that modify how graphs look.
+I will not even attempt to list them all here.  Here is the official
+Graphviz documentation on node, edge, and graph attributes:
+http://graphviz.org/doc/info/attrs.html
+
+The default way of drawing edges is as straight lines when these would
+not go over other nodes, or curved splines in order to go around
+nodes.  Other choices are described here:
+http://graphviz.org/doc/info/attrs.html#d:splines
+
+Adding one of the following lines near the beginning of the `.dot`
+output file, after the `digraph {` line, changes the shape of edges:
+
++ `splines=curved;` - curved lines that curve only "one way", but can
+  overlap other nodes.
+
++ `splines=polyline;` - straight line segments that can have many
+  different angles.  The disadvantage is that they can overlap each
+  other quite a bit, which can make it confusing which ones are which
+  in the overlapping portions.
+
++ `splines=ortho;` - straight line segments where every segment is
+  either horizontal or vertical.  This one does a good job at avoiding
+  overlapping lines.  They can be packed fairly close to each other,
+  if there are many of them and the nodes are not far apart.
