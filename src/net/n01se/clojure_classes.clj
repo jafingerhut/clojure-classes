@@ -282,10 +282,7 @@
 
 (defn class-graph [clj-classes]
   (loop [found {}
-         work (into
-                (into PersistentQueue/EMPTY extra-seed-classes)
-                (filter #(and % (some class-filter (bases %)))
-                        clj-classes))]
+         work (into PersistentQueue/EMPTY clj-classes)]
     (if (empty? work)
       found
       (let [cls (peek work)
@@ -387,7 +384,9 @@
   (let [[clojure-local-root output-dir] args
         srcpath (clojure-java-src-dir clojure-local-root)
         file-base-names (java-source-file-base-names srcpath)
-        clj-classes (clojure-lang-classes file-base-names)
+        clj-classes (concat extra-seed-classes
+                            (filter #(and % (some class-filter (bases %)))
+                                    (clojure-lang-classes file-base-names)))
         dot-fname (str output-dir "/graph-" (clojure-version) ".dot")
         log-fname (str output-dir "/log-" (clojure-version) ".txt")]
 
