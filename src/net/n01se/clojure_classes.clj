@@ -8,9 +8,7 @@
 ;   You must not remove this notice, or any other, from this software.
 
 (ns net.n01se.clojure-classes
-  (:use [clojure.java.shell :only (sh)])
   (:require [clojure.string :as str]
-            [clojure.pprint :as pp]
             [clojure.reflect :as refl])
   (:import (clojure.lang PersistentQueue)))
 
@@ -179,10 +177,6 @@
                       PersistentQueue "#0061d7"
                       LazySeq "#d78100"})
 
-;; TBD: See if there is a way to get this class name reliably at run
-;; time, without having to know a run-time generated class name like
-;; reify__5684.
-
 (defn class-named-by-symbol [sym]
   {:pre [(symbol? sym)]
    :post [(or (nil? %) (class? %))]}
@@ -191,27 +185,10 @@
     (catch clojure.lang.Compiler$CompilerException e
       nil)))
 
-(defn brute-force-find-numbered-class [base-name-string max-n]
-  {:pre [(string? base-name-string)
-         (integer? max-n)]
-   :post [(or (nil? %) (class? %))]}
-  (loop [i 0]
-    (if (> i max-n)
-      nil
-      (let [sym (symbol (str base-name-string i))
-            cls (class-named-by-symbol sym)]
-        (if cls
-          cls
-          (recur (inc i)))))))
-
-;;(def extra-seed-classes [clojure.core$future_call$reify__5684])
-;;(def aliases '{core$future_call$reify__5684 "(future)"})
-
 (def aliases (atom {}))
 
 (defn extra-seed-classes []
-  (let [future-call-class (brute-force-find-numbered-class
-                           "clojure.core$future_call$reify__" 10000)
+  (let [future-call-class (class (future-call (fn [] 5)))
         sym-with-clojure-removed (symbol (clojure.string/replace-first
                                           (.getName future-call-class)
                                           #"^clojure\." ""))]
@@ -498,4 +475,5 @@
         dot-string (dotstr graph opts)]
 
     (spit dot-fname dot-string)
-    (write-log log-fname)))
+    (write-log log-fname)
+    (shutdown-agents)))
