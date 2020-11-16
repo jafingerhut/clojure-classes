@@ -394,20 +394,22 @@
                       :class->sym class->symbol
                       :class->color class-color
                       :class->label class-label
-                      :class->shape choose-shape}
+                      :class->shape choose-shape
+                      :show-legend true
+                      :splines-type "splines"
+                      :rankdir "LR"}
         {:keys [class-order badges java-package-abbreviations
                 class->sym class->color class->label class->shape
-                splines-type]}
+                show-legend splines-type rankdir]}
         (merge default-opts opts)]
     (str
      "digraph {\n"
-     "  rankdir=LR;\n"
+     "  rankdir=" rankdir ";\n"
      "  dpi=55;\n"
      "  nodesep=0.10;\n"
      "  ranksep=1.2;\n"
      "  mclimit=2500.0;\n"
-     (when splines-type
-       (str "  splines=" splines-type ";\n"))
+     "  splines=" splines-type ";\n"
      ;;"  overlap=scale;\n"
      "  node[ fontname=Helvetica shape=box ];\n"
      "
@@ -417,11 +419,13 @@
     fontsize=19
     bgcolor=\"#dddddd\"
     "
-     (dot-for-node-shapes-legend)
-     (when (seq badges)
-       (dot-for-badges-legend badges))
-     (when (seq java-package-abbreviations)
-       (dot-for-java-pkg-abbrevs-legend java-package-abbreviations))
+     (if show-legend
+       (str
+        (dot-for-node-shapes-legend)
+        (when (seq badges)
+          (dot-for-badges-legend badges))
+        (when (seq java-package-abbreviations)
+          (dot-for-java-pkg-abbrevs-legend java-package-abbreviations))))
      "
   }
 "
