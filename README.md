@@ -13,6 +13,36 @@ installation instructions if the following do not work:
   * If you use Homebrew: `brew install graphviz`
   * If you use MacPorts: `sudo port install graphviz`
 
+
+## Usage from a REPL
+
+```clojure
+user=> (require '[net.n01se.clojure-classes :as cc])
+nil
+
+;; You may prefer the look of the drawing by leaving out the key
+;; :splines-type, or by including it but changing its value to
+;; "polyline".
+
+user=> (def opts {:create-window true :splines-type "ortho" :class-filter cc/not-root-class})
+#'user/opts
+
+user=> (def dotstr1 (cc/make-dot-graph [clojure.core.Vec] opts))
+#'user/dotstr1
+
+;; A window should pop up with a drawing of the class graph.
+;; make-dot-graph also returns a string that can be written to a file,
+;; and used as input to the Graphviz 'dot' program.
+
+;; You can give a sequence of classes as the first argument of
+;; make-dot-graph, and all of their superclasses and implemented
+;; interfaces will be found.
+
+user=> (def dotstr1 (cc/make-dot-graph (map class [[1] (vector-of :long 1)]) opts))
+```
+
+## Usage from command line via Clojure CLI tools
+
 I run it as shown below to generate a graph for all (or at least most)
 Clojure classes.  Note that the version of Clojure you run it with
 specified via `-Sdeps`, and the version of the Clojure source code in
