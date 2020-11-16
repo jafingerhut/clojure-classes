@@ -9,8 +9,10 @@
 
 (ns net.n01se.clojure-classes
   (:require [clojure.string :as str]
+            [clojure.java.shell :as sh]
             [clojure.reflect :as refl])
-  (:import (clojure.lang PersistentQueue)))
+  (:import (javax.swing JFrame JLabel JScrollPane ImageIcon)
+           (clojure.lang PersistentQueue)))
 
 ;; Ignore exceptions from attempting to require clojure.core.reducers
 ;; so that this program continues to work for Clojure 1.3.0 and 1.4.0
@@ -324,7 +326,7 @@
        (every? class? (keys graph))
        (every? nil-or-class-coll? (vals graph))))
 
-(defn class-graph [clj-classes]
+(defn class-graph [clj-classes class-filter]
   {:pre [(every? class? clj-classes)]
    :post [(class-graph? %)]}
   (loop [found {}
@@ -383,6 +385,8 @@
          (map? opts)]
    :post [(string? %)]}
   (let [default-opts {:class-order (keys graph)
+                      :badges badges
+                      :java-package-abbreviations java-package-abbreviations
                       :class->sym class->symbol
                       :class->color class-color
                       :class->label class-label
@@ -456,6 +460,21 @@
       (System/exit 1))
     (map :class info)))
 
+
+(defn make-dot-graph [classes class-filter opts]
+  (let [cf (get opts :class-filter class-filter)
+        graph (class-graph classes cf)
+        dot-string (dotstr graph opts)]
+    (when (:create-window opts)
+      (doto (JFrame. "Clojure Classes")
+        (.add (-> (sh/sh "dot" "-Tpng" :in dotstr :out-enc :bytes)
+                  :out ImageIcon. JLabel. JScrollPane.))
+        (.setSize 600 400)
+        (.setDefaultCloseOperation javax.swing.WindowConstants/DISPOSE_ON_CLOSE)
+        (.setVisible true)))
+    dot-string))
+
+
 (defn -main [& args]
   (when-not (and (>= (count args) 3)
                  (contains? #{"all-clojure-classes" "classes"} (nth args 1)))
@@ -472,15 +491,9 @@
                       :all-clojure-classes (all-clojure-classes (nth args 2)
                                                                 {:log true})
                       :classes (cli-strings->classes (nthrest args 2)))
-        graph (class-graph clj-classes)
+        graph (class-graph clj-classes class-filter)
         classes (sort-by #(.getSimpleName %) (keys graph))
-        opts {:class-order classes
-              :badges badges
-              :java-package-abbreviations java-package-abbreviations
-              :class->sym class->symbol
-              :class->color class-color
-              :class->label class-label
-              :class->shape choose-shape}
+        opts {:class-order classes}
         dot-string (dotstr graph opts)]
 
     (spit dot-fname dot-string)
