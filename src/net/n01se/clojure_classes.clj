@@ -10,9 +10,9 @@
 (ns net.n01se.clojure-classes
   (:use [clojure.java.shell :only (sh)])
   (:require [clojure.string :as str]
+            [clojure.pprint :as pp]
             [clojure.reflect :as refl])
-  (:import (javax.swing JFrame JLabel JScrollPane ImageIcon)
-           (clojure.lang PersistentQueue)))
+  (:import (clojure.lang PersistentQueue)))
 
 ;; Ignore exceptions from attempting to require clojure.core.reducers
 ;; so that this program continues to work for Clojure 1.3.0 and 1.4.0
@@ -21,15 +21,22 @@
   (catch Throwable e
     nil))
 
+;; Add this so code runs in older versions of Clojure
+(defn is-boolean? [x]
+  (instance? Boolean x))
+
 (def log-lines (atom []))
 
 (defn log [line-str]
+  {:pre [(string? line-str)]}
   (swap! log-lines conj line-str))
 
 (defn write-log [log-fname]
   (spit log-fname (str/join "\n" @log-lines)))
 
 (defn clojure-java-src-dir [clojure-local-root]
+  {:pre [(string? clojure-local-root)]
+   :post [(string? %)]}
   (str clojure-local-root "/src/jvm/clojure/lang/"))
 
 (defn java-source-file-base-names [clojure-java-src]
@@ -173,23 +180,29 @@
 ;; time, without having to know a run-time generated class name like
 ;; reify__5684.
 
-(defn class-exists? [sym]
+(defn class-named-by-symbol [sym]
+  {:pre [(symbol? sym)]
+   :post [(or (nil? %) (class? %))]}
   (try
     (eval sym)
     (catch clojure.lang.Compiler$CompilerException e
-      false)))
+      nil)))
 
-(defn find-class [base-name-string max-n]
+(defn brute-force-find-numbered-class [base-name-string max-n]
+  {:pre [(string? base-name-string)
+         (integer? max-n)]
+   :post [(or (nil? %) (class? %))]}
   (loop [i 0]
     (if (> i max-n)
       nil
       (let [sym (symbol (str base-name-string i))
-            cls (class-exists? sym)]
+            cls (class-named-by-symbol sym)]
         (if cls
           cls
           (recur (inc i)))))))
 
-(def future-call-class (find-class "clojure.core$future_call$reify__" 10000))
+(def future-call-class (brute-force-find-numbered-class
+                        "clojure.core$future_call$reify__" 10000))
 (def sym-with-clojure-removed (symbol (clojure.string/replace-first
                                        (.getName future-call-class)
                                        #"^clojure\." "")))
@@ -203,10 +216,10 @@
                 [future-call-class]
                 ;; Types in Clojure's core implementation that are
                 ;; defined via the macro clojure.core/deftype.  We use
-                ;; class-exists? so that we only keep the ones that
-                ;; exist in the version of Clojure running this
+                ;; class-named-by-symbol so that we only keep the ones
+                ;; that exist in the version of Clojure running this
                 ;; program.
-                (map class-exists?
+                (map class-named-by-symbol
                      '[clojure.core.reducers.Cat
                        clojure.reflect.JavaReflector
                        clojure.reflect.AsmReflector
@@ -217,6 +230,13 @@
                        clojure.core.Vec])))))
 
 (defn class-filter* [cls]
+  {:pre [(class? cls)]
+   :post [(is-boolean? %)]}
+  ;; Use this body for class-filter* instead if you want to include
+  ;; all Java superclasses and interfaces, except java.lang.Object,
+  ;; which is a superclass of all other objects, so a waste of space
+  ;; in a graph to draw.
+  ;;(not= cls java.lang.Object)
   (let [package (-> cls .getPackage .getName)]
     (or (= package "clojure.lang")
         (.startsWith package "clojure.core")
@@ -226,6 +246,8 @@
 (def classes-failing-class-filter (atom #{}))
 
 (defn class-filter [cls]
+  {:pre [(class? cls)]
+   :post [(is-boolean? %)]}
   (let [ret (class-filter* cls)]
     (when (and (not ret)
                (not (contains? @classes-failing-class-filter cls)))
@@ -234,12 +256,15 @@
     ret))
 
 (defn choose-shape [cls]
-  (cond
-    (not (-> cls .getPackage .getName (.startsWith "clojure"))) "box"
-    (.isInterface cls) "octagon"
-    :else "oval"))
+  {:pre [(class? cls)]
+   :post [(string? %)]}
+  (if (-> cls .getPackage .getName (.startsWith "clojure"))
+    (if (.isInterface cls) "octagon" "oval")         ;; Clojure
+    (if (.isInterface cls) "parallelogram" "box")))  ;; non-Clojure
 
 (defn abbreviate-java-package [class-name-str]
+  {:pre [(string? class-name-str)]
+   :post [(string? %)]}
   (loop [abbrevs java-package-abbreviations]
     (if-let [s (seq abbrevs)]
       (let [{:keys [full-name abbreviation]} (first s)]
@@ -249,6 +274,8 @@
       class-name-str)))
 
 (defn class-name [cls]
+  {:pre [(class? cls)]
+   :post [(symbol? %)]}
   (let [full-name (.getName cls)]
     (symbol
      (if (or (.startsWith full-name "clojure.lang.")
@@ -260,6 +287,8 @@
        (abbreviate-java-package full-name)))))
 
 (defn class-label [cls]
+  {:pre [(class? cls)]
+   :post [(string? %)]}
   (let [clsname (class-name cls)
         a (aliases clsname (str clsname))
         pred (preds clsname)
@@ -277,10 +306,27 @@
            (str "\\n[" (apply str badge) "]")))))
 
 (defn class-color [cls]
+  {:pre [(class? cls)]
+   :post [(string? %)]}
+  ;; Use .hashCode instead of hash for more consistent results across
+  ;; Clojure versions before and after 1.6.0, when clojure.core/hash
+  ;; was improved.
   (color-override (class-name cls)
-    (nth colors (rem (Math/abs (hash (str cls))) (count colors)))))
+    (nth colors (rem (Math/abs (.hashCode (str cls))) (count colors)))))
+
+(defn nil-or-class-coll? [x]
+  (or (nil? x)
+      (and (coll? x)
+           (every? class? x))))
+
+(defn class-graph? [graph]
+  (and (map? graph)
+       (every? class? (keys graph))
+       (every? nil-or-class-coll? (vals graph))))
 
 (defn class-graph [clj-classes]
+  {:pre [(every? class? clj-classes)]
+   :post [(class-graph? %)]}
   (loop [found {}
          work (into PersistentQueue/EMPTY clj-classes)]
     (if (empty? work)
@@ -296,6 +342,9 @@
 (def duplicated-node-counts (atom {}))
 
 (defn dotstr [classes graph]
+  {:pre [(every? class? classes)
+         (class-graph? graph)]
+   :post [(string? %)]}
   (str
     "digraph {\n"
     "  rankdir=LR;\n"
@@ -312,9 +361,10 @@
     fontname=\"Helvetica Bold\"
     fontsize=19
     bgcolor=\"#dddddd\"
-    \"Clojure Interface\" [ shape=octagon fillcolor=\"#ffffff\" style=filled ];
-    \"Java Interface\" [ shape=box fillcolor=\"#ffffff\" style=filled ];
     \"Clojure class\" [ shape=oval fillcolor=\"#ffffff\" style=filled ];
+    \"Clojure Interface\" [ shape=octagon fillcolor=\"#ffffff\" style=filled ];
+    \"Java class\" [ shape=box fillcolor=\"#ffffff\" style=filled ];
+    \"Java Interface\" [ shape=parallelogram fillcolor=\"#ffffff\" style=filled ];
     "
     (when (seq badges)
       (str "
@@ -403,12 +453,3 @@
           dot-string (dotstr classes graph)]
       (spit dot-fname dot-string)
       (write-log log-fname))))
-
-(comment
-(doto (JFrame. "Clojure Classes")
-  (.add (-> (sh "dot" "-Tpng" :in dotstr :out-enc :bytes) :out ImageIcon.
-          JLabel. JScrollPane.))
-  (.setSize 600 400)
-  (.setDefaultCloseOperation javax.swing.WindowConstants/DISPOSE_ON_CLOSE)
-  (.setVisible true))
-)
