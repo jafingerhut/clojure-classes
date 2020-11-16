@@ -13,23 +13,38 @@ installation instructions if the following do not work:
   * If you use Homebrew: `brew install graphviz`
   * If you use MacPorts: `sudo port install graphviz`
 
-I run it like:
+I run it as shown below to generate a graph for all (or at least most)
+Clojure classes.  Note that the version of Clojure you run it with
+specified via `-Sdeps`, and the version of the Clojure source code in
+the last argument you give it, should match, otherwise the output is
+likely to be wrong in unpredictable ways.
+
 ```bash
-$ clojure -Sdeps '{:deps {org.clojure/clojure {:mvn/version "1.10.1"}}}' -m net.n01se.clojure-classes /Users/andy/clj/clojure generate/
+$ clojure -Sdeps '{:deps {org.clojure/clojure {:mvn/version "1.10.1"}}}' -m net.n01se.clojure-classes generate/ all-clojure-classes /Users/andy/clj/clojure 
+```
+
+Since the graph is quite large for this set of Clojure classes, you
+can also specify a list of starting class names on the command line,
+and it will start from those classes, searching for their superclasses
+and the Java interfaces that they implement, recursively, and ignore
+any other Clojure classes.
+
+```bash
+$ clojure -Sdeps '{:deps {org.clojure/clojure {:mvn/version "1.10.1"}}}' -m net.n01se.clojure-classes generate/ classes clojure.lang.PersistentVector
 ```
 
 There is a script in the `generate` directory that you can use to run
 it for multiple versions of Clojure source code.  You must give it:
 
-+ the root directory of a local git clone of the Clojure source code.
 + the directory where you want output files to be created
++ the root directory of a local git clone of the Clojure source code.
 
-The script will make changes to your git clone of the Clojure source
-code, using `git checkout` commands.  It does this to change the
-Clojure source code to different Clojure release versions.
+WARNING: The script will make changes to your git clone of the Clojure
+source code, using `git checkout` commands.  It does this to change
+the Clojure source code to different Clojure release versions.
 
 ```bash
-$ ./generate/gen.sh /home/andy/clj/clojure generate/
+$ ./generate/gen.sh generate/ /Users/andy/clj/clojure
 ```
 
 You can produce svg, pdf, png, and other graphical file formats from

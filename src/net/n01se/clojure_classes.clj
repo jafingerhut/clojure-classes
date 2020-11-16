@@ -34,6 +34,9 @@
 (defn write-log [log-fname]
   (spit log-fname (str/join "\n" @log-lines)))
 
+(defn reset-log []
+  (reset! log-lines []))
+
 (defn clojure-java-src-dir [clojure-local-root]
   {:pre [(string? clojure-local-root)]
    :post [(string? %)]}
@@ -201,33 +204,37 @@
           cls
           (recur (inc i)))))))
 
-(def future-call-class (brute-force-find-numbered-class
-                        "clojure.core$future_call$reify__" 10000))
-(def sym-with-clojure-removed (symbol (clojure.string/replace-first
-                                       (.getName future-call-class)
-                                       #"^clojure\." "")))
-
-;;(def aliases '{core$future_call$reify__5684 "(future)"})
-(def aliases {sym-with-clojure-removed "(future)"})
 ;;(def extra-seed-classes [clojure.core$future_call$reify__5684])
-(def extra-seed-classes
-  (vec (filter identity
-               (concat
-                [future-call-class]
-                ;; Types in Clojure's core implementation that are
-                ;; defined via the macro clojure.core/deftype.  We use
-                ;; class-named-by-symbol so that we only keep the ones
-                ;; that exist in the version of Clojure running this
-                ;; program.
-                (map class-named-by-symbol
-                     '[clojure.core.reducers.Cat
-                       clojure.reflect.JavaReflector
-                       clojure.reflect.AsmReflector
-                       clojure.core.Eduction
-                       clojure.core.VecNode
-                       clojure.core.ArrayChunk
-                       clojure.core.VecSeq
-                       clojure.core.Vec])))))
+;;(def aliases '{core$future_call$reify__5684 "(future)"})
+
+(def aliases (atom {}))
+
+(defn extra-seed-classes []
+  (let [future-call-class (brute-force-find-numbered-class
+                           "clojure.core$future_call$reify__" 10000)
+        sym-with-clojure-removed (symbol (clojure.string/replace-first
+                                          (.getName future-call-class)
+                                          #"^clojure\." ""))]
+    (swap! aliases assoc sym-with-clojure-removed "(future)")
+    {:future-call-class future-call-class
+     :extra-classes
+     (vec (filter identity
+                  (concat
+                   [future-call-class]
+                   ;; Types in Clojure's core implementation that are
+                   ;; defined via the macro clojure.core/deftype.  We
+                   ;; use class-named-by-symbol so that we only keep
+                   ;; the ones that exist in the version of Clojure
+                   ;; running this program.
+                   (map class-named-by-symbol
+                        '[clojure.core.reducers.Cat
+                          clojure.reflect.JavaReflector
+                          clojure.reflect.AsmReflector
+                          clojure.core.Eduction
+                          clojure.core.VecNode
+                          clojure.core.ArrayChunk
+                          clojure.core.VecSeq
+                          clojure.core.Vec]))))}))
 
 (defn class-filter* [cls]
   {:pre [(class? cls)]
@@ -273,7 +280,7 @@
           (recur (rest s))))
       class-name-str)))
 
-(defn class-name [cls]
+(defn class->symbol [cls]
   {:pre [(class? cls)]
    :post [(symbol? %)]}
   (let [full-name (.getName cls)]
@@ -289,11 +296,11 @@
 (defn class-label [cls]
   {:pre [(class? cls)]
    :post [(string? %)]}
-  (let [clsname (class-name cls)
-        a (aliases clsname (str clsname))
+  (let [clsname (class->symbol cls)
+        a (@aliases clsname (str clsname))
         pred (preds clsname)
         ctor (ctors clsname)
-        anc (set (map class-name (ancestors cls)))]
+        anc (set (map class->symbol (ancestors cls)))]
     (str a
          ;(when ctor (str (when-not (empty? a) "\\n") ctor))
          (when pred (str \\ \n pred))
@@ -311,7 +318,7 @@
   ;; Use .hashCode instead of hash for more consistent results across
   ;; Clojure versions before and after 1.6.0, when clojure.core/hash
   ;; was improved.
-  (color-override (class-name cls)
+  (color-override (class->symbol cls)
     (nth colors (rem (Math/abs (.hashCode (str cls))) (count colors)))))
 
 (defn nil-or-class-coll? [x]
@@ -341,21 +348,29 @@
 
 (def duplicated-node-counts (atom {}))
 
-(defn dotstr [classes graph]
-  {:pre [(every? class? classes)
-         (class-graph? graph)]
+(defn dotstr [graph opts]
+  {:pre [(class-graph? graph)
+         (map? opts)]
    :post [(string? %)]}
-  (str
-    "digraph {\n"
-    "  rankdir=LR;\n"
-    "  dpi=55;\n"
-    "  nodesep=0.10;\n"
-    "  ranksep=1.2;\n"
-    "  mclimit=2500.0;\n"
-    ;"  splines=true;\n"
-    ;"  overlap=scale;\n"
-    "  node[ fontname=Helvetica shape=box ];\n"
-    "
+  (let [default-opts {:class-order (keys graph)
+                      :class->sym class->symbol
+                      :class->color class-color
+                      :class->label class-label
+                      :class->shape choose-shape}
+        {:keys [class-order badges java-package-abbreviations
+                class->sym class->color class->label class->shape]}
+        (merge default-opts opts)]
+    (str
+     "digraph {\n"
+     "  rankdir=LR;\n"
+     "  dpi=55;\n"
+     "  nodesep=0.10;\n"
+     "  ranksep=1.2;\n"
+     "  mclimit=2500.0;\n"
+     ;"  splines=true;\n"
+     ;"  overlap=scale;\n"
+     "  node[ fontname=Helvetica shape=box ];\n"
+     "
   subgraph cluster_legend {
     label=\"Legend\"
     fontname=\"Helvetica Bold\"
@@ -366,80 +381,72 @@
     \"Java class\" [ shape=box fillcolor=\"#ffffff\" style=filled ];
     \"Java Interface\" [ shape=parallelogram fillcolor=\"#ffffff\" style=filled ];
     "
-    (when (seq badges)
-      (str "
+     (when (seq badges)
+       (str "
     badges [
       shape=record
       style=filled
       fillcolor=\"#ffffff\"
       label=\"{{"
-       (apply str (interpose "|" (map :abbreviation (vals badges))))
-      "}|{"
-       (apply str (interpose "|" (keys badges)))
-      "}|{"
-       (apply str (interpose "|" (map :description (vals badges))))
-      "}}\"
+         (apply str (interpose "|" (map :abbreviation (vals badges))))
+         "}|{"
+         (apply str (interpose "|" (keys badges)))
+         "}|{"
+         (apply str (interpose "|" (map :description (vals badges))))
+         "}}\"
     ]"))
 
-    (when (seq java-package-abbreviations)
-      (str "
+     (when (seq java-package-abbreviations)
+       (str "
     java_package_abbreviations [
       shape=record
       style=filled
       fillcolor=\"#ffffff\"
       label=\"{{"
-       (apply str (interpose "|" (cons "Abbrev."
-                                       (map :abbreviation
-                                            java-package-abbreviations))))
-      "}|{"
-       (apply str (interpose "|" (cons "Java Package"
-                                       (map :full-name
-                                            java-package-abbreviations))))
-      "}}\"
+         (apply str (interpose "|" (cons "Abbrev."
+                                         (map :abbreviation
+                                              java-package-abbreviations))))
+         "}|{"
+         (apply str (interpose "|" (cons "Java Package"
+                                         (map :full-name
+                                              java-package-abbreviations))))
+         "}}\"
     ]"))
     "
   }
 "
-    (str-for [cls classes]
-      (when-not (badges (class-name cls))
-        (let [color (class-color cls)
-              node (str "  \"" cls "\" [ label=\"" (class-label cls) "\" "
+    (str-for [cls class-order]
+      (when-not (badges (class->sym cls))
+        (let [color (class->color cls)
+              node (str "  \"" cls "\" [ label=\"" (class->label cls) "\" "
                         "color=\"" color "\" "
-                        "shape=\"" (choose-shape cls) "\"];\n")
-              cluster (some #(clusters (class-name %))
+                        "shape=\"" (class->shape cls) "\"];\n")
+              cluster (some #(clusters (class->sym %))
                             (cons cls (ancestors cls)))]
-          (str (when cluster (str "subgraph cluster_" cluster " {\n"))
-              node
-              (when cluster "}\n")
-              (str-for [sub (graph cls)]
-                (let [sub-name (class-name sub)]
-                  (if (badges sub-name)
-                    nil
-                    (let [dest-node
-                          (if (contains? nodes-to-duplicate sub-name)
-                            (str sub " copy #"
-                                 (let [new-counts (swap! duplicated-node-counts
-                                                         inc-freq sub-name)]
-                                   (@duplicated-node-counts sub-name)))
-                            (str sub))]
-                      (str "  \"" cls "\" -> \"" dest-node "\""
-                           " [ color=\"" color "\" ];\n")))))))))
-    "}\n"))
+          (str
+           (when cluster (str "subgraph cluster_" cluster " {\n"))
+           node
+           (when cluster "}\n")
+           (str-for [cls2 (graph cls)]
+             (let [cls2-name (class->sym cls2)]
+               (if (badges cls2-name)
+                 nil
+                 (let [dest-node
+                       (if (contains? nodes-to-duplicate cls2-name)
+                         (str cls2 " copy #"
+                              (let [new-counts (swap! duplicated-node-counts
+                                                      inc-freq cls2-name)]
+                                (@duplicated-node-counts cls2-name)))
+                         (str cls2))]
+                   (str "  \"" cls "\" -> \"" dest-node "\""
+                        " [ color=\"" color "\" ];\n")))))))))
+    "}\n")))
 
 
-(defn -main [& args]
-  (when-not (= 2 (count args))
-    (println "usage: cmd_name <clojure-local-root-directory> <directory-to-write-output-files>")
-    (System/exit 1))
-  (let [[clojure-local-root output-dir] args
-        srcpath (clojure-java-src-dir clojure-local-root)
+(defn all-clojure-classes [clojure-local-root]
+  (let [srcpath (clojure-java-src-dir clojure-local-root)
         file-base-names (java-source-file-base-names srcpath)
-        clj-classes (concat extra-seed-classes
-                            (filter #(and % (some class-filter (bases %)))
-                                    (clojure-lang-classes file-base-names)))
-        dot-fname (str output-dir "/graph-" (clojure-version) ".dot")
-        log-fname (str output-dir "/log-" (clojure-version) ".txt")]
-
+        {:keys [future-call-class extra-classes]} (extra-seed-classes)]
     (log (str "Found future-call compiled class with name: "
               (.getName future-call-class)))
     (log (str "In directory: " srcpath))
@@ -447,9 +454,48 @@
               " files with .java suffix:"))
     (doseq [base-fname (sort file-base-names)]
       (log (str "    " base-fname)))
+    (concat extra-classes
+            (filter #(and % (some class-filter (bases %)))
+                    (clojure-lang-classes file-base-names)))))
 
-    (let [graph (class-graph clj-classes)
-          classes (sort-by #(.getSimpleName %) (keys graph))
-          dot-string (dotstr classes graph)]
-      (spit dot-fname dot-string)
-      (write-log log-fname))))
+(defn cli-strings->classes [cli-strings]
+  (let [info (map (fn [s]
+                    {:string s, :class (class-named-by-symbol (symbol s))})
+                  cli-strings)
+        not-a-class (remove #(class? (:class %)) info)]
+    (when (seq not-a-class)
+      (println "The following strings given on the command line do not name classes:")
+      (doseq [x not-a-class]
+        (println (str "    " (:string x))))
+      (flush)
+      (System/exit 1))
+    (map :class info)))
+
+(defn -main [& args]
+  (when-not (and (>= (count args) 3)
+                 (contains? #{"all-clojure-classes" "classes"} (nth args 1)))
+    (println "usage:")
+    (println "    cmd_name <output-file-directory> all-clojure-classes <clojure-local-root-directory>")
+    (println "    cmd_name <output-file-directory> classes <classname1> ...")
+    (flush)
+    (System/exit 1))
+  (let [output-dir (nth args 0)
+        dot-fname (str output-dir "/graph-" (clojure-version) ".dot")
+        log-fname (str output-dir "/log-" (clojure-version) ".txt")
+        class-selection-mode (keyword (nth args 1))
+        clj-classes (case class-selection-mode
+                      :all-clojure-classes (all-clojure-classes (nth args 2))
+                      :classes (cli-strings->classes (nthrest args 2)))
+        graph (class-graph clj-classes)
+        classes (sort-by #(.getSimpleName %) (keys graph))
+        opts {:class-order classes
+              :badges badges
+              :java-package-abbreviations java-package-abbreviations
+              :class->sym class->symbol
+              :class->color class-color
+              :class->label class-label
+              :class->shape choose-shape}
+        dot-string (dotstr graph opts)]
+
+    (spit dot-fname dot-string)
+    (write-log log-fname)))
