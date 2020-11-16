@@ -215,31 +215,35 @@
                           clojure.core.VecSeq
                           clojure.core.Vec]))))}))
 
-(defn class-filter* [cls]
+(defn default-class-filter* [cls]
   {:pre [(class? cls)]
    :post [(is-boolean? %)]}
-  ;; Use this body for class-filter* instead if you want to include
-  ;; all Java superclasses and interfaces, except java.lang.Object,
-  ;; which is a superclass of all other objects, so a waste of space
-  ;; in a graph to draw.
-  ;;(not= cls java.lang.Object)
   (let [package (-> cls .getPackage .getName)]
     (or (= package "clojure.lang")
         (.startsWith package "clojure.core")
         (.startsWith package "clojure.reflect")
         (and (.startsWith package "java") (.isInterface cls)))))
 
-(def classes-failing-class-filter (atom #{}))
+(def classes-failing-default-class-filter (atom #{}))
 
-(defn class-filter [cls]
+(defn default-class-filter [cls]
   {:pre [(class? cls)]
    :post [(is-boolean? %)]}
-  (let [ret (class-filter* cls)]
+  (let [ret (default-class-filter* cls)]
     (when (and (not ret)
-               (not (contains? @classes-failing-class-filter cls)))
-      (swap! classes-failing-class-filter conj cls)
-      (log (str "(class-filter " cls ") -> " ret)))
+               (not (contains? @classes-failing-default-class-filter cls)))
+      (swap! classes-failing-default-class-filter conj cls)
+      (log (str "(default-class-filter " cls ") -> " ret)))
     ret))
+
+;; Use not-root-class as your filter for classes, instead of
+;; default-class-filter, if you want to include all Java superclasses
+;; and interfaces, except java.lang.Object.  java.lang.Object is a
+;; superclass of all other objects, so a waste of space in a graph to
+;; draw.
+
+(defn not-root-class [cls]
+  (not= cls java.lang.Object))
 
 (defn all-clojure-classes [clojure-local-root opts]
   (let [srcpath (clojure-java-src-dir clojure-local-root)
@@ -254,7 +258,7 @@
       (doseq [base-fname (sort file-base-names)]
         (log (str "    " base-fname))))
     (concat extra-classes
-            (filter #(and % (some class-filter (bases %)))
+            (filter #(and % (some default-class-filter (bases %)))
                     (clojure-lang-classes file-base-names)))))
 
 (defn choose-shape [cls]
@@ -392,7 +396,8 @@
                       :class->label class-label
                       :class->shape choose-shape}
         {:keys [class-order badges java-package-abbreviations
-                class->sym class->color class->label class->shape]}
+                class->sym class->color class->label class->shape
+                splines-type]}
         (merge default-opts opts)]
     (str
      "digraph {\n"
@@ -401,7 +406,8 @@
      "  nodesep=0.10;\n"
      "  ranksep=1.2;\n"
      "  mclimit=2500.0;\n"
-     ;;"  splines=true;\n"
+     (when splines-type
+       (str "  splines=" splines-type ";\n"))
      ;;"  overlap=scale;\n"
      "  node[ fontname=Helvetica shape=box ];\n"
      "
@@ -462,7 +468,7 @@
 
 
 (defn make-dot-graph [classes opts]
-  (let [cf (get opts :class-filter class-filter)
+  (let [cf (get opts :class-filter default-class-filter)
         graph (class-graph classes cf)
         dot-string (dotstr graph opts)]
     (when (:create-window opts)
@@ -490,7 +496,7 @@
                       :all-clojure-classes (all-clojure-classes (nth args 2)
                                                                 {:log true})
                       :classes (cli-strings->classes (nthrest args 2)))
-        graph (class-graph clj-classes class-filter)
+        graph (class-graph clj-classes default-class-filter)
         classes (sort-by #(.getSimpleName %) (keys graph))
         opts {:class-order classes}
         dot-string (dotstr graph opts)]
