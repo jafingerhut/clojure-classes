@@ -461,19 +461,18 @@
     (map :class info)))
 
 
-(defn make-dot-graph [classes class-filter opts]
+(defn make-dot-graph [classes opts]
   (let [cf (get opts :class-filter class-filter)
         graph (class-graph classes cf)
         dot-string (dotstr graph opts)]
     (when (:create-window opts)
       (doto (JFrame. "Clojure Classes")
-        (.add (-> (sh/sh "dot" "-Tpng" :in dotstr :out-enc :bytes)
+        (.add (-> (sh/sh "dot" "-Tpng" :in dot-string :out-enc :bytes)
                   :out ImageIcon. JLabel. JScrollPane.))
         (.setSize 600 400)
         (.setDefaultCloseOperation javax.swing.WindowConstants/DISPOSE_ON_CLOSE)
         (.setVisible true)))
     dot-string))
-
 
 (defn -main [& args]
   (when-not (and (>= (count args) 3)
