@@ -138,12 +138,12 @@ found the following 137 files with .java suffix:
     Volatile
     WarnBoxedMath
     XMLHandler
-(class-filter class java.lang.Object) -> false
-(class-filter class java.lang.Number) -> false
-(class-filter class java.lang.IllegalArgumentException) -> false
-(class-filter class java.net.URLClassLoader) -> false
-(class-filter class java.lang.RuntimeException) -> false
-(class-filter interface clojure.asm.Opcodes) -> false
-(class-filter class java.io.PushbackReader) -> false
-(class-filter class org.xml.sax.helpers.DefaultHandler) -> false
-(class-filter class java.util.AbstractMap) -> false
+(default-class-filter class java.lang.Object) -> false
+(default-class-filter class java.lang.Number) -> false
+(default-class-filter class java.lang.IllegalArgumentException) -> false
+(default-class-filter class java.net.URLClassLoader) -> false
+(default-class-filter class java.lang.RuntimeException) -> false
+(default-class-filter interface clojure.asm.Opcodes) -> false
+(default-class-filter class java.io.PushbackReader) -> false
+(default-class-filter class org.xml.sax.helpers.DefaultHandler) -> false
+(default-class-filter class java.util.AbstractMap) -> false
