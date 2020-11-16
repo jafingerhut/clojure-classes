@@ -239,6 +239,22 @@
       (log (str "(class-filter " cls ") -> " ret)))
     ret))
 
+(defn all-clojure-classes [clojure-local-root opts]
+  (let [srcpath (clojure-java-src-dir clojure-local-root)
+        file-base-names (java-source-file-base-names srcpath)
+        {:keys [future-call-class extra-classes]} (extra-seed-classes)]
+    (when (:log opts)
+      (log (str "Found future-call compiled class with name: "
+                (.getName future-call-class)))
+      (log (str "In directory: " srcpath))
+      (log (str "found the following " (count file-base-names)
+                " files with .java suffix:"))
+      (doseq [base-fname (sort file-base-names)]
+        (log (str "    " base-fname))))
+    (concat extra-classes
+            (filter #(and % (some class-filter (bases %)))
+                    (clojure-lang-classes file-base-names)))))
+
 (defn choose-shape [cls]
   {:pre [(class? cls)]
    :post [(string? %)]}
@@ -325,6 +341,43 @@
 
 (def duplicated-node-counts (atom {}))
 
+(defn dot-for-node-shapes-legend []
+   "\"Clojure class\" [ shape=oval fillcolor=\"#ffffff\" style=filled ];
+    \"Clojure Interface\" [ shape=octagon fillcolor=\"#ffffff\" style=filled ];
+    \"Java class\" [ shape=box fillcolor=\"#ffffff\" style=filled ];
+    \"Java Interface\" [ shape=parallelogram fillcolor=\"#ffffff\" style=filled ];
+    ")
+
+(defn dot-for-badges-legend [badges]
+  (str "
+    badges [
+      shape=record
+      style=filled
+      fillcolor=\"#ffffff\"
+      label=\"{{"
+       (apply str (interpose "|" (map :abbreviation (vals badges))))
+       "}|{"
+       (apply str (interpose "|" (keys badges)))
+       "}|{"
+       (apply str (interpose "|" (map :description (vals badges))))
+       "}}\"
+    ]"))
+
+(defn dot-for-java-pkg-abbrevs-legend [java-pkg-abbrevs]
+  (str "
+    java_package_abbreviations [
+      shape=record
+      style=filled
+      fillcolor=\"#ffffff\"
+      label=\"{{"
+       (apply str (interpose "|" (cons "Abbrev."
+                                       (map :abbreviation java-pkg-abbrevs))))
+       "}|{"
+       (apply str (interpose "|" (cons "Java Package"
+                                       (map :full-name java-pkg-abbrevs))))
+       "}}\"
+    ]"))
+
 (defn dotstr [graph opts]
   {:pre [(class-graph? graph)
          (map? opts)]
@@ -344,8 +397,8 @@
      "  nodesep=0.10;\n"
      "  ranksep=1.2;\n"
      "  mclimit=2500.0;\n"
-     ;"  splines=true;\n"
-     ;"  overlap=scale;\n"
+     ;;"  splines=true;\n"
+     ;;"  overlap=scale;\n"
      "  node[ fontname=Helvetica shape=box ];\n"
      "
   subgraph cluster_legend {
@@ -353,46 +406,16 @@
     fontname=\"Helvetica Bold\"
     fontsize=19
     bgcolor=\"#dddddd\"
-    \"Clojure class\" [ shape=oval fillcolor=\"#ffffff\" style=filled ];
-    \"Clojure Interface\" [ shape=octagon fillcolor=\"#ffffff\" style=filled ];
-    \"Java class\" [ shape=box fillcolor=\"#ffffff\" style=filled ];
-    \"Java Interface\" [ shape=parallelogram fillcolor=\"#ffffff\" style=filled ];
     "
+     (dot-for-node-shapes-legend)
      (when (seq badges)
-       (str "
-    badges [
-      shape=record
-      style=filled
-      fillcolor=\"#ffffff\"
-      label=\"{{"
-         (apply str (interpose "|" (map :abbreviation (vals badges))))
-         "}|{"
-         (apply str (interpose "|" (keys badges)))
-         "}|{"
-         (apply str (interpose "|" (map :description (vals badges))))
-         "}}\"
-    ]"))
-
+       (dot-for-badges-legend badges))
      (when (seq java-package-abbreviations)
-       (str "
-    java_package_abbreviations [
-      shape=record
-      style=filled
-      fillcolor=\"#ffffff\"
-      label=\"{{"
-         (apply str (interpose "|" (cons "Abbrev."
-                                         (map :abbreviation
-                                              java-package-abbreviations))))
-         "}|{"
-         (apply str (interpose "|" (cons "Java Package"
-                                         (map :full-name
-                                              java-package-abbreviations))))
-         "}}\"
-    ]"))
-    "
+       (dot-for-java-pkg-abbrevs-legend java-package-abbreviations))
+     "
   }
 "
-    (str-for [cls class-order]
+     (str-for [cls class-order]
       (when-not (badges (class->sym cls))
         (let [color (class->color cls)
               node (str "  \"" cls "\" [ label=\"" (class->label cls) "\" "
@@ -420,21 +443,6 @@
     "}\n")))
 
 
-(defn all-clojure-classes [clojure-local-root]
-  (let [srcpath (clojure-java-src-dir clojure-local-root)
-        file-base-names (java-source-file-base-names srcpath)
-        {:keys [future-call-class extra-classes]} (extra-seed-classes)]
-    (log (str "Found future-call compiled class with name: "
-              (.getName future-call-class)))
-    (log (str "In directory: " srcpath))
-    (log (str "found the following " (count file-base-names)
-              " files with .java suffix:"))
-    (doseq [base-fname (sort file-base-names)]
-      (log (str "    " base-fname)))
-    (concat extra-classes
-            (filter #(and % (some class-filter (bases %)))
-                    (clojure-lang-classes file-base-names)))))
-
 (defn cli-strings->classes [cli-strings]
   (let [info (map (fn [s]
                     {:string s, :class (class-named-by-symbol (symbol s))})
@@ -461,7 +469,8 @@
         log-fname (str output-dir "/log-" (clojure-version) ".txt")
         class-selection-mode (keyword (nth args 1))
         clj-classes (case class-selection-mode
-                      :all-clojure-classes (all-clojure-classes (nth args 2))
+                      :all-clojure-classes (all-clojure-classes (nth args 2)
+                                                                {:log true})
                       :classes (cli-strings->classes (nthrest args 2)))
         graph (class-graph clj-classes)
         classes (sort-by #(.getSimpleName %) (keys graph))
