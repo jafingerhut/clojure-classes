@@ -189,6 +189,27 @@
 
 (def aliases (atom {}))
 
+;; This list of symbols correspond to the names of classes in
+;; Clojure's implementation that are defined via the macro
+;; clojure.core/deftype.
+(def clojure-core-deftype-classes
+  '[clojure.core.reducers.Cat
+    clojure.reflect.JavaReflector
+    clojure.reflect.AsmReflector
+    clojure.core.Eduction
+    clojure.core.VecNode
+    clojure.core.ArrayChunk
+    clojure.core.VecSeq
+    clojure.core.Vec])
+
+;; Note 1: class-named-by-symbol returns nil if the symbol does not
+;; name a class in the version of Clojure that is running this
+;; program.  This allows this same Clojure program to work for many
+;; versions of Clojure, even older ones that do not define all of the
+;; classes in the vector clojure-core-deftype-classes.  The `filter
+;; identity` wrapped around this expression, removes the `nil` return
+;; values.
+
 (defn extra-seed-classes []
   (let [future-call-class (class (future-call (fn [] 5)))
         sym-with-clojure-removed (symbol (clojure.string/replace-first
@@ -196,24 +217,12 @@
                                           #"^clojure\." ""))]
     (swap! aliases assoc sym-with-clojure-removed "(future)")
     {:future-call-class future-call-class
-     :extra-classes
-     (vec (filter identity
-                  (concat
-                   [future-call-class]
-                   ;; Types in Clojure's core implementation that are
-                   ;; defined via the macro clojure.core/deftype.  We
-                   ;; use class-named-by-symbol so that we only keep
-                   ;; the ones that exist in the version of Clojure
-                   ;; running this program.
-                   (map class-named-by-symbol
-                        '[clojure.core.reducers.Cat
-                          clojure.reflect.JavaReflector
-                          clojure.reflect.AsmReflector
-                          clojure.core.Eduction
-                          clojure.core.VecNode
-                          clojure.core.ArrayChunk
-                          clojure.core.VecSeq
-                          clojure.core.Vec]))))}))
+     :extra-classes (vec
+                     (filter identity
+                             (concat [future-call-class]
+                                     ;; See Note 1
+                                     (map class-named-by-symbol
+                                          clojure-core-deftype-classes))))}))
 
 (defn default-class-filter* [cls]
   {:pre [(class? cls)]
@@ -264,7 +273,7 @@
 (defn choose-shape [cls]
   {:pre [(class? cls)]
    :post [(string? %)]}
-  (if (-> cls .getPackage .getName (.startsWith "clojure"))
+  (if (-> cls .getName (.startsWith "clojure"))
     (if (.isInterface cls) "octagon" "oval")         ;; Clojure
     (if (.isInterface cls) "parallelogram" "box")))  ;; non-Clojure
 

@@ -29,16 +29,45 @@ user=> (def opts {:create-window true :splines-type "ortho" :class-filter cc/not
 
 user=> (def dotstr1 (cc/make-dot-graph [clojure.core.Vec] opts))
 #'user/dotstr1
+```
 
-;; A window should pop up with a drawing of the class graph.
-;; make-dot-graph also returns a string that can be written to a file,
-;; and used as input to the Graphviz 'dot' program.
+A window should pop up with a drawing of the class graph.
+`make-dot-graph` also returns a string that can be written to a file,
+and used as input to the Graphviz `dot` program.
 
-;; You can give a sequence of classes as the first argument of
-;; make-dot-graph, and all of their superclasses and implemented
-;; interfaces will be found.
+You may give a sequence of classes as the first argument of
+`make-dot-graph`.  If you do, all of their superclasses, and all
+interfaces they implement, will be found, and their superclasses,
+etc. transitively.
 
-user=> (def dotstr1 (cc/make-dot-graph (map class [[1] (vector-of :long 1)]) opts))
+```
+user=> (def class-list (map class [[1] (vector-of :long 1)]))
+user=> (def dotstr1 (cc/make-dot-graph class-list opts))
+
+;; Write the string to a file named "vector-classes.dot"
+
+user=> (spit "vector-classes.dot" dotstr1)
+```
+
+To get a list of all classes in the package `clojure.lang` that are
+part of the Clojure implementation, which is the list of classes that
+the command line invocation that has the word `all-clojure-classes`
+described in the next section uses, you can call the function
+`all-clojure-classes`, passing it a string that is the root directory
+of a copy of the Clojure source code, e.g. if you were in the
+directory `/home/andy` when you entered this command:
+
+```bash
+$ cd /home/andy
+$ git clone https://github.com/clojure/clojure
+```
+
+then the root directory is `"/home/andy/clojure"`.
+
+```clojure
+user=> (def clj-src-dir "/home/andy/clojure")
+user=> (def clj-class-list (cc/all-clojure-classes clj-src-dir {}))
+user=> (def dotstr1 (cc/make-dot-graph clj-class-list opts))
 ```
 
 ## Usage from command line via Clojure CLI tools
@@ -105,10 +134,10 @@ number of colors and therefore the file size.
 
 ## Tweaking the Graphviz file further
 
-There are many, many options to Graphviz that modify how graphs look.
-I will not even attempt to list them all here.  Here is the official
-Graphviz documentation on node, edge, and graph attributes:
-http://graphviz.org/doc/info/attrs.html
+There are many, many options to Graphviz that modify how graphs are
+drawn.  I will not even attempt to list all of those options here.
+Here is the official Graphviz documentation on node, edge, and graph
+attributes: http://graphviz.org/doc/info/attrs.html
 
 The default way of drawing edges is as straight lines when these would
 not go over other nodes, or curved splines in order to go around
