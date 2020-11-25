@@ -227,11 +227,11 @@
 (defn default-class-filter* [cls]
   {:pre [(class? cls)]
    :post [(is-boolean? %)]}
-  (let [package (-> cls .getPackage .getName)]
-    (or (= package "clojure.lang")
-        (.startsWith package "clojure.core")
-        (.startsWith package "clojure.reflect")
-        (and (.startsWith package "java") (.isInterface cls)))))
+  (let [cls-name (.getName cls)]
+    (or (.startsWith cls-name "clojure.lang")
+        (.startsWith cls-name "clojure.core")
+        (.startsWith cls-name "clojure.reflect")
+        (and (.startsWith cls-name "java") (.isInterface cls)))))
 
 (def classes-failing-default-class-filter (atom #{}))
 

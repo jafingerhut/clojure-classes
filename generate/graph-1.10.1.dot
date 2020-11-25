@@ -4,6 +4,7 @@ digraph {
   nodesep=0.10;
   ranksep=1.2;
   mclimit=2500.0;
+  splines=splines;
   node[ fontname=Helvetica shape=box ];
 
   subgraph cluster_legend {
