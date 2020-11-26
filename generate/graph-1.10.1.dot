@@ -27,7 +27,7 @@ digraph {
       shape=record
       style=filled
       fillcolor="#ffffff"
-      label="{{Abbrev.|c.c|j.l|j.u.c|j.u}|{Java Package|clojure.core|java.lang|java.util.concurrent|java.util}}"
+      label="{{Abbrev.||c.c|j.l|j.u.c|j.u}|{Java Package|clojure.lang.|clojure.core|java.lang|java.util.concurrent|java.util}}"
     ]
   }
   "class clojure.lang.AFn" [ label="AFn" color="#76d700" shape="oval"];
@@ -74,11 +74,11 @@ digraph {
   "class clojure.lang.Agent" [ label="Agent\n[M]" color="#00d764" shape="oval"];
   "class clojure.lang.Agent" -> "class clojure.lang.ARef" [ color="#00d764" ];
   "interface java.lang.annotation.Annotation" [ label="j.l.annotation.Annotation" color="#d70000" shape="parallelogram"];
+  "class clojure.lang.ArrayChunk" [ label="ArrayChunk\n[1Z]" color="#76d700" shape="oval"];
+  "class clojure.lang.ArrayChunk" -> "interface clojure.lang.IChunk" [ color="#76d700" ];
   "class clojure.core.ArrayChunk" [ label="c.c.ArrayChunk\n[D1]" color="#0061d7" shape="oval"];
   "class clojure.core.ArrayChunk" -> "interface clojure.lang.IChunk" [ color="#0061d7" ];
   "class clojure.core.ArrayChunk" -> "interface clojure.lang.Indexed" [ color="#0061d7" ];
-  "class clojure.lang.ArrayChunk" [ label="ArrayChunk\n[1Z]" color="#76d700" shape="oval"];
-  "class clojure.lang.ArrayChunk" -> "interface clojure.lang.IChunk" [ color="#76d700" ];
   "class clojure.lang.ArrayIter" [ label="ArrayIter" color="#00d764" shape="oval"];
   "class clojure.lang.ArrayIter" -> "interface java.util.Iterator" [ color="#00d764" ];
   "class clojure.lang.ArraySeq" [ label="ArraySeq\n[MWT1HZ]" color="#5a00d7" shape="oval"];

@@ -10,7 +10,7 @@
 (ns net.n01se.clojure-classes
   (:require [clojure.string :as str]
             [clojure.java.shell :as sh]
-            [clojure.reflect :as refl])
+            [net.n01se.reflection :as reflect])
   (:import (javax.swing JFrame JLabel JScrollPane ImageIcon)
            (clojure.lang PersistentQueue)))
 
@@ -121,7 +121,8 @@
              MultiFn defmulti Keyword keyword Symbol "symbol, gensym"})
 
 (def java-package-abbreviations
-  [{:full-name "clojure.core", :abbreviation "c.c"}
+  [{:full-name "clojure.lang.", :abbreviation ""}
+   {:full-name "clojure.core", :abbreviation "c.c"}
    {:full-name "java.lang", :abbreviation "j.l"}
    {:full-name "java.util.concurrent", :abbreviation "j.u.c"}
    {:full-name "java.util", :abbreviation "j.u"}])

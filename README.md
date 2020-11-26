@@ -80,7 +80,7 @@ the last argument you give it, should match, otherwise the output is
 likely to be wrong in unpredictable ways.
 
 ```bash
-$ clojure -Sdeps '{:deps {org.clojure/clojure {:mvn/version "1.10.1"}}}' -m net.n01se.clojure-classes generate/ all-clojure-classes /Users/andy/clj/clojure 
+$ clojure -Sdeps '{:deps {org.clojure/clojure {:mvn/version "1.10.1"}}}' -m net.n01se.clojure-classes generate/ all-clojure-classes /Users/andy/clj/clojure
 ```
 
 Since the graph is quite large for this set of Clojure classes, you
