@@ -55,19 +55,20 @@ the command line invocation that has the word `all-clojure-classes`
 described in the next section uses, you can call the function
 `all-clojure-classes`, passing it a string that is the root directory
 of a copy of the Clojure source code, e.g. if you were in the
-directory `/home/andy` when you entered this command:
+directory `/Users/andy/clj` when you entered this command:
 
 ```bash
 $ cd /home/andy
 $ git clone https://github.com/clojure/clojure
 ```
 
-then the root directory is `"/home/andy/clojure"`.
+then the root directory is `"/Users/andy/clj/clojure"`.
 
 ```clojure
-user=> (def clj-src-dir "/home/andy/clojure")
+user=> (def clj-src-dir "/Users/andy/clj/clojure")
 user=> (def clj-class-list (cc/all-clojure-classes clj-src-dir {}))
 user=> (def dotstr1 (cc/make-dot-graph clj-class-list opts))
+user=> (spit "all-clj-classes.dot" dotstr1)
 ```
 
 ## Usage from command line via Clojure CLI tools
