@@ -302,24 +302,48 @@
        (.getSimpleName cls)
        (abbreviate-java-package full-name)))))
 
-(defn class-label [cls]
+(defn html-one-col-row [s align]
+  (str "<tr><td align=\"" align "\">" s "</td></tr>"))
+
+(defn members-label [cls]
+  (let [member-descs (reflect/all-description-strs
+                      cls {:class-name-abbreviator abbreviate-java-package})]
+    (str/join "" (for [kind [:field :constructor :method]]
+                   (str/join ""
+                             (map #(html-one-col-row (:description-str %)
+                                                     "left")
+                                  (member-descs kind)))))))
+
+(defn class-label [cls opts]
   {:pre [(class? cls)]
    :post [(string? %)]}
   (let [clsname (class->symbol cls)
+        show-members? (get opts :show-members false)
+        html-label? show-members?
         a (@aliases clsname (str clsname))
         pred (preds clsname)
         ctor (ctors clsname)
-        anc (set (map class->symbol (ancestors cls)))]
-    (str a
+        anc (set (map class->symbol (ancestors cls)))
+        badge (->> (keys badges)
+                   (map #(:abbreviation (badges (anc %))))
+                   (filter identity)
+                   seq)]
+    (str (if html-label? "<" "\"")
+         (if show-members? "<table border=\"0\">")
+         (if show-members? (html-one-col-row a "center") a)
          ;(when ctor (str (when-not (empty? a) "\\n") ctor))
-         (when pred (str \\ \n pred))
-         (when-let [badge (->> (keys badges)
-                               (map anc)
-                               (map badges)
-                               (map :abbreviation)
-                               (filter identity)
-                               seq)]
-           (str "\\n[" (apply str badge) "]")))))
+         (when pred
+           (str "\\n" (if show-members?
+                        (html-one-col-row pred "center")
+                        pred)))
+         (when badge
+           (let [badge-str (str "[" (apply str badge) "]")]
+             (if show-members?
+               (html-one-col-row badge-str "center")
+               (str "\\n" badge-str))))
+         (if show-members? (members-label cls))
+         (if show-members? (str "</table>"))
+         (if html-label? ">" "\""))))
 
 (defn class-color [cls]
   {:pre [(class? cls)]
@@ -442,8 +466,8 @@
      (str-for [cls class-order]
       (when-not (badges (class->sym cls))
         (let [color (class->color cls)
-              node (str "  \"" cls "\" [ label=\"" (class->label cls) "\" "
-                        "color=\"" color "\" "
+              node (str "  \"" cls "\" [ label=" (class->label cls opts)
+                        " color=\"" color "\" "
                         "shape=\"" (class->shape cls) "\"];\n")
               cluster (some #(clusters (class->sym %))
                             (cons cls (ancestors cls)))]

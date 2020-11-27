@@ -110,22 +110,29 @@
 (defn all-description-strs [typeref opts]
   {:pre [(or (class? typeref) (symbol? typeref))
          (map? opts)]}
-  (let [members (:members (refl/type-reflect typeref))
-        grp (group-by member-kind members)]
+  (let [members (->> (:members (refl/type-reflect typeref))
+                     (map (fn [m]
+                            (assoc m :kind (member-kind m)
+                                   :description-str
+                                   (member-description-str m opts)))))
+        grp (group-by :kind members)]
     (into {} (for [kind [:field :constructor :method]]
-               [kind (mapv #(member-description-str % opts)
-                           (sort-by :name (get grp kind)))]))))
+               [kind (sort-by (fn [m]
+                                [(:name m) (if (= :field (:kind m))
+                                             0
+                                             (count (:parameter-types m)))])
+                              (grp kind))]))))
 
 (defn show [typeref opts]
   {:pre [(or (class? typeref) (symbol? typeref))]}
-  (let [tbd (all-description-strs typeref opts)]
+  (let [member-descs (all-description-strs typeref opts)]
     (doseq [kind [:field :constructor :method]]
-      (when (seq (tbd kind))
+      (when (seq (member-descs kind))
         (println (case kind
                    :field "Fields:"
                    :constructor "Constructors:"
                    :method "Methods:"))
-        (pp/pprint (tbd kind))))))
+        (pp/pprint (map :description-str (member-descs kind)))))))
 
 (defn show-old [typeref opts]
   {:pre [(or (class? typeref) (symbol? typeref))]}
@@ -189,6 +196,7 @@
 (show clojure.lang.Counted opts)          ;; looks as expected from Java defn
 
 (show clojure.lang.IPersistentCollection opts) ;; looks as expected from Java defn
+(show clojure.lang.IFn opts)
 
 (show clojure.core.Vec opts)
 
