@@ -324,19 +324,32 @@
     s))
 
 (defn default-member-classifier [member-info opts]
-  (let [omit-const-fields? (get opts :omit-const-fields false)]
+  (let [omit-compiler-generated-fields? (get opts
+                                             :omit-compiler-generated-fields
+                                             false)
+        deftype-field? (and (= :field (:kind member-info))
+                            (contains? (set (bases (:class member-info)))
+                                       clojure.lang.IType))
+        name (:name member-info)
+        name-str (str name)]
     (cond
 
-      ;; Some classes created with clojure.core/deftype contain
-      ;; auto-generated fields with names of the
+      ;; Some classes created with clojure.core/deftype (and maybe
+      ;; others?) contain auto-generated fields with names of the
       ;; form "const__<number>" where <number> is a decimal integer.
       ;; It is often nicer to summarize these rather than list them
       ;; out individually.
-      (and omit-const-fields?
-           (= :field (:kind member-info))
-           (contains? (set (bases (:class member-info))) clojure.lang.IType)
-           (.startsWith (str (:name member-info)) "const__"))
+      (and omit-compiler-generated-fields?
+           deftype-field?
+           (.startsWith name-str "const__"))
       :const-field
+
+      ;; Similarly some classes created with deftype (and perhaps
+      ;; others) contain fields named "__cached_class__<number>".
+      (and omit-compiler-generated-fields?
+           deftype-field?
+           (.startsWith name-str "__cached_class__"))
+      :cached-class-field
 
       ;; The classes and interfaces in the set below each contain a
       ;; little more than 20 different signatures for a method
@@ -348,7 +361,7 @@
                         clojure.lang.Keyword clojure.lang.Var
                         clojure.lang.Ref}
                       (:class member-info))
-           (= 'invoke (:name member-info)))
+           (= 'invoke name))
       :fn-invoke-method
 
       ;; This case is similar to the "invoke" method above, but the
@@ -412,6 +425,9 @@
       
       (= classification :const-field)
       [(str n " const__&lt;num&gt; fields omitted")]
+
+      (= classification :cached-class-field)
+      [(str n " __cached_class__&lt;num&gt; fields omitted")]
       
       (= classification :fn-invoke-method)
       [(str n " invoke methods omitted")]
