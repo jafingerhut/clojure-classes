@@ -276,7 +276,7 @@
    :post [(string? %)]}
   (if (-> cls .getName (.startsWith "clojure"))
     (if (.isInterface cls) "octagon" "oval")         ;; Clojure
-    (if (.isInterface cls) "parallelogram" "box")))  ;; non-Clojure
+    (if (.isInterface cls) "box" "parallelogram")))  ;; non-Clojure
 
 (defn abbreviate-java-package [class-name-str]
   {:pre [(string? class-name-str)]
@@ -305,19 +305,175 @@
 (defn html-one-col-row [s align]
   (str "<tr><td align=\"" align "\">" s "</td></tr>"))
 
-(defn members-label [cls]
-  (let [member-descs (reflect/all-description-strs
-                      cls {:class-name-abbreviator abbreviate-java-package})]
-    (str/join "" (for [kind [:field :constructor :method]]
-                   (str/join ""
-                             (map #(html-one-col-row (:description-str %)
-                                                     "left")
-                                  (member-descs kind)))))))
+(defn remove-prefix [s prefix]
+  (if (.startsWith s prefix)
+    (subs s (count prefix))
+    s))
 
-(defn class-label [cls opts]
-  {:pre [(class? cls)]
+(defn default-member-classifier [member-info opts]
+  (let [omit-const-fields? (get opts :omit-const-fields false)]
+    (cond
+
+      ;; Some classes created with clojure.core/deftype contain
+      ;; auto-generated fields with names of the
+      ;; form "const__<number>" where <number> is a decimal integer.
+      ;; It is often nicer to summarize these rather than list them
+      ;; out individually.
+      (and (or
+            (println "cls=" (:class member-info)
+                     " (class cls)=" (class (:class member-info))
+                     " itype?="
+                     (contains? (set (bases (:class member-info)))
+                                clojure.lang.IType))
+            true)
+           omit-const-fields?
+           (= :field (:kind member-info))
+           (contains? (set (bases (:class member-info))) clojure.lang.IType)
+           (.startsWith (str (:name member-info)) "const__"))
+      :const-field
+
+      ;; The classes and interfaces in the set below each contain a
+      ;; little more than 20 different signatures for a method
+      ;; named "invoke", differing only in the number of parameters
+      ;; that they take.  It makes for a very large node label if all
+      ;; of them are listed separately.
+      (and (contains? #{clojure.lang.IFn clojure.lang.AFn
+                        clojure.lang.RestFn clojure.lang.MultiFn
+                        clojure.lang.Keyword clojure.lang.Var
+                        clojure.lang.Ref}
+                      (:class member-info))
+           (= 'invoke (:name member-info)))
+      :fn-invoke-method
+
+      ;; This case is similar to the "invoke" method above, but the
+      ;; classes in the set below have a little more than 20 different
+      ;; signatures for a method named "doInvoke".
+      (and (contains? #{clojure.lang.RestFn}
+                      (:class member-info))
+           (= 'doInvoke (:name member-info)))
+      :fn-doinvoke-method
+
+      :else :normal)))
+
+(defn default-grouped-member-transform [classification member-infos]
+  "Return a sequence of strings that describe some of the
+  members (e.g. fields, constructors, or methods) of a class.
+
+  classification is the return value from a user-defined classifier
+  function.
+
+  member-infos is a sequence of maps, one for each member of a
+  particular kind (field, constructor, or method) and classification
+  within a class.  Each map contains the following keys describing the
+  member:
+
+  :class - the class that the member is a part of
+
+  :kind - value is one of the set #{:field :constructor :method}
+
+  :description-str - value is a string describing the member in
+      Java-like syntax
+
+  plus everything that clojure.reflect/type-reflect returns for a
+  member, which includes:
+
+  :name - the value is either a class object, or a symbol (tbd)
+
+  :flags - a set of keywords.  See net.n01se.reflection namespace vars
+      interface-flag-print-order, method-flag-print-order, and
+      field-flag-print-order for a list of keywords that are known to
+      possibly be included for each of a constructor, method, and
+      field.
+
+  :type - only if :kind is :field.  A symbol that is the type of the
+      field.
+
+  :return-type - only if :kind is :method.  A symbol that is the
+      return type of the method.
+
+  :parameter-types - only if :kind is :constructor or :method.  A
+      sequence of symbols that are the types taken by the parameter.
+      They can end with one or more sequences of characters <> to
+      denote Java arrays.
+
+  :exception-types - only if :kind is :constructor or :method.  I have
+      not yet investigated what the value contains.
+  "
+  (let [n (count member-infos)]
+    (cond
+      (= classification :normal)
+      (map :description-str member-infos)
+      
+      (= classification :const-field)
+      [(str n " const__&lt;num&gt; fields omitted")]
+      
+      (= classification :fn-invoke-method)
+      [(str n " invoke methods omitted")]
+
+      (= classification :fn-doinvoke-method)
+      [(str n " doInvoke methods omitted")]
+      
+      :else
+      [(str "Unknown classification " classification " with " n " members")])))
+
+(defn members-label [cls opts]
+  (let [member-descs (reflect/all-description-strs
+                      cls {:class-name-abbreviator abbreviate-java-package})
+        classifier (get opts :member-classifier (constantly :normal))
+        interface? (.isInterface cls)]
+    (str/join
+     ""
+     (for [kind [:field :constructor :method]]
+       (let [mems (map #(assoc % :class cls) (member-descs kind))
+             n (count mems)
+             mems-grouped (group-by #(classifier % opts) mems)
+             groups (sort (keys mems-grouped))
+             not-normal-groups (remove #(= :normal %) groups)
+             mems-grouped2
+             (into {}
+                   (for [[group mems-in-group] mems-grouped]
+                     [group
+                      (default-grouped-member-transform group mems-in-group)]))]
+         (str/join ""
+                   (concat
+                    (if (or (and (not interface?) (> n 0))
+                            (> n 4))
+                      [(html-one-col-row (str n " " (name kind)
+                                              (if (> n 1) "s"))
+                                         "center")])
+                    (map #(html-one-col-row
+                           (if interface?
+                             (remove-prefix % "public abstract ")
+                             %)
+                           "left")
+                         (concat
+                          (mapcat mems-grouped2 not-normal-groups)
+                          (mems-grouped2 :normal))))))))))
+
+(defn class-label
+  "Given a class `cls`, i.e. a Java object with class java.lang.Class,
+  return a string that will be used to label the node in a drawing.
+
+  The string returns should should follow the Graphviz rules that it
+  must begin and end with a double quote, and contain a 'regular
+  label' string, or it must begin with < and end with >, and contain
+  the text of an HTML label string.
+
+  :badges - Default value net.n01se.clojure-classes/badges
+
+  See documentation of function dotstr for more details.
+
+  :show-members - Default value false.
+
+  If true, then include not only the class name, but also a
+  description of its member fields, constructors, and methods.  These
+  can make the nodes quite large."
+  [cls opts]
+  {:pre [(class? cls)
+         (map? opts)]
    :post [(string? %)]}
   (let [clsname (class->symbol cls)
+        badges (get opts :badges badges)
         show-members? (get opts :show-members false)
         html-label? show-members?
         a (@aliases clsname (str clsname))
@@ -341,7 +497,7 @@
              (if show-members?
                (html-one-col-row badge-str "center")
                (str "\\n" badge-str))))
-         (if show-members? (members-label cls))
+         (if show-members? (members-label cls opts))
          (if show-members? (str "</table>"))
          (if html-label? ">" "\""))))
 
@@ -384,8 +540,8 @@
 (defn dot-for-node-shapes-legend []
    "\"Clojure class\" [ shape=oval fillcolor=\"#ffffff\" style=filled ];
     \"Clojure Interface\" [ shape=octagon fillcolor=\"#ffffff\" style=filled ];
-    \"Java class\" [ shape=box fillcolor=\"#ffffff\" style=filled ];
-    \"Java Interface\" [ shape=parallelogram fillcolor=\"#ffffff\" style=filled ];
+    \"Java class\" [ shape=parallelogram fillcolor=\"#ffffff\" style=filled ];
+    \"Java Interface\" [ shape=box fillcolor=\"#ffffff\" style=filled ];
     ")
 
 (defn dot-for-badges-legend [badges]
@@ -418,7 +574,87 @@
        "}}\"
     ]"))
 
-(defn dotstr [graph opts]
+(defn dotstr
+  "Given a class graph `graph`, represented as a map whose keys are
+  Java objects with class java.lang.Class, and associated values are
+  collections of other java.lang.Class objects, return a string that
+  can be given as input to Graphviz's dot commmand to create a drawing
+  of this graph.
+
+  The behavior of dotstr can be affected by including the following
+  keys in the options map `opts`, but see also the documentation for
+  the function net.n01se.clojure-classes/class-label if you use that
+  function for creating node labels, as it is passed this same `opts`
+  map for controlling its behavior.
+
+  :badges - Default value net.n01se.clojure-classes/badges.
+
+  A Clojure map with keys that are Java interfaces, named as Clojure
+  symbols, as returned by the function class->symbol.  The
+  corresponding values for each key are themselves Clojure maps with
+  keys :abbreviation (a short symbol) and :description (a string
+  describing the interface for the legend of the drawing).
+
+  :class-order - Default value (keys graph).
+
+  A sequence of java.lang.Class objects, all of which should be keys
+  in the map `graph`, representing the order they they should be
+  considered by this function.
+
+  :class->sym - Default value net.n01se.clojure-classes/class->symbol
+
+  A function that takes an instance of class java.lang.Class, and
+  returns a symbol whose name will be used as the label for the class
+  in the graph.  This symbol is also the key used to look up in the
+  map 'badges'.
+
+  :class->color - Default value net.n01se.clojure-classes/class-color
+
+  A function that takes an instance of class java.lang.Class, and
+  returns a string naming a Graphviz color, which will be used as the
+  color of the node in the drawing.
+
+  :class->label - Default value net.n01se.clojure-classes/class-label
+
+  A function that takes an instance of class java.lang.Class and the
+  map `opts`, and returns a string that will be the label of the node
+  for this class in the drawing.
+
+  :class->shape - Default value net.n01se.clojure-classes/choose-shape
+
+  A function that takes an instance of class java.lang.Class, and
+  returns a string naming a Graphviz node shape.  Useful values
+  include \"box\", \"oval\", \"octagon\", \"parallelogram\", but see
+  the Graphviz documentation for the node 'shape' attribute for a full
+  list.
+
+  :java-package-abbreviations - Default value
+  net.n01se.clojure-classes/java-package-abbreviations.
+
+  A sequence of maps, each containing the keys :full-name
+  and :abbreviation.  The values for both keys are strings.  The
+  string :full-name is a prefix of a full Java class name,
+  e.g. \"java.util\", and the string :abbreviation is a shorter string
+  that will replace the longer prefix if it is ever found in the name
+  of a class in the label of a node for that class, e.g. \"j.u\".
+
+  :rankdir - Default value \"LR\" (left to right).
+
+  The value for the Graphviz dot language 'rankdir' attribute of a
+  graph.  Other useful values include \"BT\" (bottom to top) and
+  \"TB\" (top to bottom), but see the Graphviz documentation for more.
+
+  :show-legend - Default value true.
+
+  true if the drawing should include a legend for node shapes, badge
+  meanings, and Java package abbreviations.
+
+  :splines-type - Default value \"splines\".
+
+  The value for the Graphviz dot language 'splines' attribute of a
+  graph.  Other useful values include \"ortho\" and \"polyline\", but
+  see the Graphviz documentation for more."
+  [graph opts]
   {:pre [(class-graph? graph)
          (map? opts)]
    :post [(string? %)]}
@@ -506,6 +742,39 @@
 
 
 (defn make-dot-graph [classes opts]
+  "Create a graph with one node for each Java class that is in the
+  that is in the collection `classes`.  Each may also be a Java
+  interface, since Java interfaces are represented in the reflection
+  API as classes.
+
+  The graph will include a node for each class in `classes`, plus any
+  that can be reached from one of those classes by a superclass or
+  'class implements interface' relationship from one of those classes.
+
+  Other classes or interfaces reached that are not in `classes` are
+  only included if the 'class filter' function returns true for them.
+  By default this function is
+  net.n01se.clojure-classes/default-class-filter, but you can provide
+  a different one as the value of the key :class-filter in the options
+  map `opts`.  Another useful class filter function is
+  net.n01se.clojure-classes/not-root-class, which returns true for all
+  classes except java.lang.Object.
+
+  Options map keys that can modify the behavior are given below.  See
+  also the function dotstr for the keys in the options map that affect
+  its behavior, as this function calls dotstr to create the Graphviz
+  dot language describing the drawing.
+
+  :class-filter - Default value net.n01se.clojure-classes/default-class-filter
+
+  A function that takes as input a JVM class or interface, and returns
+  true or false for whether to include the class in the generated
+  graph of classes.
+
+  :create-window - Default value false.
+
+  true to use the Graphviz dot command to create a drawing of the
+  graph and open a new window containing that drawing."
   (let [cf (get opts :class-filter default-class-filter)
         graph (class-graph classes cf)
         dot-string (dotstr graph opts)]
