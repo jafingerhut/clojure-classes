@@ -271,12 +271,25 @@
             (filter #(and % (some default-class-filter (bases %)))
                     (clojure-lang-classes file-base-names)))))
 
+(def default-node-shapes {:node-shape-clojure-class "oval"
+                          :node-shape-clojure-interface "octagon"
+                          :node-shape-java-class "parallelogram"
+                          :node-shape-java-interface "box"})
+
 (defn choose-shape [cls]
   {:pre [(class? cls)]
    :post [(string? %)]}
-  (if (-> cls .getName (.startsWith "clojure"))
-    (if (.isInterface cls) "octagon" "oval")         ;; Clojure
-    (if (.isInterface cls) "box" "parallelogram")))  ;; non-Clojure
+  (let [{:keys [node-shape-clojure-class
+                node-shape-clojure-interface
+                node-shape-java-class
+                node-shape-java-interface]} (merge default-node-shapes opts)]
+    (if (-> cls .getName (.startsWith "clojure"))
+      (if (.isInterface cls)
+        node-shape-clojure-interface
+        node-shape-clojure-class)
+      (if (.isInterface cls)
+        node-shape-java-interface
+        node-shape-java-class))))
 
 (defn abbreviate-java-package [class-name-str]
   {:pre [(string? class-name-str)]
@@ -530,12 +543,17 @@
 
 (def duplicated-node-counts (atom {}))
 
-(defn dot-for-node-shapes-legend []
-   "\"Clojure class\" [ shape=oval fillcolor=\"#ffffff\" style=filled ];
-    \"Clojure Interface\" [ shape=octagon fillcolor=\"#ffffff\" style=filled ];
-    \"Java class\" [ shape=parallelogram fillcolor=\"#ffffff\" style=filled ];
-    \"Java Interface\" [ shape=box fillcolor=\"#ffffff\" style=filled ];
-    ")
+(defn dot-for-node-shapes-legend [opts]
+  (let [{:keys [node-shape-clojure-class
+                node-shape-clojure-interface
+                node-shape-java-class
+                node-shape-java-interface]} (merge default-node-shapes opts)]
+    (str
+     "\"Clojure class\" [ shape=" node-shape-clojure-class " fillcolor=\"#ffffff\" style=filled ];
+    \"Clojure Interface\" [ shape=" node-shape-clojure-interface " fillcolor=\"#ffffff\" style=filled ];
+    \"Java class\" [ shape=" node-shape-java-class " fillcolor=\"#ffffff\" style=filled ];
+    \"Java Interface\" [ shape=" node-shape-java-interface " fillcolor=\"#ffffff\" style=filled ];
+    ")))
 
 (defn dot-for-badges-legend [badges]
   (str "
@@ -684,7 +702,7 @@
     "
      (if show-legend
        (str
-        (dot-for-node-shapes-legend)
+        (dot-for-node-shapes-legend opts)
         (when (seq badges)
           (dot-for-badges-legend badges))
         (when (seq java-package-abbreviations)
@@ -697,7 +715,7 @@
         (let [color (class->color cls)
               node (str "  \"" cls "\" [ label=" (class->label cls opts)
                         " color=\"" color "\" "
-                        "shape=\"" (class->shape cls) "\"];\n")
+                        "shape=\"" (class->shape cls opts) "\"];\n")
               cluster (some #(clusters (class->sym %))
                             (cons cls (ancestors cls)))]
           (str
