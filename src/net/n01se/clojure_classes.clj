@@ -276,7 +276,7 @@
                           :node-shape-java-class "parallelogram"
                           :node-shape-java-interface "box"})
 
-(defn choose-shape [cls]
+(defn choose-shape [cls opts]
   {:pre [(class? cls)]
    :post [(string? %)]}
   (let [{:keys [node-shape-clojure-class
