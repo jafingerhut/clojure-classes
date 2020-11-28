@@ -319,14 +319,7 @@
       ;; form "const__<number>" where <number> is a decimal integer.
       ;; It is often nicer to summarize these rather than list them
       ;; out individually.
-      (and (or
-            (println "cls=" (:class member-info)
-                     " (class cls)=" (class (:class member-info))
-                     " itype?="
-                     (contains? (set (bases (:class member-info)))
-                                clojure.lang.IType))
-            true)
-           omit-const-fields?
+      (and omit-const-fields?
            (= :field (:kind member-info))
            (contains? (set (bases (:class member-info))) clojure.lang.IType)
            (.startsWith (str (:name member-info)) "const__"))
