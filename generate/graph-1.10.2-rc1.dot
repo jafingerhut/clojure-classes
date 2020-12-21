@@ -74,11 +74,11 @@ digraph {
   "class clojure.lang.Agent" [ label="Agent\n[M]" color="#00d764" shape="oval"];
   "class clojure.lang.Agent" -> "class clojure.lang.ARef" [ color="#00d764" ];
   "interface java.lang.annotation.Annotation" [ label="j.l.annotation.Annotation" color="#d70000" shape="box"];
-  "class clojure.lang.ArrayChunk" [ label="ArrayChunk\n[1Z]" color="#76d700" shape="oval"];
-  "class clojure.lang.ArrayChunk" -> "interface clojure.lang.IChunk" [ color="#76d700" ];
   "class clojure.core.ArrayChunk" [ label="c.c.ArrayChunk\n[D1]" color="#0061d7" shape="oval"];
   "class clojure.core.ArrayChunk" -> "interface clojure.lang.IChunk" [ color="#0061d7" ];
   "class clojure.core.ArrayChunk" -> "interface clojure.lang.Indexed" [ color="#0061d7" ];
+  "class clojure.lang.ArrayChunk" [ label="ArrayChunk\n[1Z]" color="#76d700" shape="oval"];
+  "class clojure.lang.ArrayChunk" -> "interface clojure.lang.IChunk" [ color="#76d700" ];
   "class clojure.lang.ArrayIter" [ label="ArrayIter" color="#00d764" shape="oval"];
   "class clojure.lang.ArrayIter" -> "interface java.util.Iterator" [ color="#00d764" ];
   "class clojure.lang.ArraySeq" [ label="ArraySeq\n[MWT1HZ]" color="#5a00d7" shape="oval"];
@@ -334,7 +334,7 @@ digraph {
   "class clojure.core.Vec" -> "interface java.util.List" [ color="#d78100" ];
   "class clojure.core.Vec" -> "interface clojure.lang.Indexed" [ color="#d78100" ];
   "class clojure.core.VecNode" [ label="c.c.VecNode\n[D]" color="#d7009e" shape="oval"];
-  "class clojure.core.VecSeq" [ label="c.c.VecSeq\n[D]" color="#00d764" shape="oval"];
+  "class clojure.core.VecSeq" [ label="c.c.VecSeq\n[DMWTH]" color="#00d764" shape="oval"];
   "class clojure.core.VecSeq" -> "interface clojure.lang.ISeq" [ color="#00d764" ];
   "class clojure.core.VecSeq" -> "interface clojure.lang.IChunkedSeq" [ color="#00d764" ];
   "class clojure.core.VecSeq" -> "interface clojure.core.protocols.InternalReduce" [ color="#00d764" ];
@@ -343,9 +343,9 @@ digraph {
   "class clojure.lang.Volatile" -> "interface clojure.lang.IDeref" [ color="#00d0d7" ];
   "interface clojure.lang.WarnBoxedMath" [ label="WarnBoxedMath" color="#00d0d7" shape="octagon"];
   "interface clojure.lang.WarnBoxedMath" -> "interface java.lang.annotation.Annotation" [ color="#00d0d7" ];
-  "class clojure.core$future_call$reify__8454" [ label="(future)\n[MW]" color="#d70000" shape="oval"];
-  "class clojure.core$future_call$reify__8454" -> "interface clojure.lang.IPending" [ color="#d70000" ];
-  "class clojure.core$future_call$reify__8454" -> "interface clojure.lang.IBlockingDeref" [ color="#d70000" ];
-  "class clojure.core$future_call$reify__8454" -> "interface java.util.concurrent.Future" [ color="#d70000" ];
-  "class clojure.core$future_call$reify__8454" -> "interface clojure.lang.IDeref" [ color="#d70000" ];
+  "class clojure.core$future_call$reify__8479" [ label="(future)\n[MW]" color="#00d0d7" shape="oval"];
+  "class clojure.core$future_call$reify__8479" -> "interface clojure.lang.IPending" [ color="#00d0d7" ];
+  "class clojure.core$future_call$reify__8479" -> "interface clojure.lang.IBlockingDeref" [ color="#00d0d7" ];
+  "class clojure.core$future_call$reify__8479" -> "interface java.util.concurrent.Future" [ color="#00d0d7" ];
+  "class clojure.core$future_call$reify__8479" -> "interface clojure.lang.IDeref" [ color="#00d0d7" ];
 }

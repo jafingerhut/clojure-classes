@@ -23,7 +23,8 @@ for CLOJURE_VERSION in \
 	1.7.0 \
 	1.8.0 \
 	1.9.0 \
-	1.10.1
+	1.10.1 \
+	1.10.2-rc1
 do
     # Check out the appropriate git tag in the Clojure source tree.
     cd $CLOJURE_REPO_LOCAL_COPY
